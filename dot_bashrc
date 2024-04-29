@@ -151,9 +151,12 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 
-eval "$(mise activate bash)"
+if [[ $CONTAINER_ID = dev ]]; then
+	eval "$(mise activate bash)"
+	. "$HOME/.cargo/env"
+fi
 
 alias vim=nvim
+alias neovide-nightly='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly" neovide'
 
 eval "$(chezmoi completion bash)"
-. "$HOME/.cargo/env"
