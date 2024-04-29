@@ -162,3 +162,4 @@ alias vim="nvim"
 alias neovide-nightly='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
 alias nvim-nightly="nvim-nightly-bin"
 
+. "$HOME/.cargo/env"
