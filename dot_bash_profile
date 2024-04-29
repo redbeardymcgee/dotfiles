@@ -1,7 +1,8 @@
 # vim: ft=sh
+# shellcheck source=/home/josh/.bashrc
 if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+	. ~/.bashrc
 fi
 
 eval "$(/home/josh/.local/bin/mise activate bash)"
-. "$HOME/.cargo/env"
+[[ $CONTAINER_ID = dev ]] && . "$HOME/.cargo/env"
