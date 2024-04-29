@@ -1,0 +1,6 @@
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+eval "$(/home/josh/.local/bin/mise activate bash)"
+. "$HOME/.cargo/env"

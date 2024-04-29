@@ -1,0 +1,60 @@
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+	# include .bashrc if it exists
+	if [ -f "$HOME/.bashrc" ]; then
+		. "$HOME/.bashrc"
+	fi
+fi
+
+source_env_files() {
+	for env_file; do
+		if [ -f "$env_file" ] && [ -r "$env_file" ]; then
+			. "$env_file"
+		fi
+	done
+}
+
+source_env_files \
+	"$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" \
+	"$HOME/.cargo/env" \
+	"$HOME/.ghcup/env" \
+	"$HOME/.opam/opam-init/init.sh"
+
+add_to_PATH() {
+	for d; do
+		d=$({ cd -- "$d" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
+		if [ -d "$d" ]; then
+			case ":$PATH:" in
+			*":$d:"*) : ;;
+			*)
+				PATH="$d:$PATH"
+				;;
+			esac
+		fi # skip nonexistent directory
+	done
+}
+
+add_to_PATH \
+	"$HOME/.local/bin/" \
+	"$HOME/.config/emacs/bin" \
+	"$HOME/go/bin" \
+	"$VOLTA_HOME/bin"
+
+export NIX_CONFIG="experimental-features = nix-command flakes"
+export CHECKPOINT_DISABLE=1
+export MISE_NODE_COREPACK=true
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+. "$HOME/.cargo/env"
