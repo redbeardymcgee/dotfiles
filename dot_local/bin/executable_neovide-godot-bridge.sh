@@ -7,7 +7,11 @@ file=$1
 line=$2
 col=$3
 
-[[ -e $server_path ]] || neovide "$file" -- --listen "$server_path"
+[[ -e $server_path ]] || neovide \
+	--neovim-bin ~/.local/bin/nvim-nightly-bin \
+	"$file" \
+	-- \
+	--listen "$server_path"
 
-nvim --server "$server_path" \
+nvim-nightly-bin --server "$server_path" \
 	--remote-send "<C-\><C-N>:n $file<CR>:call cursor($line,$col)<CR>" "${@:4}"

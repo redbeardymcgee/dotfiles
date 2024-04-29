@@ -156,7 +156,7 @@ if [[ $CONTAINER_ID = dev ]]; then
 	. "$HOME/.cargo/env"
 fi
 
-alias vim="vim"
+alias vim="nvim"
 alias neovide-nightly='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
 alias nvim-nightly="nvim-nightly-bin"
 
