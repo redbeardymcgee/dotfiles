@@ -6,7 +6,7 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/josh/.oh-my-bash'
+OSH='/home/josh/.oh-my-bash'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
@@ -154,11 +154,11 @@ source "$OSH"/oh-my-bash.sh
 
 if [[ $CONTAINER_ID = dev ]]; then
 	eval "$(mise activate bash)"
-	. "$HOME/.cargo/env"
 fi
+
+eval "$(chezmoi completion bash)"
 
 alias vim="nvim"
 alias neovide-nightly='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
 alias nvim-nightly="nvim-nightly-bin"
 
-eval "$(chezmoi completion bash)"
