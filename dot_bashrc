@@ -101,19 +101,13 @@ completions=(
 # Custom aliases may be added to ~/.oh-my-bash/custom/aliases/
 # Example format: aliases=(vagrant composer git-avh)
 # Add wisely, as too many aliases slow down shell startup.
-aliases=(
-)
+aliases=()
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-bash/plugins/*)
 # Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	bashmarks
-	bash-preexec
-	progress
-	sudo
-)
+plugins=()
 
 # Which plugins would you like to conditionally load? (plugins can be found in ~/.oh-my-bash/plugins/*)
 # Custom plugins may be added to ~/.oh-my-bash/custom/plugins/
@@ -154,12 +148,10 @@ source "$OSH"/oh-my-bash.sh
 
 if [[ $CONTAINER_ID = dev ]]; then
 	eval "$(mise activate bash)"
+  eval "$(chezmoi completion bash)"
 fi
 
-eval "$(chezmoi completion bash)"
 
 alias vim="nvim"
 alias neovide-nightly='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
 alias nvim-nightly="nvim-nightly-bin"
-
-. "$HOME/.cargo/env"

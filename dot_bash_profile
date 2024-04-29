@@ -1,6 +1,0 @@
-# vim: ft=sh
-# shellcheck source=/home/josh/.bashrc
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
-. "$HOME/.cargo/env"
