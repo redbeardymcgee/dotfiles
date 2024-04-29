@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Dev
+GenericName=Terminal entering Dev
+Comment=Terminal entering Dev
+Categories=Distrobox;System;Utility
+Exec=kitty /home/josh/.local/bin/distrobox enter  dev
+Icon=/home/josh/.local/share/icons/distrobox/fedora.png
+Keywords=distrobox;
+NoDisplay=false
+Terminal=false
+TryExec=/home/josh/.local/bin/distrobox
+Type=Application
