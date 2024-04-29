@@ -156,3 +156,4 @@ eval "$(mise activate bash)"
 alias vim=nvim
 
 eval "$(chezmoi completion bash)"
+. "$HOME/.cargo/env"
