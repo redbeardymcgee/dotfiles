@@ -15,6 +15,10 @@ return {
       },
     },
     {
+      "windwp/nvim-ts-autotag",
+      cond = false,
+    },
+    {
       "pmizio/typescript-tools.nvim",
       dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
       opts = {
