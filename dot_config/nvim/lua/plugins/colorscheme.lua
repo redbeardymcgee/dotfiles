@@ -1,9 +1,9 @@
 return {
   {
     "catppuccin",
-    -- opts = {
-    --   transparent_background = true,
-    -- },
+    opts = {
+      transparent_background = true,
+    },
   },
   {
     "LazyVim/LazyVim",
