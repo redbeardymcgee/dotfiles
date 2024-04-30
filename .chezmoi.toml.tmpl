@@ -1,3 +1,5 @@
+# vim: ft=toml
+
 progress = true
 
 [edit]
@@ -6,4 +8,4 @@ watch = true
 
 [git]
 autoCommit = true
-commitMessageTemplate = '{{ promptString "Commit message" }}'
+commitMessageTemplateFile = 'commitMessage.tmpl'
