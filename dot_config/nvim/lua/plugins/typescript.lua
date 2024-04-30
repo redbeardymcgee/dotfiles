@@ -8,11 +8,9 @@ return {
       codelens = {
         enabled = true,
       },
-      servers = {
-        tsserver = {
-          enabled = false,
-        },
-      },
+    },
+    setup = {
+      tsserver = false,
     },
     {
       "windwp/nvim-ts-autotag",
