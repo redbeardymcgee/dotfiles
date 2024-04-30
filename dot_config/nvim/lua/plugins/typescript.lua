@@ -11,7 +11,7 @@ return {
     },
     servers = {
       tsserver = {
-        enabled = false,
+        cond = false,
       },
     },
     {
