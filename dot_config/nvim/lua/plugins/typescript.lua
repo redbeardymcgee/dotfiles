@@ -8,10 +8,10 @@ return {
       codelens = {
         enabled = true,
       },
-    },
-    servers = {
-      tsserver = {
-        cond = false,
+      servers = {
+        tsserver = {
+          cond = false,
+        },
       },
     },
     {
