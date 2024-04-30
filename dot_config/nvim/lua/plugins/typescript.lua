@@ -10,7 +10,7 @@ return {
       },
     },
     setup = {
-      tsserver = false,
+      tsserver = {},
     },
     {
       "windwp/nvim-ts-autotag",
