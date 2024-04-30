@@ -9,25 +9,22 @@ return {
         enabled = true,
       },
     },
-    setup = {
-      tsserver = {},
-    },
     {
       "windwp/nvim-ts-autotag",
       cond = false,
     },
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        handlers = {
-          function(server_name)
-            if server_name == "tsserver" then
-              return
-            end
-          end,
-        },
-      },
-    },
+    -- {
+    --   "williamboman/mason-lspconfig.nvim",
+    --   opts = {
+    --     handlers = {
+    --       function(server_name)
+    --         if server_name == "tsserver" then
+    --           return
+    --         end
+    --       end,
+    --     },
+    --   },
+    -- },
     {
       "pmizio/typescript-tools.nvim",
       dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
