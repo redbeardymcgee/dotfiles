@@ -1,41 +1,82 @@
+#!/usr/bin/env bash
+
 ## Unattended setup script for bootstrapping my dev/shell container
 
-if [[ ! -x /usr/bin/lazygit ]]; then
-	sudo dnf copr enable atim/lazygit -y
-	sudo dnf install lazygit -y
+packages=(
+	coreutils
+	cmake
+
+	diff-so-fancy
+
+	fd-find
+	fontconfig-devel
+	freetype-devel
+	fzf
+
+	lazygit
+	libxkbcommon-x11
+
+	openssl-devel
+
+	neovim
+	ripgrep
+
+	xclip
+	xdotool
+	xsel
+	xwininfo
+
+	wezterm
+)
+
+repos=(
+	atim/lazygit
+	wezfurlong/wezterm-nightly
+)
+
+for repo in "${repos[@]}"; do
+	sudo dnf -y copr enable "$repo"
+done
+
+sudo dnf -y install "${packages[@]}"
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
+	sh -s -- -q -y --no-modify-path
+
+. "$HOME/.cargo/env"
+
+OPTBIN=$HOME/.local/opt/bin
+NNVIM_DIR=$OPTBIN/nvim-nightly-bin
+
+if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
+	curl --proto '=https' \
+		--tlsv1.2 \
+		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' |
+		tar --overwrite \
+			--transform 's/-linux64/-nightly-bin/' \
+			--transform 's/nvim$/nvim-nightly-bin/' \
+			-C "$OPTBIN" \
+			-xzf -
 fi
 
-if [[ ! -x /usr/bin/wezterm ]]; then
-	sudo dnf copr enable wezfurlong/wezterm-nightly -y
-	sudo dnf install wezterm -y
-fi
+cargo_packages=(
+	atuin
+	mise
+	starship
+)
 
-if [[ ! -x ~/.cargo/bin/rustup ]]; then
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -q -y --profile minimal --no-modify-path
-fi
+for package in "${cargo_packages[@]}"; do
+	cargo install "$package"
+done
 
-if [[ ! -x /usr/bin/nvim ]]; then
-	curl --proto '=https' --tlsv1.2 -sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' | tar --transform 's/-linux64/-nightly/' --transform 's/nvim$/nvim-nightly-bin/' -C ~/.local/bin -xzf -
-fi
+cargo_git_packages=('https://github.com/neovide/neovide')
 
-if [[ ! -x ~/.cargo/bin/neovide ]]; then
-	cargo install -f --git https://github.com/neovide/neovide
-fi
+for package in "${cargo_git_packages[@]}"; do
+	cargo install --git "$package"
+done
 
-if [[ ! -x ~/.cargo/bin/mise ]]; then
-	cargo install -f mise
-fi
+git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+make -C ble.sh install PREFIX="$HOME/.local"
+rm -rf ble.sh
 
-if [[ ! -x ~/.cargo/bin/atuin ]]; then
-	cargo install -f atuin
-fi
-
-if [[ ! -x ~/.cargo/bin/starship ]]; then
-	cargo install -f starship
-fi
-
-if [[ ! -r ~/.local/share/blesh/ble.sh ]]; then
-	git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
-	make -C ble.sh install PREFIX="$HOME"
-	rm -rf ble.sh
-fi
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
