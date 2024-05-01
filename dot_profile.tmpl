@@ -1,0 +1,44 @@
+if [ -n "$BASH_VERSION" ]; then
+	if [ -f "$HOME/.bashrc" ]; then
+		. "$HOME/.bashrc"
+	fi
+fi
+
+source_env_files() {
+	for env_file; do
+		if [ -f "$env_file" ] && [ -r "$env_file" ]; then
+			. "$env_file"
+		fi
+	done
+}
+
+add_to_PATH() {
+	for d; do
+		d=$({ cd -- "$d" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
+		if [ -d "$d" ]; then
+			case ":$PATH:" in
+			*":$d:"*) : ;;
+			*)
+				PATH="$d:$PATH"
+				;;
+			esac
+		fi # skip nonexistent directory
+	done
+}
+
+add_to_PATH \
+	"$HOME/.local/bin"
+
+{{ if eq .chezmoi.hostname "rbmpc" -}}
+
+add_to_PATH "$HOME/devbox/.local/bin"
+
+{{- end }}
+
+export NIX_CONFIG="experimental-features = nix-command flakes"
+export CHECKPOINT_DISABLE=1
+export MISE_NODE_COREPACK=true
+
+export EDITOR=nvim
+export VISUAL=nvim
+
