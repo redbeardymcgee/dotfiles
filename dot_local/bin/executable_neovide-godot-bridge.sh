@@ -2,7 +2,7 @@
 
 # CHANGE IF NEEDED:
 # - replace with other path for the Neovim server pipe
-server_path="$HOME/.cache/nvim/godot-server.pipe"
+server_path=$HOME/.cache/nvim/godot-server.pipe
 file=$1
 line=$2
 col=$3
