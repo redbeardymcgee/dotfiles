@@ -4,7 +4,7 @@ case $- in
 *) return ;;
 esac
 
-{{- if eq .chezmoi.hostname "rbmpc" -}}
+{{ if or (eq .chezmoi.fqdnHostname "rbmpc") (eq .chezmoi.fqdnHostname "dev.rbmpc") -}}
 
 source ~/.local/share/blesh/ble.sh --noattach --rcfile ~/.config/ble.rc
 
@@ -21,4 +21,4 @@ alias dev="distrobox enter dev"
 
 [[ ${BLE_VERSION-} ]] && ble-attach
 
-{{- end -}}
+{{- end }}
