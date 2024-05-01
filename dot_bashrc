@@ -5,11 +5,18 @@ case $- in
 esac
 
 if [[ $CONTAINER_ID = dev ]]; then
-	source <(mise activate bash)
+	source ~/.local/share/blesh/blesh --noattach --rcfile ~/.config/ble.rc
+
 	source <(chezmoi completion bash)
 	source <(starship init bash)
+	source <(atuin init bash)
+
+	source <(mise activate bash)
 fi
 
 alias vim="nvim"
 alias nneovide='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
 alias nnvim="nvim-nightly-bin"
+alias dev="distrobox enter dev"
+
+[[ ${BLE_VERSION-} ]] && ble-attach
