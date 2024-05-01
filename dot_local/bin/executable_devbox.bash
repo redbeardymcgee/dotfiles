@@ -58,13 +58,13 @@ curl -L \
 	
 	
 for package in "${cargo_packages[@]}"; do
-	cargo binstall "$package" -y
+	cargo binstall -y "$package"
 done
 
 cargo_git_packages=('https://github.com/neovide/neovide')
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo binstall --git "$package" -y
+	cargo binstall -y --git "$package"
 done
 
 OPTBIN=$HOME/.local/opt/bin
