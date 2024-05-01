@@ -7,7 +7,6 @@ esac
 if [[ $CONTAINER_ID = dev ]]; then
 	source <(mise activate bash)
 	source <(chezmoi completion bash)
-	source <(sheldon source)
 	source <(starship init bash)
 fi
 
