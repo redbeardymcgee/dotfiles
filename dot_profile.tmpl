@@ -28,10 +28,15 @@ append_to_PATH() {
 	done
 }
 
-PATH=$HOME/.local/bin:$PATH
+append_to_PATH \
+	"$HOME/.local/bin"
 
 {{- if eq .chezmoi.hostname "rbmpc" }}
 add_to_PATH "$HOME/devbox/.local/bin"
+{{ end -}}
+
+{{- if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
+add_to_PATH "$HOME/.cargo/bin"
 {{ end -}}
 
 export NIX_CONFIG="experimental-features = nix-command flakes"
