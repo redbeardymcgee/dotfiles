@@ -71,6 +71,7 @@ OPTBIN=$HOME/.local/opt/bin
 NNVIM_DIR=$OPTBIN/nvim-nightly-bin
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
+	mkdir -p "$OPTBIN"
 	curl --proto '=https' \
 		--tlsv1.2 \
 		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' | 
