@@ -51,12 +51,12 @@ NNVIM_DIR=$OPTBIN/nvim-nightly-bin
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	curl --proto '=https' \
 		--tlsv1.2 \
-		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' |
-		tar --overwrite \
-			--transform 's/-linux64/-nightly-bin/' \
-			--transform 's/nvim$/nvim-nightly-bin/' \
-			-C "$OPTBIN" \
-			-xzf -
+		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' | 
+	tar --overwrite \
+		--transform 's/-linux64/-nightly-bin/' \
+		--transform 's/nvim$/nvim-nightly-bin/' \
+		-C "$OPTBIN" \
+		-xzf -
 fi
 
 cargo_packages=(
@@ -80,3 +80,4 @@ make -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
+
