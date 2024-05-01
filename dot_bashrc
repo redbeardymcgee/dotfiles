@@ -146,8 +146,10 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 
 if [[ $CONTAINER_ID = dev ]]; then
-	eval "$(mise activate bash)"
-	eval "$(chezmoi completion bash)"
+	source <(mise activate bash)
+	source <(chezmoi completion bash)
+	source <(sheldon source)
+	source <(starship init bash)
 fi
 
 alias vim="nvim"
