@@ -31,7 +31,7 @@ append_to_PATH() {
 append_to_PATH \
 	"$HOME/.local/bin"
 
-{{- if eq .chezmoi.hostname "rbmpc" }}
+{{- if eq .chezmoi.fqdnHostname "rbmpc" }}
 add_to_PATH "$HOME/devbox/.local/bin"
 {{ end -}}
 
