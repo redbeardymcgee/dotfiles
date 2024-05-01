@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+config.scrollback_lines = 3500
+
 config.font = wezterm.font("FiraCode Nerd Font Mono")
 config.harfbuzz_features = {
 	"zero",
@@ -23,10 +25,11 @@ config.harfbuzz_features = {
 }
 
 config.color_scheme = "Catppuccin Mocha"
+config.window_background_opacity = 0.85
 
 config.ssh_domains = {
 	{
-		name = "",
+		name = "mcgeedia",
 		remote_address = "media.mcgee.network",
 		username = "josh",
 	},
