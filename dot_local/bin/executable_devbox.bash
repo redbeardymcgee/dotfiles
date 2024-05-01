@@ -64,7 +64,7 @@ done
 cargo_git_packages=('https://github.com/neovide/neovide')
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo binstall -y --git "$package"
+	cargo binstall -y --git "$package" neovide
 done
 
 OPTBIN=$HOME/.local/opt/bin
