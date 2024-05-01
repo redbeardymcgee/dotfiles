@@ -15,12 +15,13 @@ if [[ $CONTAINER_ID = dev ]]; then
 	source ~/.local/share/blesh/ble.sh \
 		--noattach \
 		--rcfile ~/.config/ble.rc
-
+	
+	PATH=~/.cargo/bin:$PATH
+	
 	source <(starship init bash)
 	source <(atuin init bash)
 	source <(mise activate bash)
-	
-	PATH=~/.cargo/bin:$PATH
+
 fi
 
 [[ ${BLE_VERSION-} ]] && ble-attach
