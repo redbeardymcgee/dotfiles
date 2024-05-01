@@ -76,7 +76,7 @@ SCM_GIT_IGNORE_UNTRACKED="true"
 OMB_USE_SUDO=false
 
 # To enable/disable display of Python virtualenv and condaenv
-OMB_PROMPT_SHOW_PYTHON_VENV=true  # enable
+OMB_PROMPT_SHOW_PYTHON_VENV=true # enable
 # OMB_PROMPT_SHOW_PYTHON_VENV=false # disable
 
 # Which completions would you like to load? (completions can be found in ~/.oh-my-bash/completions/*)
@@ -147,9 +147,9 @@ source "$OSH"/oh-my-bash.sh
 
 if [[ $CONTAINER_ID = dev ]]; then
 	eval "$(mise activate bash)"
-  eval "$(chezmoi completion bash)"
+	eval "$(chezmoi completion bash)"
 fi
 
 alias vim="nvim"
-alias neovide-nightly='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
-alias nvim-nightly="nvim-nightly-bin"
+alias nneovide='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
+alias nnvim="nvim-nightly-bin"
