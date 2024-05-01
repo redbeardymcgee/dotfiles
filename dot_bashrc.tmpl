@@ -4,21 +4,24 @@ case $- in
 *) return ;;
 esac
 
-{{ if or (eq .chezmoi.fqdnHostname "rbmpc") (eq .chezmoi.fqdnHostname "dev.rbmpc") -}}
-
-source ~/.local/share/blesh/ble.sh --noattach --rcfile ~/.config/ble.rc
+{{ if eq .chezmoi.hostname "rbmpc" "dev" -}}
 
 source <(chezmoi completion bash)
-source <(starship init bash)
-source <(atuin init bash)
-
-source <(mise activate bash)
 
 alias vim="nvim"
-alias nneovide='NEOVIM_BIN="$HOME/.local/bin/nvim-nightly-bin" neovide'
 alias nnvim="nvim-nightly-bin"
+alias nneovide="NEOVIM_BIN=$HOME/local/bin/nvim-nightly-bin neovide"
 alias dev="distrobox enter dev"
 
-[[ ${BLE_VERSION-} ]] && ble-attach
+if [[ $CONTAINER_ID = dev ]]; then
+	source ~/.local/share/blesh/ble.sh \
+		--noattach \
+		--rcfile ~/.config/ble.rc
+
+	source <(starship init bash)
+	source <(atuin init bash)
+	source <(mise activate bash)
+	[[ ${BLE_VERSION-} ]] && ble-attach
+fi
 
 {{- end }}
