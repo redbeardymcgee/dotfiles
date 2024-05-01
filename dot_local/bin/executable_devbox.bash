@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -euo pipefail
 ## Unattended setup script for bootstrapping my dev/shell container
 
 packages=(
@@ -45,6 +45,28 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
 
 . "$HOME/.cargo/env"
 
+cargo_packages=(
+	atuin
+	mise
+	starship
+)
+
+curl -L \
+	--proto '=https' \
+	--tlsv1.2 \
+	-sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+	
+	
+for package in "${cargo_packages[@]}"; do
+	cargo binstall "$package"
+done
+
+cargo_git_packages=('https://github.com/neovide/neovide')
+
+for package in "${cargo_git_packages[@]}"; do
+	cargo install --git "$package"
+done
+
 OPTBIN=$HOME/.local/opt/bin
 NNVIM_DIR=$OPTBIN/nvim-nightly-bin
 
@@ -58,22 +80,6 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 		-C "$OPTBIN" \
 		-xzf -
 fi
-
-cargo_packages=(
-	atuin
-	mise
-	starship
-)
-
-for package in "${cargo_packages[@]}"; do
-	cargo install "$package"
-done
-
-cargo_git_packages=('https://github.com/neovide/neovide')
-
-for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package"
-done
 
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX="$HOME/.local"

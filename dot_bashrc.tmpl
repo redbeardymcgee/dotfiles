@@ -4,8 +4,6 @@ case $- in
 *) return ;;
 esac
 
-{{ if eq .chezmoi.hostname "rbmpc" "dev" -}}
-
 source <(chezmoi completion bash)
 
 alias vim="nvim"
@@ -18,11 +16,12 @@ if [[ $CONTAINER_ID = dev ]]; then
 		--noattach \
 		--rcfile ~/.config/ble.rc
 
-
 	source <(starship init bash)
 	source <(atuin init bash)
 	source <(mise activate bash)
-	[[ ${BLE_VERSION-} ]] && ble-attach
+	
+	PATH=~/.cargo/bin:$PATH
 fi
 
-{{- end }}
+[[ ${BLE_VERSION-} ]] && ble-attach
+

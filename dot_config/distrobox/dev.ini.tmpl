@@ -3,16 +3,16 @@ image="registry.fedoraproject.org/fedora-toolbox:latest"
 pull=true
 start_now=true
 
-{{ if eq .chezmoi.hostname "rbmpc" -}}
-
-nvidia=true
-
+{{- if eq .chezmoi.hostname "rbmpc" }}
+#nvidia=true
 {{ end -}}
 
 home="$HOME/devbox"
 entry=false
 
 additional_flags="--env PATH=~/.local/bin:$PATH"
+
+#pre_init_hooks='sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee'
 
 #init_hooks="~/../.local/bin/devbox.bash"
 
@@ -21,21 +21,17 @@ exported_bins_path="~/.local/bin"
 exported_bins="/usr/bin/nvim"
 exported_bins="~/.local/bin/nvim-nightly/bin/nvim-nightly-bin"
 
-{{- if eq .chezmoi.hostname "rbmpc" -}}
-
+{{- if eq .chezmoi.hostname "rbmpc" }}
 exported_bins="~/.cargo/bin/neovide"
-
-{{- end -}}
+{{ end -}}
 
 exported_bins="/usr/bin/lazygit"
 exported_bins="/usr/bin/fzf"
 
 
-{{- if eq .chezmoi.hostname "rbmpc" -}}
-
+{{- if eq .chezmoi.hostname "rbmpc" }}
 exported_apps="wezterm"
-
-{{- end -}}
+{{ end -}}
 
 # home=""
 # pre_init_hooks=""
