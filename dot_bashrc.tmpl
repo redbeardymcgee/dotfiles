@@ -32,6 +32,6 @@ source <(atuin init bash)
 source <(mise activate bash)
 {{ end -}}
 
-prepend_to_PATH "$HOME/.local/bin"
+PATH="$HOME/.local/bin:$PATH"
 
 [[ ${BLE_VERSION-} ]] && ble-attach
