@@ -6,6 +6,8 @@ esac
 
 shopt -s globstar
 
+PATH="$HOME/.local/bin:$PATH"
+
 source "$HOME/.local/lib/rbm/utils.sh"
 
 export FZF_DEFAULT_OPTS=" \
@@ -29,6 +31,14 @@ bhelp() {
 }
 
 {{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
+setup_atuin() {
+	source <(atuin init bash)
+	out=$HOME/.local/etc/bash_completion.d/
+	if ! [[ -r $out/atuin.bash ]]; then
+		atuin gen-completions --shell bash --out-dir "$out"
+	fi
+}
+
 source ~/.local/share/blesh/ble.sh \
 	--noattach \
 	--rcfile ~/.config/ble.rc
@@ -37,17 +47,9 @@ prepend_to_PATH "$HOME/.cargo/bin"
 
 source <(starship init bash)
 
-source <(atuin init bash)
-out=$HOME/.local/etc/bash_completion.d/
-if ! [[ -r $out/atuin.bash ]]; then
-	atuin gen-completions --shell bash --out-dir "$out"
-fi
+setup_atuin
 
 source <(mise activate bash)
 {{ end -}}
-
-PATH="$HOME/.local/bin:$PATH"
-
-source <(chezmoi completion bash)
 
 [[ ${BLE_VERSION-} ]] && ble-attach
