@@ -89,6 +89,8 @@ curl -L \
 	--proto '=https' \
 	--tlsv1.2 \
 	-sSf https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz |
-	tar -C ~/.local/share/fonts -xzf -
+	tar -C ~/.local/share/fonts -xJf -
+
+fc-cache
 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
