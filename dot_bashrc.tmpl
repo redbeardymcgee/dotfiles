@@ -6,21 +6,25 @@ esac
 
 source <(chezmoi completion bash)
 
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
 alias vim="nvim"
 alias nnvim="nvim-nightly-bin"
 alias nneovide="NEOVIM_BIN=$HOME/local/bin/nvim-nightly-bin neovide"
 alias dev="distrobox enter dev"
 
-{{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }} 
-	source ~/.local/share/blesh/ble.sh \
-		--noattach \
-		--rcfile ~/.config/ble.rc
+{{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
+source ~/.local/share/blesh/ble.sh \
+	--noattach \
+	--rcfile ~/.config/ble.rc
 
-  PATH=$HOME/.cargo/bin:$PATH
-  source <(starship init bash)
-  source <(atuin init bash)
-  source <(mise activate bash)
+PATH=$HOME/.cargo/bin:$PATH
+source <(starship init bash)
+source <(atuin init bash)
+source <(mise activate bash)
 {{ end -}}
 
 [[ ${BLE_VERSION-} ]] && ble-attach
-
