@@ -42,12 +42,12 @@ for repo in "${repos[@]}"; do
 done
 
 sudo dnf -y install "${packages[@]}"
-exit 0
+
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
 
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
-
+exit 0
 . "$HOME/.cargo/env"
 
 cargo_packages=(
