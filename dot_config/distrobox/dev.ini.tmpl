@@ -11,7 +11,7 @@ home="$HOME/devbox"
 entry=false
 
 init_hooks='sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "~/.local/bin" init --apply redbeardymcgee'
-init_hooks='sudo chown -R \"{USER}" ~/.config/chezmoi/chezmoi.toml'
+init_hooks='sudo chown -R "${USER}" ~/.config/chezmoi/chezmoi.toml'
 
 init_hooks="~/.local/bin/devbox.bash"
 
