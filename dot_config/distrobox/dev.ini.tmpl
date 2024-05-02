@@ -7,22 +7,20 @@ start_now=true
 #nvidia=true
 {{ end -}}
 
-{{ $home := cat .chezmoi.homeDir "/devbox" }}
-
-home={{ .home }}
+home={{ .devbox }}
 entry=false
 
 additional_flags="--hostname 'dev.rbmpc'"
 
-init_hooks="$HOME/devbox/.local/bin/devbox.bash"
+init_hooks="{{ .devbox }}/.local/bin/devbox.bash"
 
-exported_bins_path="$HOME/devbox/.local/bin"
+exported_bins_path="{{ .devbox }}/.local/bin"
 
 exported_bins="/usr/bin/nvim"
-exported_bins="$HOME/devbox/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
+exported_bins="{{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
 
 {{- if eq .chezmoi.hostname "rbmpc" }}
-exported_bins="$HOME/devbox/.cargo/bin/neovide"
+exported_bins="{{ .devbox }}/.cargo/bin/neovide"
 {{ end -}}
 
 exported_bins="/usr/bin/lazygit"
