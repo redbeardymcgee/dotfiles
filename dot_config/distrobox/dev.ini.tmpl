@@ -3,14 +3,14 @@ image="registry.fedoraproject.org/fedora-toolbox:latest"
 pull=true
 start_now=true
 
-{{- if eq .chezmoi.hostname "rbmpc" }}
-#nvidia=true
+{{ if eq .chezmoi.hostname "rbmpc" }}
+nvidia=true
 {{ end -}}
 
 home={{ .devbox }}
 entry=false
 
-additional_flags="--hostname 'dev.{{ .chezmoi.fqdnHostname }}'"
+# additional_flags="--hostname 'dev.{{ .chezmoi.fqdnHostname }}'"
 
 init_hooks="{{ .devbox }}/.local/bin/devbox.bash"
 
@@ -19,14 +19,14 @@ exported_bins_path="{{ .devbox }}/.local/bin"
 exported_bins="/usr/bin/nvim"
 exported_bins="{{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
 
-{{- if eq .chezmoi.hostname "rbmpc" }}
+{{ if eq .chezmoi.hostname "rbmpc" }}
 exported_bins="{{ .devbox }}/.cargo/bin/neovide"
 {{ end -}}
 
 exported_bins="/usr/bin/lazygit"
 exported_bins="/usr/bin/fzf"
 
-{{- if eq .chezmoi.hostname "rbmpc" }}
+{{ if eq .chezmoi.hostname "rbmpc" }}
 exported_apps="wezterm"
 {{ end -}}
 
