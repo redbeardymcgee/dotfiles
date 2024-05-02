@@ -44,9 +44,9 @@ done
 sudo dnf -y install "${packages[@]}"
 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- \
+	-b "$HOME/.local/bin" \
 	init \
 	redbeardymcgee \
-	-b "$HOME/.local/bin" \
 	--apply \
 	--ssh \
 	--force \
