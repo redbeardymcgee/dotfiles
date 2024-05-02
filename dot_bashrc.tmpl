@@ -36,8 +36,10 @@ prepend_to_PATH "$HOME/.cargo/bin"
 source <(starship init bash)
 
 source <(atuin init bash)
-if [[ -r $HOME/.local/etc/bash_completion.d/atuin.bash ]]; then
-  atuin --generate-completions --shell bash
+out=$HOME/.local/etc/bash_completion.d/
+if ! [[ -r $out/atuin.bash ]]; then
+	atuin gen-completions --shell bash --out-dir "$out"
+fi
 
 source <(mise activate bash)
 {{ end -}}
