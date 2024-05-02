@@ -18,6 +18,7 @@ packages=(
 
 	lazygit
 	libxkbcommon-x11
+	libXcursor
 
 	openssl-devel
 
