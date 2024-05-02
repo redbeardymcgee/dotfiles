@@ -34,7 +34,11 @@ source ~/.local/share/blesh/ble.sh \
 prepend_to_PATH "$HOME/.cargo/bin"
 
 source <(starship init bash)
+
 source <(atuin init bash)
+if [[ -r $HOME/.local/etc/bash_completion.d/atuin.bash ]]; then
+  atuin --generate-completions --shell bash
+
 source <(mise activate bash)
 {{ end -}}
 
