@@ -9,12 +9,12 @@ packages=(
 	coreutils
 	cmake
 
-	diff-so-fancy
-
 	fd-find
 	fontconfig-devel
 	freetype-devel
 	fzf
+
+	git-delta
 
 	lazygit
 	libxkbcommon-x11
@@ -52,7 +52,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	--promptDefaults \
 	--source "$HOME/../.local/share/chezmoi" \
 	--cache "$HOME/../.cache/chezmoi"
-	
+
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
 
