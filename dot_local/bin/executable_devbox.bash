@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-set -euo pipefail
 ## Unattended setup script for bootstrapping my dev/shell container
 
+set -euo pipefail
+
 packages=(
+	bat
+
 	coreutils
 	cmake
 
@@ -39,6 +42,8 @@ for repo in "${repos[@]}"; do
 done
 
 sudo dnf -y install "${packages[@]}"
+
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
 	sh -s -- -q -y --no-modify-path
@@ -92,5 +97,3 @@ curl -L \
 	tar -C ~/.local/share/fonts -xJf -
 
 fc-cache
-
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
