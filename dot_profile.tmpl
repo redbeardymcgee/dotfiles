@@ -30,7 +30,10 @@ prepend_to_PATH() {
 prepend_to_PATH "$HOME/devbox/.local/bin"
 {{ end -}}
 
+
+
 prepend_to_PATH \
+  "$HOME/.cargo/bin"
 	"$HOME/.local/bin"
 
 export NIX_CONFIG="experimental-features = nix-command flakes"
