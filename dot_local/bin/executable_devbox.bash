@@ -43,11 +43,20 @@ done
 
 sudo dnf -y install "${packages[@]}"
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
-
+sh -c "$(curl -fsLS get.chezmoi.io)" -- \
+	init \
+	redbeardymcgee \
+	-b "$HOME/.local/bin" \
+	--apply \
+	--ssh \
+	--force \
+	--promptDefaults \
+	--source "$HOME/../.local/share/chezmoi" \
+	--cache "$HOME/../.cache/chezmoi"
+	
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
-exit 0
+
 . "$HOME/.cargo/env"
 
 cargo_packages=(
@@ -59,7 +68,8 @@ cargo_packages=(
 curl -L \
 	--proto '=https' \
 	--tlsv1.2 \
-	-sSf 'https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh' | bash
+	-sSf 'https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh' |
+	bash
 
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
@@ -86,8 +96,9 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 			-xzf -
 fi
 
+rm -rf "$HOME/.local/share/blesh"
 git clone --recursive --depth 1 --shallow-submodules 'https://github.com/akinomyoga/ble.sh.git'
-make -C ble.sh install PREFIX="$HOME/.local"
+make -k -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
 curl --proto '=https' \
