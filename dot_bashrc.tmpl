@@ -4,6 +4,10 @@ case $- in
 *) return ;;
 esac
 
+echo {{ .chezmoi.fqdnHostname }}
+
+source "$HOME/.local/lib/rbm/utils.sh"
+
 source <(chezmoi completion bash)
 
 export FZF_DEFAULT_OPTS=" \
@@ -21,10 +25,13 @@ source ~/.local/share/blesh/ble.sh \
 	--noattach \
 	--rcfile ~/.config/ble.rc
 
-PATH=$HOME/.cargo/bin:$PATH
+prepend_to_PATH "$HOME/.cargo/bin"
+
 source <(starship init bash)
 source <(atuin init bash)
 source <(mise activate bash)
 {{ end -}}
+
+prepend_to_PATH "$HOME/.local/bin"
 
 [[ ${BLE_VERSION-} ]] && ble-attach

@@ -2,7 +2,7 @@
 ## Unattended setup script for bootstrapping my dev/shell container
 
 set -euo pipefail
-
+exit 0
 packages=(
 	bat
 
@@ -45,7 +45,7 @@ sudo dnf -y install "${packages[@]}"
 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
+curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
 
 . "$HOME/.cargo/env"
@@ -59,7 +59,7 @@ cargo_packages=(
 curl -L \
 	--proto '=https' \
 	--tlsv1.2 \
-	-sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+	-sSf 'https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh' | bash
 
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
@@ -86,14 +86,13 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 			-xzf -
 fi
 
-git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+git clone --recursive --depth 1 --shallow-submodules 'https://github.com/akinomyoga/ble.sh.git'
 make -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
-curl -L \
-	--proto '=https' \
+curl --proto '=https' \
 	--tlsv1.2 \
-	-sSf https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz |
+	-sSLf 'https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz' |
 	tar -C ~/.local/share/fonts -xJf -
 
 fc-cache

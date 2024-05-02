@@ -4,7 +4,7 @@ if [ -n "$BASH_VERSION" ]; then
 	fi
 fi
 
-source <("$HOME/.local/lib/rbm/utils.sh")
+source "$HOME/.local/lib/rbm/utils.sh"
 
 source_env_files() {
 	for env_file; do
@@ -14,10 +14,9 @@ source_env_files() {
 	done
 }
 
-{{ if eq .chezmoi.fqdnHostname "rbmpc" }}
+{{ if not (eq .chezmoi.fqdnHostname "dev.rbmpc") }}
 prepend_to_PATH "$HOME/devbox/.local/bin"
-{{ end -}}
-
+{{ end }}
 prepend_to_PATH "$HOME/.cargo/bin"
 
 export NIX_CONFIG="experimental-features = nix-command flakes"
