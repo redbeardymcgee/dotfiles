@@ -7,6 +7,7 @@
 
 - [atuin](https://atuin.sh/)
 - [bat](https://github.com/sharkdp/bat)
+- [ble.sh](https://github.com/akinomyoga/ble.sh)
 - [chezmoi](https://chezmoi.io)
 - [distrobox](https://distrobox.io)
 - [eza](https://eza.rocks/)
