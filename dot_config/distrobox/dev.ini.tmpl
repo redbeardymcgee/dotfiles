@@ -20,10 +20,11 @@ exported_bins="/usr/bin/nvim"
 exported_bins="{{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
 
 {{ if eq .chezmoi.hostname "rbmpc" }}
-exported_bins="/usr/bin/bat"
 exported_bins="{{ .devbox }}/.cargo/bin/neovide"
 {{ end -}}
 
+exported_bins="/usr/bin/bat"
+exported_bins="/usr/bin/eza"
 exported_bins="/usr/bin/fzf"
 
 {{ if eq .chezmoi.hostname "rbmpc" }}

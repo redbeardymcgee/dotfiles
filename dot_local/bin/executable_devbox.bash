@@ -9,6 +9,8 @@ packages=(
 	coreutils
 	cmake
 
+	eza
+
 	fd-find
 	fontconfig-devel
 	freetype-devel
