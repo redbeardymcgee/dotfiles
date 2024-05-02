@@ -1,0 +1,319 @@
+# Start logging at 2023-12-05 12:57:26 CST
+[12:57:26] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:57:26] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:57:38] disconnected
+[12:57:40] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:57:40] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:57:52] disconnected
+[12:57:54] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:57:54] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:58:06] disconnected
+[12:58:11] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:58:11] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:58:23] disconnected
+[12:58:32] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:58:32] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:58:44] disconnected
+[12:59:00] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:59:00] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:59:12] disconnected
+[12:59:28] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:59:28] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:59:40] disconnected
+[12:59:56] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[12:59:56] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:00:08] disconnected
+[13:00:24] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:00:24] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:00:36] disconnected
+[13:00:52] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:00:52] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:01:04] disconnected
+[13:01:20] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:01:20] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:01:32] disconnected
+[13:01:48] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:01:48] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:02:00] disconnected
+[13:02:16] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:02:16] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:02:28] disconnected
+[13:02:44] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:02:44] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:02:56] disconnected
+[13:03:12] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:03:12] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:03:24] disconnected
+[13:03:40] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:03:40] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:03:52] disconnected
+[13:04:08] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:04:08] Login expired for user "redbeardy_mcgee"! Try adding your account again.
+[13:04:20] disconnected
+[13:04:31] joined channel
+[13:04:32] redbeardy_mcgee is live!
+[13:10:49] fishbots: Good morning. Just perusing random streams to see what kind of cool things people are doing.
+[13:12:54] moribund: moneym59SHAME
+[13:12:56] fishbots: Cool, always cool to see how people are coding, especially during AoC
+[13:13:36] fishbots: I am being boring this year.  Just regular Python for me this time.
+[13:15:03] fishbots: Donated USD 50 to support The Trevor Project
+[13:15:08] moribund: PogChamp PogChamp PogChamp
+[13:15:28] fishbots: good choice of charity too.
+[13:16:18] fishbots: All about getting better over time.
+[13:18:08] fishbots: I haven't done today's yet. Date night last night instead of coding :)
+[13:19:01] fishbots: 12 years and counting...
+[13:21:42] fishbots: alright, I am out.  Back to work for me.
+[13:24:53] sycocell: yayy beardy stream
+[13:25:21] sycocell: whatcha workin on
+[13:25:38] moribund: he's hacking the mainframe
+[13:25:53] redbeardy_mcgee: https://adventofcode.com/2023/about
+[13:27:09] sycocell: i saw tonytwitch doing this. pretty cool.
+[13:42:25] apneaa: navigating
+[13:42:32] apneaa: navigation is my state of mind
+[13:42:33] moribund: monkaNAVIGATE
+[13:42:39] apneaa: monkaNAVIGATE
+[13:48:31] leprochauninja: comment your code
+[13:48:40] leprochauninja: only monsters don't comment their code
+[13:48:55] moribund: self-documenting
+[13:50:43] leprochauninja: I always felt like I was good at commenting my stuff, but that's probably because whenever I coded there was always a thought in my head that I was going to pass it on to someone who was going to do it correctly, so I wanted to make sure they understood what I was trying to do.
+[13:51:48] leprochauninja: well, my coding experience was always on games where I wasn't the programmer, I was just the whiteboxer who wrote garbage to test things.
+[13:53:19] leprochauninja: what is this code for
+[13:53:41] moribund: @leprochauninja https://adventofcode.com/2023/about
+[14:12:15] apneaa: beardy how are you
+[14:12:20] apneaa: yes or no
+[14:12:34] moribund: yes
+[14:12:47] apneaa: @moribund good
+[14:13:02] moribund: 1000101
+[14:13:49] leprochauninja: it's capitol I
+[14:16:08] leprochauninja: I really hate that there's instructions, Instruction, and Instructions, and they're all different things.
+[14:17:59] moribund: I would just call them lines, probably
+[14:20:59] leprochauninja: do whatever works for you, but I'd go crazy and probably confuse myself if I wrote my code without a reasonable differentiator.
+[14:24:48] leprochauninja: I'm not sure if I can give you a good way to fix it since I'm not entirely sure what each thing is doing. Sometimes you can get by with just using a synonym if there's not a clear purpose of why they're different. So like using Information, or Identifier might work.
+[14:25:57] leprochauninja: identifier is at least used in the advent post.
+[14:30:03] firstdane: lord have mercy im gonna beard
+[14:30:10] leprochauninja: two arrays holding hands
+[14:31:55] moribund: @firstdane 💦
+[14:32:10] moribund: 💦 FeelsBeardMan
+[14:34:32] its_goddy: !pronouns
+[14:34:32] nightbot: Automatically share your pronouns as a chat badge: https://pronouns.alejo.io/ -- Don't forget the extension for Firefox ( https://pronouns.alejo.io/firefox ) or Chrome ( https://pronouns.alejo.io/chrome )!
+[14:43:07] moribund: ojbSlice
+[14:43:28] moribund: ojbSplice
+[14:46:13] moribund: I think you may want to refactor things. I'm not sure there is value in creating a variable for seeds
+[14:47:42] moribund: I guess seed does make sense, actually
+[15:00:06] redbeardy_mcgee: !adge
+[15:00:13] moribund: Adge
+[15:00:24] redbeardy_mcgee: did you understand what i was talking through moribund
+[15:12:24] moribund: I had the stream muted so I didn't hear it
+[15:12:28] moribund: but I'll say yes
+[15:13:17] moribund: I misread the instructions and didn't see there are 4 seed numbers provided, so I goofed that part
+[15:14:08] moribund: I would think it would be easier to put the maps in a csv or something like that so you can parse it how you please
+[15:14:53] moribund: it doesn't have to be a csv; it could be some other file format
+[15:15:01] moribund: whatever format you're most comfortable with
+[15:17:52] moribund: that works
+[15:18:12] moribund: yeah I thought you were just trying to parse the literal text
+[15:19:04] moribund: I saw that block of text copied from the site and thought that was what you were parsing which would be pchCatDrugs
+[16:00:05] moribund: Adge
+[16:12:30] moribund: I think I get it, but I don't think I know what part you are missing
+[16:12:46] moribund: answer this: Using seed 79 as an example, what is the journey from seed number to location number
+[16:14:57] moribund: The way I understand it is: you take your seed number and use the seed-to-soil map to get a soil number. Then you take your soil number and use the soil-to-fertilizer map to get a fertilizer number, and so on
+[16:15:18] moribund: and the maps are basically telling you how to build a lookup table
+[16:16:31] moribund: I found reading the section starting with "Consider again the example seed-to-soil map" the most helpful
+[16:17:25] moribund: correct
+[16:46:05] moribund: I think I got it figured out on paper. Some of the word problemy stuff is a bit of a red herring
+[17:18:29] moribund: I don't think you should be doing any min calculations when going through the maps
+[17:19:05] moribund: the only min calculation you want to do is at the end when you get all of the location numbers
+[17:19:09] moribund: you want the minimum location number
+[17:38:29] vmservice: are u doing p2
+[17:38:31] vmservice: it's so fucked
+[17:38:40] vmservice: monka
+[17:38:56] moribund: there's a part 2? monkaS
+[17:39:02] vmservice: oh boi p2
+[17:40:41] vmservice: if seed 13 doesn't match the first line in the map but matches the second line and return 60 you need to return 60
+[17:40:48] vmservice: you can't just take the min of all 3 lines
+[17:41:09] vmservice: but if none of the lines match you can return 13
+[17:41:16] vmservice: yeah i think  i saw
+[17:41:20] vmservice: no p1
+[17:42:52] vmservice: yeah you can't reduce you need to filter for a valid line and if there are none you return the input
+[17:44:30] moribund: seed 79 corresponds to soil 81
+[17:44:34] vmservice: o
+[17:44:37] vmservice: nvm
+[17:44:55] vmservice: i think line 128 is the wrong one
+[17:45:15] vmservice: like you need to feed the output of map1 to map2
+[17:48:20] moribund: what do you mean by position
+[17:48:28] moribund: that word isn't used in the problem, so I don't know where it comes from
+[17:49:39] vmservice: then you need to feed 81 to the second map
+[17:49:42] moribund: ^
+[17:50:35] moribund: I think it's a variable name problem
+[17:51:20] vmservice: i don;t see you saving the map's output to anywhere
+[17:51:26] vmservice: i just the the for loop
+[17:51:48] vmservice: no like each of the maps provided by the problems
+[17:52:11] vmservice: ok doesn't reduce return a value
+[17:52:22] vmservice: where is that value used?
+[17:52:55] vmservice: don't you need to x = wahtever.reduce
+[17:53:02] vmservice: like line 130
+[17:53:34] vmservice: monkaS
+[17:54:07] vmservice: you can't return
+[17:54:20] vmservice: you need to feed the result of reduce into the next iteration of the for loop
+[17:54:48] vmservice: then do like seed = foobar
+[17:56:44] moribund: can you walk me through the path of where your input updates in your code
+[17:58:03] vmservice: on line 146 you are always passing the original seed to the reduce
+[17:58:19] moribund: yeah, you're just starting with the seed number again which is always 79
+[17:58:54] vmservice: it doesn't because there are 4 seeds as input
+[17:59:07] moribund: those are just soil numbers
+[17:59:59] moribund: Adge
+[18:00:03] vmservice: Adge
+[18:00:11] redbeardy_mcgee: Adge
+[18:01:39] vmservice: just do var input = seed before the for loop then do input = map.reduce
+[18:01:41] tonytwitch: Why is it reducing?
+[18:01:50] vmservice: tony
+[18:01:54] vmservice: did u do day 5
+[18:01:55] tonytwitch: You only apply one instruction line per seed
+[18:02:28] tonytwitch: I did day 5 last night
+[18:02:31] vmservice: o
+[18:02:45] vmservice: p2 crashed my stream
+[18:02:49] vmservice: LUL
+[18:03:06] vmservice: then i made it run in 50ms
+[18:03:07] tonytwitch: Oh, you did brute force? I did it the clever way
+[18:03:33] vmservice: brute force is always worth trying in case it works
+[18:03:38] vmservice: then i don't have to do more work
+[18:03:44] tonytwitch: You want to apply one instruction line, but need to figure out which one.
+[18:03:44] vmservice: smile
+[18:04:01] tonytwitch: Eh, I saw the numbers were too big for brute force.
+[18:04:14] vmservice: looking at input file is cheating
+[18:04:23] tonytwitch: hehe
+[18:05:16] moribund: monkaGIGA
+[18:06:26] tonytwitch: Oh I see, the reduce is ok. I think a for loop would be a little easier to read
+[18:06:37] tonytwitch: But the reduce might apply multiple lines
+[18:06:47] tonytwitch: You might map multiple times
+[18:07:22] tonytwitch: LUL lots of people learned scheme at university (not me)
+[18:08:08] tonytwitch: The reduce might apply multiple instruction lines, which is problematic
+[18:09:45] tonytwitch: I forget how reduce works
+[18:11:42] tonytwitch: Yeah, the accumulator is the problem
+[18:12:00] tonytwitch: Yes, the instructions don't overlap
+[18:12:15] tonytwitch: But once you transform a number, you might transform again
+[18:12:25] tonytwitch: The instruction ranges don't overlap
+[18:13:06] tonytwitch: In the same seed-to-soil, you have 2 instructionLines
+[18:13:23] tonytwitch: You might apply both of them to seed.
+[18:13:51] tonytwitch: Right, you need to break out when an instructionLine matches
+[18:13:58] tonytwitch: Yes, need to break out somehow
+[18:14:41] tonytwitch: It's hard to break out of a reduce
+[18:14:55] tonytwitch: That's why reduce isn't great here and a for loop is better 🙂
+[18:37:17] dank_maymeis: I sure hope you're not doing this in Typescript LUL
+[18:40:25] leprochauninja: did you solve it
+[18:43:10] leprochauninja: backseat gaming
+[18:56:15] leprochauninja: I blame the neow bonus for being unhelpful to the seed
+[18:56:38] leprochauninja: you would have solved this otherwise
+[18:56:58] moribund: drink potion?
+[18:58:14] leprochauninja: I honestly have no idea what you're even doing
+[18:58:26] leprochauninja: this has like zero correlation to anything I've ever done
+[18:58:49] moribund: he's making a NFT from scratch
+[18:59:03] moribund: D:
+[18:59:10] moribund: 🚨 🚨 🚨
+[18:59:22] moribund: this man right here, officer
+[18:59:33] leprochauninja: the joke was better when you lost it
+[18:59:51] leprochauninja: really showed the scarcity of it
+[19:00:26] moribund: Adge
+[19:04:14] moribund: ads are done
+[19:04:28] moribund: !sr ads
+[19:04:29] nightbot: @moribund -> "Watch the 2012 Coke commercial: "Catch" featuring NE_Bear | Coca-Cola #Commercials" by Coca-Cola has been added to the queue in position #5
+[19:04:34] moribund: FeelsGoodMan
+[19:04:47] leprochauninja: rip sr
+[19:04:48] redbeardy_mcgee: redbeardy_mcgee banned nightbot 
+[19:04:50] moribund: FeelsBadMan
+[19:04:55] moribund: D:
+[19:05:25] leprochauninja: !songrequest https://soundcloud.com/nativepeople/call-me-1
+[19:05:37] leprochauninja: this bot sucks
+[19:05:52] moribund: !streamerrequest stop being cringe and let me play songs
+[19:08:50] moribund: HACKERMANS
+[19:09:27] moribund: HI YOUTUBE
+[19:10:06] moribund: ProtonDB integration 🤔
+[19:10:23] leprochauninja: BIGFROG
+[19:10:53] leprochauninja: it's disabled
+[19:11:13] moribund: column 3
+[19:11:20] moribund: it was there
+[19:11:24] moribund: NotLikeThis
+[19:11:54] moribund: !commands
+[19:12:19] redbeardy_mcgee: !ad
+[19:12:19] redbeard_bot: https://github.com/single-right-quote/VideoAdBlockForTwitchNoPepe
+[19:12:26] moribund: !amid
+[19:12:26] redbeard_bot: https://clips.twitch.tv/NurturingMuddyDumplingsTooSpicy-i1SrGEZHPsvoK4k6
+[19:12:29] moribund: !apneaa
+[19:12:29] redbeard_bot: 👴 Too old for this job. Too feeble.
+[19:12:34] leprochauninja: !banana
+[19:12:35] redbeard_bot: get a banana in Maxx's chat
+[19:13:05] leprochauninja: no lepro command feelsbad
+[19:15:09] redbeardy_mcgee: !songrequest talking heads
+[19:15:11] leprochauninja: you probably want one that's just (!sr) too
+[19:15:15] redbeard_bot: @redbeardy_mcgee, song Talking Heads - Once in a Lifetime (Official Video) was added to queue
+[19:15:45] leprochauninja: !songrequst call me - native people
+[19:15:46] moribund: !songlist
+[19:15:51] moribund: >:(
+[19:15:58] leprochauninja: !songrequest call me native people
+[19:16:01] redbeard_bot: @leprochauninja, song Native People -Call Me was added to queue
+[19:16:11] moribund: !songrequest chicken dance
+[19:16:13] redbeard_bot: @moribund, song chicken dance song was added to queue
+[19:17:06] leprochauninja: !sr the comet is coming summon the fire
+[19:17:09] redbeard_bot: @leprochauninja, song The Comet Is Coming - Summon The Fire was added to queue
+[19:17:54] moribund: !sr https://www.youtube.com/watch?v=hIw7oeZKpZc
+[19:17:56] redbeard_bot: Sorry, @moribund, but this song is too long
+[19:18:19] moribund: dkShame
+[19:18:38] moribund: is there a songlist command
+[19:18:47] leprochauninja: !songqueue
+[19:18:54] moribund: !songs
+[19:19:08] leprochauninja: !playlist
+[19:19:20] moribund: this bot is fired
+[19:22:32] leprochauninja: it'll only take forever because it has to reach infinity
+[19:23:00] leprochauninja: I dunno, it seems to have to go from 92 to infinity
+[19:23:07] leprochauninja: and that's a big leap
+[19:23:09] moribund: Infinity - 1 = 92
+[19:23:16] moribund: didn't you know that, Lepro
+[19:23:24] moribund: name a number bigger than 92
+[19:23:33] leprochauninja: infinity
+[19:23:39] moribund: that's the one
+[19:23:40] moribund: and the only one
+[19:25:31] moribund: DinoDance
+[19:25:46] leprochauninja: dogJAM
+[19:25:55] moribund: DonkeyKongPLS
+[19:26:18] moribund: this is a thinking man's song
+[19:26:27] moribund: huge increase in productivity while it's playing
+[19:28:20] leprochauninja: programing for games is way more enjoyable than this because if you don't do something correctly you sometimes at least get a funny result out of it
+[19:28:30] leprochauninja: this is just brain ouchies
+[19:29:18] moribund: Redbeardy game when
+[19:29:20] leprochauninja: bot just needs some love
+[19:31:37] leprochauninja: wormJAM
+[19:31:54] moribund: wormJAM
+[19:32:15] leprochauninja: beardy are you gonna play/stream the new ror2 expansion when it comes out?
+[19:32:47] moribund: Sadge
+[19:33:09] leprochauninja: yeah you sent me signalis
+[19:33:15] leprochauninja: that was cool and unexpected
+[19:33:41] moribund: I wasn't even aware of new RoR2 DLC
+[19:34:18] leprochauninja: no release date or price for it yet, but I'm guessing it'll be 15 like the last one
+[19:35:24] leprochauninja: I just can't find myself wanting to play 2d risk of rain
+[19:35:53] moribund: yeah RoRR didn't appeal to me much
+[19:36:36] moribund: yes
+[19:36:57] leprochauninja: the gearbox expansion for ror2 will determine how much I support the endeavor or not
+[19:37:21] leprochauninja: I don't have any negative feels towards hoppo for selling it
+[19:37:33] leprochauninja: I think they just want to make other things
+[19:37:49] moribund: lagaJAM
+[19:38:43] leprochauninja: I sure do love it when things just work and I don't expect them too
+[19:39:32] leprochauninja: your reaction made it seem like that was the case
+[19:44:10] moribund: !sr vo3RAH0zLlU
+[19:44:12] redbeard_bot: @moribund, song D'Angelo and The Vanguard - Sugah Daddy (Audio) was added to queue
+[19:44:17] moribund: it worked FeelsGoodMan
+[19:44:45] leprochauninja: I feel targeted
+[21:05:21] catlomein_: hm?
+[21:05:33] catlomein_: good
+[21:06:06] catlomein_: having issues? Keepo
+[21:39:10] sparklecrotchthottie: soilPatchkids
+[21:39:35] sparklecrotchthottie: all this coding nonsense is hurting my frontal l0be
+[21:39:38] sparklecrotchthottie: i mus grab bagel
+[21:40:00] sparklecrotchthottie: did the cat get it
+[21:40:32] sparklecrotchthottie: quite litcherally impossible mouseeJammin
+[21:44:22] prince_of_squirrels: I would be more motivated to solve this if it was in the context of squirrels.
+[21:44:52] prince_of_squirrels: Lol
+[21:45:50] apneaa: this guy just spent 9 hour coding
+[21:45:51] apneaa: for free
+[21:46:12] apneaa: doesnt he know he must produce money
+[21:46:17] apneaa: what is this guy doing
+[23:25:45] moribund: ban ojb
+[23:38:26] Redbeardy_McGee is now offline.
