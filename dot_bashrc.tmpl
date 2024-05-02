@@ -35,6 +35,10 @@ alias dev="distrobox enter dev --"
 {{ end -}}
 
 {{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
+source ~/.local/share/blesh/ble.sh \
+	--noattach \
+	--rcfile ~/.config/ble.rc
+
 setup_atuin() {
 	source <(atuin init bash)
 	out=$HOME/.local/etc/bash_completion.d/
@@ -50,9 +54,5 @@ source <(starship init bash)
 
 setup_atuin
 {{ end -}}
-
-source ~/.local/share/blesh/ble.sh \
-	--noattach \
-	--rcfile ~/.config/ble.rc
 
 [[ ${BLE_VERSION-} ]] && ble-attach
