@@ -31,7 +31,7 @@ bhelp() {
 }
 
 {{- if eq .chezmoi.hostname "rbmpc" }}
-alias dev="distrobox enter dev --"
+alias dev="distrobox enter dev"
 {{ end -}}
 
 {{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
