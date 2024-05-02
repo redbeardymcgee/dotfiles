@@ -10,15 +10,12 @@ start_now=true
 home="$HOME/devbox"
 entry=false
 
-#init_hooks='sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "~/.local/bin" init --apply redbeardymcgee'
-#init_hooks='sudo chown -R \"${USER}:${USER}\" ~/.config/chezmoi/chezmoi.toml'
-
 init_hooks="~/.local/bin/devbox.bash"
 
 exported_bins_path="~/.local/bin"
 
 exported_bins="/usr/bin/nvim"
-exported_bins="~/.local/bin/nvim-nightly/bin/nvim-nightly-bin"
+exported_bins="~/.local/opt/bin/nvim-nightly/bin/nvim-nightly-bin"
 
 {{- if eq .chezmoi.hostname "rbmpc" }}
 exported_bins="~/.cargo/bin/neovide"
