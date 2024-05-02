@@ -6,9 +6,10 @@ esac
 
 shopt -s globstar
 
-PATH="$HOME/.local/bin:$PATH"
-
 source "$HOME/.local/lib/rbm/utils.sh"
+
+prepend_to_PATH "$HOME/.cargo/bin" \
+	"$HOME/.local/bin:$PATH"
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=" \
@@ -46,8 +47,6 @@ setup_atuin() {
 		atuin gen-completions --shell bash --out-dir "$out"
 	fi
 }
-
-prepend_to_PATH "$HOME/.cargo/bin"
 
 source <(mise activate bash)
 source <(starship init bash)
