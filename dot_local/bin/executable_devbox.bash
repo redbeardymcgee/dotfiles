@@ -43,6 +43,13 @@ done
 
 sudo dnf -y install "${packages[@]}"
 
+package_groups=(
+	"Development Tools"
+	"Development Libraries"
+)
+
+sudo dnf -y groupinstall "${package_groups[@]}"
+
 sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	-b "$HOME/.local/bin" \
 	init redbeardymcgee \
