@@ -2,7 +2,7 @@
 ## Unattended setup script for bootstrapping my dev/shell container
 
 set -euo pipefail
-exit 0
+
 packages=(
 	bat
 
@@ -42,7 +42,7 @@ for repo in "${repos[@]}"; do
 done
 
 sudo dnf -y install "${packages[@]}"
-
+exit 0
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
 
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
