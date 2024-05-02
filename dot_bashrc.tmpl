@@ -12,12 +12,15 @@ alias nneovide="NEOVIM_BIN=$HOME/local/bin/nvim-nightly-bin neovide"
 alias dev="distrobox enter dev"
 
 {{- if eq .chezmoi.fqdnHostname "dev.rbmpc" }} 
-if [[ $CONTAINER_ID = dev ]]; then
 	source ~/.local/share/blesh/ble.sh \
 		--noattach \
 		--rcfile ~/.config/ble.rc
-fi
-{{ end }}
+  prepend_to_PATH "$HOME/.cargo/bin"
+
+  source <(starship init bash)
+  source <(atuin init bash)
+  source <(mise activate bash)
+{{ end -}}
 
 [[ ${BLE_VERSION-} ]] && ble-attach
 
