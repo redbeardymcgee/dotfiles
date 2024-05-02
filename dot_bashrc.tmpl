@@ -15,6 +15,8 @@ alias dev="distrobox enter dev"
 	source ~/.local/share/blesh/ble.sh \
 		--noattach \
 		--rcfile ~/.config/ble.rc
+
+  PATH=$HOME/.cargo/bin:$PATH
   source <(starship init bash)
   source <(atuin init bash)
   source <(mise activate bash)
