@@ -7,7 +7,7 @@ start_now=true
 #nvidia=true
 {{ end -}}
 
-{{ $home := {{.chezmoi.homeDir}}/devbox }}
+{{ $home := cat .chezmoi.homeDir /devbox }}
 
 home="{{ .home }}"
 entry=false
