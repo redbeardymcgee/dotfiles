@@ -4,8 +4,6 @@ case $- in
 *) return ;;
 esac
 
-echo {{ .chezmoi.fqdnHostname }}
-
 source "$HOME/.local/lib/rbm/utils.sh"
 
 source <(chezmoi completion bash)
