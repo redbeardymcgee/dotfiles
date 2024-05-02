@@ -8,5 +8,5 @@ Icon=terminal-distrobox-icon
 Keywords=distrobox;
 NoDisplay=false
 Terminal=false
-TryExec=/home/josh/.local/bin/distrobox
+TryExec=kitty
 Type=Application
