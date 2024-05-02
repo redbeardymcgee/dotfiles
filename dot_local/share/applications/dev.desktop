@@ -1,12 +1,11 @@
 [Desktop Entry]
 Name=Kitty (on dev)
 GenericName=Terminal entering Dev
-Comment=Terminal entering Dev
-Categories=Distrobox;System;Utility
+Comment=Kitty terminal in devbox environment
+Categories=X-Distrobox;System;Utility
 Exec=kitty /home/josh/.local/bin/distrobox enter  dev
 Icon=terminal-distrobox-icon
 Keywords=distrobox;
 NoDisplay=false
 Terminal=false
-TryExec=kitty
 Type=Application
