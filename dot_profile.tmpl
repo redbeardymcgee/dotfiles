@@ -4,13 +4,7 @@ if [ -n "$BASH_VERSION" ]; then
 	fi
 fi
 
-echo
-echo $PATH
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
-echo
-echo -------
-echo $PATH
-echo -----
 
 source_env_files() {
 	for env_file; do
@@ -41,9 +35,9 @@ prepend_to_PATH "$HOME/devbox/.local/bin"
 {{- if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
 prepend_to_PATH "$HOME/.cargo/bin"
 
-eval "$(starship init bash)"
-eval "$(atuin init bash)"
-eval "$(mise activate bash)"
+source <(starship init bash)
+source <(atuin init bash)
+source <(mise activate bash)
 {{ end -}}
 
 prepend_to_PATH \
