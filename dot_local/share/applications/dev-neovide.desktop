@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Neovide (on dev)
-Icon=/home/josh/.local/share/icons/distrobox/neovide.png
+Icon=neovide
 Type=Application
 Terminal=false
 Categories=Development;Utility;TextEditor;
