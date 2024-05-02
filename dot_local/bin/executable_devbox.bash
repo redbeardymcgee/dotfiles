@@ -55,8 +55,7 @@ curl -L \
 	--proto '=https' \
 	--tlsv1.2 \
 	-sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-	
-	
+
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
 done
@@ -74,17 +73,22 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	mkdir -p "$OPTBIN"
 	curl --proto '=https' \
 		--tlsv1.2 \
-		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' | 
-	tar --overwrite \
-		--transform 's/-linux64/-nightly-bin/' \
-		--transform 's/nvim$/nvim-nightly-bin/' \
-		-C "$OPTBIN" \
-		-xzf -
+		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' |
+		tar --overwrite \
+			--transform 's/-linux64/-nightly-bin/' \
+			--transform 's/nvim$/nvim-nightly-bin/' \
+			-C "$OPTBIN" \
+			-xzf -
 fi
 
 git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
 make -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
+curl -L \
+	--proto '=https' \
+	--tlsv1.2 \
+	-sSf https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraMono.tar.xz |
+	tar -C ~/.local/share/fonts -xzf -
 
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply redbeardymcgee
