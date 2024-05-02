@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Dev
+Name=Kitty (on dev)
 GenericName=Terminal entering Dev
 Comment=Terminal entering Dev
 Categories=Distrobox;System;Utility
-Exec=wezterm /home/josh/.local/bin/distrobox enter  dev
+Exec=kitty /home/josh/.local/bin/distrobox enter  dev
 Icon=terminal-distrobox-icon
 Keywords=distrobox;
 NoDisplay=false
