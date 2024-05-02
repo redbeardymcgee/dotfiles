@@ -29,15 +29,15 @@ prepend_to_PATH() {
 }
 
 {{- if eq .chezmoi.fqdnHostname "rbmpc" }}
-
 prepend_to_PATH "$HOME/devbox/.local/bin"
-
 {{ end -}}
 
 {{- if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
-
 prepend_to_PATH "$HOME/.cargo/bin"
-
+	
+source <(starship init bash)
+source <(atuin init bash)
+source <(mise activate bash)
 {{ end -}}
 
 prepend_to_PATH \
