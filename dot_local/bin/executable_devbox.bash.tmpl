@@ -93,7 +93,7 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	NNVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
 	dl "$NNVIM_URL" |
 		tar -C "$OPT_DIR" \
-			--strip-components=2 \
+			--strip-components=1 \
 			--transform 's,bin/nvim$,bin/nvim-nightly,' \
 			--overwrite \
 			-xzf -
@@ -123,16 +123,14 @@ export_bins=(
 	{{ end }}
 
 	/usr/bin/nvim
-	"$HOME/.local/opt/bin/nvim-nightly"
+	"$OPT_DIR/bin/nvim-nightly"
 )
 
 for bin in "${export_bins[@]}"; do
 	distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
-{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
-{{ if eq .chezmoi.hostname "rbmpc" }}
+{{ if eq .chezmoi.hostname "dev" }}
 distrobox-export --app wezterm
-{{ end }}
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
 {{ end }}
