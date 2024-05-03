@@ -31,9 +31,9 @@ bhelp() {
 	"$@" --help 2>&1 | bathelp
 }
 
-{{- if eq .chezmoi.hostname "rbmpc" }}
+{{ if eq .chezmoi.hostname "rbmpc" }}
 alias dev="distrobox enter dev"
-{{ end -}}
+{{ end }}
 
 {{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
 source ~/.local/share/blesh/ble.sh \
