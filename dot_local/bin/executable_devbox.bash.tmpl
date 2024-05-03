@@ -48,12 +48,13 @@ sudo dnf -y install "${packages[@]}"
 
 sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	-b "$HOME/.local/bin" \
+	--source-path "$HOME/../.local/share/chezmoi/" \
 	init redbeardymcgee \
 	--apply \
 	--ssh \
 	--force \
 	--promptDefaults \
-  	--source-path "$HOME/../.local/share/chezmoi/"
+  	
 
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
