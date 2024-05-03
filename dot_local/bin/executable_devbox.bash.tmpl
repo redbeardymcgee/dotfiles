@@ -73,7 +73,7 @@ done
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" neovide
+	cargo install --git "$package" neovide &
 done
 {{ end }}
 
@@ -81,35 +81,34 @@ OPT_DIR=$HOME/.local/opt
 NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
 
 setup_nnvim() {
-    mkdir -p "$OPT_DIR"
-    NNVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
-    dl "$NNVIM_URL" |
-      tar -C "$OPT_DIR" \
-        --strip-components=1 \
-        --transform 's,bin/nvim$,bin/nvim-nightly,' \
-        --overwrite \
-        -xzf -
- }
+	mkdir -p "$OPT_DIR"
+	NNVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+	dl "$NNVIM_URL" |
+		tar -C "$OPT_DIR" \
+			--strip-components=1 \
+			--transform 's,bin/nvim$,bin/nvim-nightly,' \
+			--overwrite \
+			-xzf -
+}
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-  setup_nnvim &
+	setup_nnvim &
 fi
 
 BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
 
 {
-  git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
-  make -k -C ble.sh install PREFIX="$HOME/.local"
-  rm -rf ble.sh
+	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
+	make -k -C ble.sh install PREFIX="$HOME/.local"
+	rm -rf ble.sh
 } &
-
 
 FONT_DIR=$HOME/.local/share/fonts
 FIRA_CODE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz"
 {
-  mkdir -p "$FONT_DIR"
-  dl "$FIRA_CODE_URL" | tar -C "$FONT_DIR" -xJf -
-  fc-cache
+	mkdir -p "$FONT_DIR"
+	dl "$FIRA_CODE_URL" | tar -C "$FONT_DIR" -xJf -
+	fc-cache
 } &
 
 EXPORT_BIN_PATH=$HOME/.local/bin
