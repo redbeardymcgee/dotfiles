@@ -65,21 +65,22 @@ cargo_packages=(
 	starship
 )
 
-curl -L \
-	--proto '=https' \
+curl --proto '=https' \
 	--tlsv1.2 \
-	-sSf 'https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh' |
+	-sSLf 'https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh' |
 	bash
 
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
 done
 
+{{ if eq .chezmoi.hostname "rbmpc" }}
 cargo_git_packages=('https://github.com/neovide/neovide')
 
 for package in "${cargo_git_packages[@]}"; do
 	cargo binstall -y --git "$package" neovide
 done
+{{ end }}
 
 OPTBIN=$HOME/.local/opt/bin
 NNVIM_DIR=$OPTBIN/nvim-nightly-bin
