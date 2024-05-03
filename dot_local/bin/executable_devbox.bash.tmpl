@@ -52,7 +52,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	--apply \
 	--ssh \
 	--promptDefaults \
-  	
+  	--force
 
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
