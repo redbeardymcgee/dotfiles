@@ -33,11 +33,11 @@ alias bathelp='bat --plain --language=help'
 alias cat="bat"
 alias ls='eza'
 
-{{ if eq .chezmoi.hostname "rbmpc" }}
+{{ if not (hasPrefix "dev" .chezmoi.hostname) }}
 alias dev="distrobox enter dev"
 {{ end }}
 
-{{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
+{{ if (hasPrefix "dev" .chezmoi.fqdnHostname) }}
 source ~/.local/share/blesh/ble.sh \
 	--noattach \
 	--rcfile ~/.config/ble.rc
