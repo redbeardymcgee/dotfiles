@@ -53,16 +53,6 @@ done
 
 sudo dnf -y install "${packages[@]}"
 
-(
-yes | sh -c "$(curl -fsLS get.chezmoi.io)" -- \
-		-b "$HOME/.local/bin" \
-		init redbeardymcgee \
-		--apply \
-		--ssh \
-		--promptDefaults \
-		--force
-)
-
 PATH=$HOME/.cargo/bin:$PATH
 dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
 

@@ -10,7 +10,9 @@ start_now=true
 home={{ .devbox }}
 entry=false
 
-additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
+additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"'
+
+init_hooks={{ .chezmoiInitHook }}
 
 # home=""
 # pre_init_hooks=""
