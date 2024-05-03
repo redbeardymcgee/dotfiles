@@ -1,0 +1,19 @@
+[{dot_bash*, *.bash}]
+binary_next_line   = false
+function_next_line = false
+indent_style       = space
+indent_size        = 2
+keep_padding       = true
+shell_variant      = bash
+space_redirects    = true
+switch_case_indent = true
+
+[dot_profile.tmpl]
+binary_next_line   = false
+function_next_line = false
+indent_style       = space
+indent_size        = 2
+keep_padding       = true
+shell_variant      = posix
+space_redirects    = true
+switch_case_indent = true

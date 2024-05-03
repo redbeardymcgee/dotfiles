@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 ## Unattended setup script for bootstrapping my dev/shell container
 
 set -euo pipefail
@@ -60,9 +61,8 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	--promptDefaults \
 	--force
 
-dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
-
 PATH=$HOME/.cargo/bin:$PATH
+dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
 
 cargo_packages=(
 	atuin
@@ -85,22 +85,22 @@ for package in "${cargo_git_packages[@]}"; do
 done
 {{ end }}
 
-OPTBIN=$HOME/.local/opt/bin
 NNVIM_DIR=$OPTBIN/nvim-nightly-bin
+OPT_DIR=$HOME/.local/opt
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-	mkdir -p "$OPTBIN"
-	curl --proto "=https" \
-		--tlsv1.2 \
-		-sSLf "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz" |
-		tar --overwrite \
-			--transform "s/-linux64/-nightly-bin/" \
-			--transform "s/nvim$/nvim-nightly-bin/" \
-			-C "$OPTBIN" \
+	mkdir -p "$OPT_DIR"
+	NNVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+	dl "$NNVIM_URL" |
+		tar -C "$OPT_DIR" \
+			--strip-components=2 \
+			--transform "s/nvim$/nvim-nightly/" \
+			--overwrite \
 			-xzf -
 fi
 
-git clone --recursive --depth 1 --shallow-submodules "https://github.com/akinomyoga/ble.sh.git"
+BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
+git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
 make -k -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
@@ -123,15 +123,15 @@ export_bins=(
 	{{ end }}
 
 	/usr/bin/nvim
-	"$HOME/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
+	"$HOME/.local/opt/bin/nvim-nightly"
 )
 
 for bin in "${export_bins[@]}"; do
 	distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
-{{ if hasPrefix "dev" .chezmoi.hostname }}
-{{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
+{{ if hasPrefix "dev" .chezmoi.fqdnHostname}}
+{{ if eq .chezmoi.hostname "rbmpc" }}
 distrobox-export --app wezterm
 {{ end }}
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm

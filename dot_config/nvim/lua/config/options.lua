@@ -3,3 +3,4 @@
 -- Add any additional options here
 
 vim.g.neovide_transparency = 0.80
+vim.g["chezmoi#use_external"] = 1
