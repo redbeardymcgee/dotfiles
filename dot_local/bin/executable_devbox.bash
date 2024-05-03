@@ -56,8 +56,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	--source "$HOME/../.local/share/chezmoi" \
 	--cache "$HOME/../.cache/chezmoi"
 
-curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
-	sh -s -- -q -y --no-modify-path
+curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -q -y --no-modify-path
 
 PATH=$HOME/.cargo/bin:$PATH
 
