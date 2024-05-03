@@ -7,7 +7,7 @@ start_now=true
 nvidia=true
 {{ end }}
 
-home={{ cat .chezmoi.homeDir "/devbox" }}
+home={{ nospace (cat .chezmoi.homeDir "/devbox") }}
 entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"

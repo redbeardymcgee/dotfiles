@@ -73,14 +73,14 @@ curl --proto '=https' \
 	bash
 
 for package in "${cargo_packages[@]}"; do
-	cargo binstall -y "$package"
+	cargo binstall "$package"
 done
 
 {{ if eq .chezmoi.hostname "rbmpc" }}
 cargo_git_packages=('https://github.com/neovide/neovide')
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install -y --git "$package" neovide
+	cargo install --git "$package" neovide
 done
 {{ end }}
 
