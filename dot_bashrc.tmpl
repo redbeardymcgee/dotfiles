@@ -3,7 +3,7 @@
 # <command> from "$HOME"
 source "$HOME/.local/lib/rbm/utils.sh"
 
-{{ if (hasPrefix "dev" .chezmoi.fqdnHostname) }}
+{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"
 {{ end }}
