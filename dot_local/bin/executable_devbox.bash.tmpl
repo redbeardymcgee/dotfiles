@@ -92,7 +92,7 @@ setup_nnvim() {
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-	setup_nnvim &
+	setup_nnvim
 fi
 
 BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
@@ -101,7 +101,7 @@ BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
 	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
 	make -k -C ble.sh install PREFIX="$HOME/.local"
 	rm -rf ble.sh
-} &
+}
 
 FONT_DIR=$HOME/.local/share/fonts
 FIRA_CODE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz"
@@ -109,7 +109,7 @@ FIRA_CODE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/
 	mkdir -p "$FONT_DIR"
 	dl "$FIRA_CODE_URL" | tar -C "$FONT_DIR" -xJf -
 	fc-cache
-} &
+}
 
 EXPORT_BIN_PATH=$HOME/.local/bin
 
