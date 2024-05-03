@@ -112,7 +112,7 @@ curl --proto '=https' \
 
 fc-cache
 
-EXPORT_BIN_PATH="{{ .devbox }}/.local/bin"
+EXPORT_BIN_PATH=$HOME/.local/bin
 
 export_bins=(
   /usr/bin/bat
@@ -120,19 +120,21 @@ export_bins=(
   /usr/bin/fzf
 
   {{ if eq .chezmoi.hostname "rbmpc" }}
-  {{ .devbox }}/.cargo/bin/neovide
+  "$HOME/.cargo/bin/neovide"
   {{ end }}
 
   /usr/bin/nvim
-  {{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin
+  "$HOME/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
 )
 
 for bin in "${export_bins[@]}"; do
   distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
-{{ if not (hasPrefix "dev" .chezmoi.hostname) }}
+{{ if hasPrefix "dev" .chezmoi.hostname }}
+{{ if eq .chezmoi.fqdnHostname "dev.rbmpc" }}
 distrobox-export --app wezterm
+{{ end }}
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
 {{ end }}
 
