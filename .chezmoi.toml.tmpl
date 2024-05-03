@@ -10,6 +10,7 @@ progress = true
 
 {{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 sourceDir = "{{ .chezmoi.homeDir }}/../.local/share/chezmoi"
+workingTree = "{{ .chezmoi.workingTree }}"
 {{ end }}
 
 umask = 0o22
