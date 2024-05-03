@@ -7,5 +7,9 @@ autoCommit = true
 autoPush = true
 
 progress = true
-umask = 0o22
 
+{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
+sourceDir = {{ .chezmoi.homeDir }}/../.local/share/chezmoi
+{{ end }}
+
+umask = 0o22
