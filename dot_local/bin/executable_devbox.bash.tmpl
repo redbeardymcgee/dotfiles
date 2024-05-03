@@ -53,13 +53,15 @@ done
 
 sudo dnf -y install "${packages[@]}"
 
-sh -c "$(curl -fsLS get.chezmoi.io)" -- \
-	-b "$HOME/.local/bin" \
-	init redbeardymcgee \
-	--apply \
-	--ssh \
-	--promptDefaults \
-	--force
+(
+yes | sh -c "$(curl -fsLS get.chezmoi.io)" -- \
+		-b "$HOME/.local/bin" \
+		init redbeardymcgee \
+		--apply \
+		--ssh \
+		--promptDefaults \
+		--force
+)
 
 PATH=$HOME/.cargo/bin:$PATH
 dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
@@ -81,7 +83,7 @@ done
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	: cargo install --git "$package" neovide
+	cargo install --git "$package" neovide
 done
 {{ end }}
 
@@ -131,6 +133,8 @@ for bin in "${export_bins[@]}"; do
 done
 
 {{ if eq .chezmoi.hostname "dev" }}
+{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 distrobox-export --app wezterm
+{{ end }}
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
 {{ end }}
