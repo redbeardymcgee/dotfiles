@@ -127,11 +127,11 @@ export_bins=(
   {{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin
 )
 
-for bin in "${export_bins}"; do
+for bin in "${export_bins[@]}"; do
   distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
-{{ if hasPrefix "dev" .chezmoi.hostname }}
+{{ if not (hasPrefix "dev" .chezmoi.hostname) }}
 distrobox-export --app wezterm
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
 {{ end }}
