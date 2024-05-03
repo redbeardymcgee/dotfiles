@@ -69,7 +69,7 @@ for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
 done
 
-{{ if eq .chezmoi.hostname "rbmpc" }}
+{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
