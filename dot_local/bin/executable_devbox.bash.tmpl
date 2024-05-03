@@ -102,6 +102,7 @@ git clone --recursive --depth 1 --shallow-submodules 'https://github.com/akinomy
 make -k -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
+mkdir -p ~/.local/share/fonts
 curl --proto '=https' \
 	--tlsv1.2 \
 	-sSLf 'https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz' |
