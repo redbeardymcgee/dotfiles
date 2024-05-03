@@ -14,10 +14,11 @@ source_env_files() {
 	done
 }
 
-{{ if not (eq .chezmoi.fqdnHostname "dev.rbmpc") }}
+{{ if not (eq .chezmoi.hostname "dev") }}
 prepend_to_PATH "$HOME/devbox/.local/bin"
-{{ end -}}
+{{ end }}
 prepend_to_PATH "$HOME/.cargo/bin"
+prepend_to_PATH "$HOME/.local/bin"
 
 export NIX_CONFIG="experimental-features = nix-command flakes"
 export CHECKPOINT_DISABLE=1
