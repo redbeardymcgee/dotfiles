@@ -73,7 +73,7 @@ curl --proto '=https' \
 	bash
 
 for package in "${cargo_packages[@]}"; do
-	cargo binstall "$package"
+	cargo binstall -y "$package"
 done
 
 {{ if eq .chezmoi.hostname "rbmpc" }}
