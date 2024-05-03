@@ -93,7 +93,7 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	NNVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
 	dl "$NNVIM_URL" |
 		tar -C "$OPT_DIR" \
-			--strip-components=3 \
+			--strip-components=2 \
 			--transform "s/nvim$/nvim-nightly/" \
 			--overwrite \
 			-xzf -
