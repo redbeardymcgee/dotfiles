@@ -12,7 +12,8 @@ entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 
-init_hooks='sh -c $(curl -fsLS get.chezmoi.io) -- -b {{ .devboxLocalBin }} init {{ .dotfilesRepo }} --apply --promptDefaults --force'
+init_hooks='curl -fsLSO get.chezmoi.io; chmod +x ./chezmoi;'
+init_hooks='./chezmoi -b {{ .devboxLocalBin }} init {{ .dotfilesRepo }} --apply --promptDefaults --force'
 
 # home=""
 # pre_init_hooks=""
