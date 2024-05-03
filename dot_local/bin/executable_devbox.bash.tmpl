@@ -80,7 +80,7 @@ done
 cargo_git_packages=('https://github.com/neovide/neovide')
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo binstall -y --git "$package" neovide
+	cargo install -y --git "$package" neovide
 done
 {{ end }}
 
