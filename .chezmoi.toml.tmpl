@@ -7,7 +7,7 @@ autoCommit = true
 autoPush = true
 
 progress = true
-scriptTempDir = "{{ .chezmoi.fqdnHostname }}"
+
 {{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 sourceDir = "{{ .chezmoi.homeDir }}/../.local/share/chezmoi"
 {{ end }}
