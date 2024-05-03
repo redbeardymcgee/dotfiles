@@ -3,10 +3,8 @@
 # <command> from "$HOME"
 source "$HOME/.local/lib/rbm/utils.sh"
 
-{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"
-{{ end }}
 
 # Enable the subsequent settings only in interactive sessions
 case $- in
@@ -40,7 +38,7 @@ alias ls='eza'
 alias dev="distrobox enter dev"
 {{ end }}
 
-{{ if (hasPrefix "dev" .chezmoi.fqdnHostname) }}
+{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 source ~/.local/share/blesh/ble.sh \
 	--noattach \
 	--rcfile ~/.config/ble.rc
