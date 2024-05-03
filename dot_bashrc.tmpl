@@ -1,3 +1,11 @@
+# Put this above the interactive session check
+# This allows `ssh foo@bar <command>` to resolve 
+# <command> from "$HOME"
+{{ if (hasPrefix "dev" .chezmoi.fqdnHostname) }}
+prepend_to_PATH "$HOME/.cargo/bin"
+prepend_to_PATH "$HOME/.local/bin"
+{{ end }}
+
 # Enable the subsequent settings only in interactive sessions
 case $- in
 *i*) ;;
@@ -7,11 +15,6 @@ esac
 shopt -s globstar
 
 source "$HOME/.local/lib/rbm/utils.sh"
-
-{{ if (hasPrefix "dev" .chezmoi.fqdnHostname) }}
-prepend_to_PATH "$HOME/.cargo/bin"
-prepend_to_PATH "$HOME/.local/bin"
-{{ end }}
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=" \
