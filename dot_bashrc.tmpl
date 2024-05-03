@@ -54,4 +54,9 @@ source <(starship init bash)
 setup_atuin
 {{ end }}
 
+{{ if eq .chezmoi.hostname "media" }}
+source <(ssh-agent -s)
+ssh-add ~/.ssh/github
+{{ end }}
+
 [[ ${BLE_VERSION-} ]] && ble-attach
