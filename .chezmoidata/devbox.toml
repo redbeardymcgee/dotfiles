@@ -1,4 +1,4 @@
-devbox = "$HOME/devbox"
-devboxLocalBin = '"$HOME/devbox/.local/bin"'
+devbox = '$HOME/devbox'
+devboxLocalBin = '$HOME/devbox/.local/bin'
 dotfilesRepo = 'git@github.com:redbeardymcgee/dotfiles.git'
 chezmoiInitHook = 'sh -c "$(curl -fsLS get.chezmoi.io)" -- -b {{ .devboxLocalBin }} init {{ .dotfilesRepo }} --apply --promptDefaults --force'
