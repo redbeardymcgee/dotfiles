@@ -81,7 +81,7 @@ done
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" neovide
+	#cargo install --git "$package" neovide
 done
 {{ end }}
 
@@ -94,7 +94,7 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	dl "$NNVIM_URL" |
 		tar -C "$OPT_DIR" \
 			--strip-components=2 \
-			--transform "s/nvim$/nvim-nightly/" \
+			--transform 's,bin/nvim$,bin/nvim-nightly,' \
 			--overwrite \
 			-xzf -
 fi
