@@ -27,6 +27,14 @@ config.harfbuzz_features = {
 config.color_scheme = "Catppuccin Mocha"
 config.window_background_opacity = 0.85
 
+config.ssh_domains = {
+	{
+		name = "mcgeedia",
+		remote_address = "media.mcgee.network",
+		connect_automatically = true,
+	},
+}
+
 wezterm.on("update-status", function(window, pane)
 	local meta = pane:get_metadata() or {}
 	if meta.is_tardy then
