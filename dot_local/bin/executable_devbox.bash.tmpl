@@ -85,8 +85,8 @@ for package in "${cargo_git_packages[@]}"; do
 done
 {{ end }}
 
-NNVIM_DIR=$OPTBIN/nvim-nightly-bin
 OPT_DIR=$HOME/.local/opt
+NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	mkdir -p "$OPT_DIR"
