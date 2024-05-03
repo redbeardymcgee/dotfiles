@@ -6,6 +6,10 @@ source "$HOME/.local/lib/rbm/utils.sh"
 prepend_to_PATH "$HOME/.local/bin"
 prepend_to_PATH "$HOME/.cargo/bin"
 
+{{ if eq .chezmoi.hostname "rbmpc" "media" }}
+prepend_to_PATH "$HOME/devbox/.local/bin"
+{{ end }}
+
 # Enable the subsequent settings only in interactive sessions
 case $- in
 *i*) ;;
