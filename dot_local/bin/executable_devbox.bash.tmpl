@@ -81,7 +81,7 @@ done
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	#cargo install --git "$package" neovide
+	: cargo install --git "$package" neovide
 done
 {{ end }}
 
@@ -130,7 +130,7 @@ for bin in "${export_bins[@]}"; do
 	distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
-{{ if hasPrefix "dev" .chezmoi.fqdnHostname}}
+{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 {{ if eq .chezmoi.hostname "rbmpc" }}
 distrobox-export --app wezterm
 {{ end }}
