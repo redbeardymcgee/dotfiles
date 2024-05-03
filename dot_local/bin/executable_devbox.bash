@@ -59,7 +59,7 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
 	sh -s -- -q -y --no-modify-path
 
-. "$HOME/.cargo/env"
+PATH=$HOME/.cargo/bin:$PATH
 
 cargo_packages=(
 	atuin
