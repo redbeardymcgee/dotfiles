@@ -7,29 +7,10 @@ start_now=true
 nvidia=true
 {{ end }}
 
-home={{ nospace (cat .chezmoi.homeDir "/devbox") }}
+home={{ .devbox }}
 entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
-
-#init_hooks="{{ .chezmoi.homeDir }}/.local/bin/devbox.bash"
-
-exported_bins_path="{{ .devbox }}/.local/bin"
-
-exported_bins="/usr/bin/nvim"
-exported_bins="{{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
-
-{{ if eq .chezmoi.hostname "rbmpc" }}
-exported_bins="{{ .devbox }}/.cargo/bin/neovide"
-{{ end }}
-
-exported_bins="/usr/bin/bat"
-exported_bins="/usr/bin/eza"
-exported_bins="/usr/bin/fzf"
-
-{{ if eq .chezmoi.hostname "rbmpc" }}
-exported_apps="wezterm"
-{{ end }}
 
 # home=""
 # pre_init_hooks=""

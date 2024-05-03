@@ -111,3 +111,28 @@ curl --proto '=https' \
 	tar -C "$FONT_DIR" -xJf -
 
 fc-cache
+
+EXPORT_BIN_PATH="{{ .devbox }}/.local/bin"
+
+export_bins=(
+  /usr/bin/bat
+  /usr/bin/eza
+  /usr/bin/fzf
+
+  {{ if eq .chezmoi.hostname "rbmpc" }}
+  {{ .devbox }}/.cargo/bin/neovide
+  {{ end }}
+
+  /usr/bin/nvim
+  {{ .devbox }}/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin
+)
+
+for bin in "${export_bins}"; do
+  distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
+done
+
+{{ if hasPrefix "dev" .chezmoi.hostname }}
+distrobox-export --app wezterm
+distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
+{{ end }}
+
