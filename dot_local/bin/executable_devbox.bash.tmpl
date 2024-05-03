@@ -97,15 +97,15 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 			-xzf -
 fi
 
-rm -rf "$HOME/.local/share/blesh"
 git clone --recursive --depth 1 --shallow-submodules 'https://github.com/akinomyoga/ble.sh.git'
 make -k -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
-mkdir -p ~/.local/share/fonts
+FONT_DIR=$HOME/.local/share/fonts
+mkdir -p "$FONT_DIR"
 curl --proto '=https' \
 	--tlsv1.2 \
 	-sSLf 'https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz' |
-	tar -C ~/.local/share/fonts -xJf -
+	tar -C "$FONT_DIR" -xJf -
 
 fc-cache
