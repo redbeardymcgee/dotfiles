@@ -1,6 +1,8 @@
 # Put this above the interactive session check
 # This allows `ssh foo@bar <command>` to resolve 
 # <command> from "$HOME"
+source "$HOME/.local/lib/rbm/utils.sh"
+
 {{ if (hasPrefix "dev" .chezmoi.fqdnHostname) }}
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"
@@ -13,8 +15,6 @@ case $- in
 esac
 
 shopt -s globstar
-
-source "$HOME/.local/lib/rbm/utils.sh"
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=" \
