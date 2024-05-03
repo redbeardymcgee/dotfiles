@@ -3,6 +3,12 @@
 
 set -euo pipefail
 
+dl() {
+	local url=$1
+
+	curl --proto "=https" --tlsv1.2 -sSLf "$url"
+}
+
 packages=(
 	bat
 
@@ -52,10 +58,9 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 	--apply \
 	--ssh \
 	--promptDefaults \
-  	--force
+	--force
 
-curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' |
-	sh -s -- -q -y --no-modify-path
+dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
 
 PATH=$HOME/.cargo/bin:$PATH
 
@@ -65,17 +70,15 @@ cargo_packages=(
 	starship
 )
 
-curl --proto '=https' \
-	--tlsv1.2 \
-	-sSLf 'https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh' |
-	bash
+BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
+curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash
 
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
 done
 
 {{ if eq .chezmoi.hostname "rbmpc" }}
-cargo_git_packages=('https://github.com/neovide/neovide')
+cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
 	cargo install --git "$package" neovide
@@ -87,46 +90,44 @@ NNVIM_DIR=$OPTBIN/nvim-nightly-bin
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	mkdir -p "$OPTBIN"
-	curl --proto '=https' \
+	curl --proto "=https" \
 		--tlsv1.2 \
-		-sSLf 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz' |
+		-sSLf "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz" |
 		tar --overwrite \
-			--transform 's/-linux64/-nightly-bin/' \
-			--transform 's/nvim$/nvim-nightly-bin/' \
+			--transform "s/-linux64/-nightly-bin/" \
+			--transform "s/nvim$/nvim-nightly-bin/" \
 			-C "$OPTBIN" \
 			-xzf -
 fi
 
-git clone --recursive --depth 1 --shallow-submodules 'https://github.com/akinomyoga/ble.sh.git'
+git clone --recursive --depth 1 --shallow-submodules "https://github.com/akinomyoga/ble.sh.git"
 make -k -C ble.sh install PREFIX="$HOME/.local"
 rm -rf ble.sh
 
 FONT_DIR=$HOME/.local/share/fonts
+FIRA_CODE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz"
 mkdir -p "$FONT_DIR"
-curl --proto '=https' \
-	--tlsv1.2 \
-	-sSLf 'https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz' |
-	tar -C "$FONT_DIR" -xJf -
+dl "$FIRA_CODE_URL" | tar -C "$FONT_DIR" -xJf -
 
 fc-cache
 
 EXPORT_BIN_PATH=$HOME/.local/bin
 
 export_bins=(
-  /usr/bin/bat
-  /usr/bin/eza
-  /usr/bin/fzf
+	/usr/bin/bat
+	/usr/bin/eza
+	/usr/bin/fzf
 
-  {{ if eq .chezmoi.hostname "rbmpc" }}
-  "$HOME/.cargo/bin/neovide"
-  {{ end }}
+	{{ if eq .chezmoi.hostname "rbmpc" }}
+	"$HOME/.cargo/bin/neovide"
+	{{ end }}
 
-  /usr/bin/nvim
-  "$HOME/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
+	/usr/bin/nvim
+	"$HOME/.local/opt/bin/nvim-nightly-bin/bin/nvim-nightly-bin"
 )
 
 for bin in "${export_bins[@]}"; do
-  distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
+	distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
 {{ if hasPrefix "dev" .chezmoi.hostname }}
@@ -135,4 +136,3 @@ distrobox-export --app wezterm
 {{ end }}
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
 {{ end }}
-
