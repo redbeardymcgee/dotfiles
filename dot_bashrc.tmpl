@@ -51,7 +51,7 @@ source <(starship init bash)
 setup_atuin
 {{ end }}
 
-{{ if eq .chezmoi.hostname "media" }}
+{{ if eq .chezmoi.fqdnHostname "media" }}
 source <(ssh-agent -s)
 ssh-add ~/.ssh/github
 {{ end }}
