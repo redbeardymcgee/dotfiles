@@ -4,6 +4,8 @@
 
 set -euo pipefail
 
+source "$HOME/.local/lib/rbm/utils.sh"
+
 dl() {
 	local url=$1
 
@@ -55,8 +57,8 @@ done
 
 sudo dnf -y install "${packages[@]}"
 
-PATH=$HOME/.cargo/bin:$PATH
 dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
+PATH=$HOME/.cargo/bin:$PATH
 
 cargo_packages=(
 	atuin
@@ -123,7 +125,7 @@ export_bins=(
 	/usr/bin/eza
 	/usr/bin/fzf
 
-	{{ if eq .chezmoi.hostname "rbmpc" }}
+	{{ if eq .chezmoi.hostname "dev" }}
 	"$HOME/.cargo/bin/neovide"
 	{{ end }}
 
