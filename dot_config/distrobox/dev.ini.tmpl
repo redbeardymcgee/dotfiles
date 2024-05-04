@@ -12,9 +12,9 @@ entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 
-pre_init_hooks='ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}/.ssh'
-init_hooks='sh -c {{ .curlChezmoi }} -- -b {{ .devboxBin }} init {{ .devboxUser }} --apply  --force --keep-going --promptDefaults --ssh'
-#init_hooks='devbox.bash'
+pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}'
+init_hooks='sudo -u {{ .chezmoi.username }} sh -c {{ .curlChezmoi }} -- -b {{ .devboxBin }} init {{ .devboxUser }} --apply --force --keep-going --promptDefaults'
+init_hooks='devbox.bash'
 
 # home=""
 # pre_init_hooks=""
