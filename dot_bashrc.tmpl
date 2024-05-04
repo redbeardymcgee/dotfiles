@@ -21,6 +21,7 @@ case $- in
 esac
 
 shopt -s globstar
+shopt -s extglob
 
 {{ if eq .chezmoi.fqdnHostname "media" }}
 source <(ssh-agent -s)
