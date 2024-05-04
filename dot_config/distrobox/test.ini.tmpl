@@ -9,7 +9,7 @@ entry=false
 additional_flags='--hostname "dev.{{ .chezmoi.hostname }}"'
 
 pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }}'
-init_hooks='sh -c \"\$(curl -sSLf get.chezmoi.io)\" -- -b {{ .devbox }}/.local/bin'
+init_hooks='sh -c \"\$(curl -sSLf get.chezmoi.io)\" -- -b {{ .testbox }}/.local/bin'
 #init {{ .testboxUser }} --apply --ssh'
 init_hooks='echo devbox.bash'
 
