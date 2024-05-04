@@ -14,6 +14,7 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 
 pre_init_hooks='cp -aru {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}'
 init_hooks='"sh -c {{ .curlChezmoi }} -- -b {{ .devboxBin }} init {{ .devboxUser }} --apply --force --keep-going --promptDefaults --ssh'
+init_hooks='devbox.bash'
 
 # home=""
 # pre_init_hooks=""

@@ -4,14 +4,14 @@
 
 set -euo pipefail
 
-cp -aru "{{ .chezmoi.homeDir }}/.ssh" "$HOME"
-sh -c "$(curl -fsLS get.chezmoi.io)" -- \
-  -b "$HOME/.local/bin" \
-  init 'git@github.com:redbeardymcgee/dotfiles.git' \
-  --apply \
-  --force \
-  --promptDefaults \
-  --ssh
+# cp -aru "{{ .chezmoi.homeDir }}/.ssh" "$HOME"
+# sh -c "$(curl -fsLS get.chezmoi.io)" -- \
+#   -b "$HOME/.local/bin" \
+#   init 'git@github.com:redbeardymcgee/dotfiles.git' \
+#   --apply \
+#   --force \
+#   --promptDefaults \
+#   --ssh
 
 source "$HOME/.local/lib/rbm/utils.sh"
 
