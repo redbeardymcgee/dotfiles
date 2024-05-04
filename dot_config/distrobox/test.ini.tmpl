@@ -10,6 +10,7 @@ additional_flags='--hostname "test.{{ .chezmoi.hostname }}"'
 
 pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }}/.ssh;'
 init_hooks='sudo -u {{ .chezmoi.username }} {{ .chezmoi.homeDir }}/.local/bin/chezmoi init redbeardymcgee --apply --force --promptDefaults --ssh;'
+init_hooks='devbox.bash;'
 
 #init_hooks='echo devbox.bash'
 
