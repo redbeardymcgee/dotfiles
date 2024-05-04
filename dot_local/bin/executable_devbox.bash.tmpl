@@ -13,8 +13,9 @@ dl() {
 packages=(
 	bat
 
-	coreutils
 	cmake
+	coreutils
+	cpanm
 
 	eza
 
@@ -69,6 +70,9 @@ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
 done
+
+mise use -g 'node@20'
+mise use -g 'python@3.12'
 
 {{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 cargo_git_packages=("https://github.com/neovide/neovide")
