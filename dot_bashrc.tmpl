@@ -66,4 +66,6 @@ source <(ssh-agent -s)
 ssh-add ~/.ssh/github
 {{ end }}
 
+chezmoi update
+
 [[ ${BLE_VERSION-} ]] && ble-attach
