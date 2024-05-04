@@ -1,1 +1,4 @@
 devbox = '"$HOME/devbox"'
+curlChezmoi = '\"\$(curl -sSLf get.chezmoi.io)\"'
+devboxBin = '\"\$HOME/.local/bin\"'
+devboxUser = "redbeardymcgee"
