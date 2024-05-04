@@ -11,7 +11,7 @@ additional_flags='--hostname "test.{{ .chezmoi.hostname }}"'
 #sudo -u {{ .chezmoi.username }} 
 #pre_init_hooks='ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }};'
 
-init_hooks='sh -c \"$(curl -fsLS get.chezmoi.io)\";'
+init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\";'
 #-- -b "$HOME/testbox/.local/bin"'
 #init {{ .testboxUser }} --apply --ssh'
 
