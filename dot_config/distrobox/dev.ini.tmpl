@@ -20,7 +20,7 @@ additional_packages="coreutils"
 #
 # {{ define "dotfilesRepo" }} "git@github.com:redbeardymcgee/dotfiles.git" {{ end }}
 #
-# init_hooks='sh -c {{ template "dlChezmoi" }} -- -b {{ template "devboxLocalBin" }} init {{ template "dotfilesRepo" }} --apply --promptDefaults --force'
+init_hooks='sh -c {{ template "dlChezmoi" }} -- -b {{ template "devboxLocalBin" }} init {{ template "dotfilesRepo" }} --apply --promptDefaults --force'
 
 # home=""
 # pre_init_hooks=""
