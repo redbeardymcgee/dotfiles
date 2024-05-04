@@ -9,7 +9,7 @@ entry=false
 additional_flags='--hostname "dev.{{ .chezmoi.hostname }}"'
 
 pre_init_hooks='ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }}/.ssh'
-init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\" -- -b \"\$HOME/.local/bin\"'
+init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\" -- -b \"\$HOME/.local/bin\" init redbeardymcgee'
 #init_hooks='sh -c \"\$(curl -sSLf get.chezmoi.io)\" -- -b \"\$HOME/.local/bin\" init redbeardymcgee --apply --force --keep-going --promptDefaults --ssh'
 # init_hooks='devbox.bash'
 
