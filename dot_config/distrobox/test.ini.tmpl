@@ -12,7 +12,7 @@ volume="{{ .chezmoi.homeDir }}/.ssh"
 
 #pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }}/.ssh;'
 
-init_hooks='sudo -u {{ .chezmoi.username }} {{ .chezmoi.homeDir }}/.local/bin/chezmoi init redbeardymcgee --apply --force --promptDefaults --ssh;'
+#init_hooks='sudo -u {{ .chezmoi.username }} {{ .chezmoi.homeDir }}/.local/bin/chezmoi init redbeardymcgee --apply --force --promptDefaults --ssh;'
 #init_hooks='sudo -u {{ .chezmoi.username }} ~/.local/bin/devbox.bash;'
 #init_hooks='echo devbox.bash'
 
