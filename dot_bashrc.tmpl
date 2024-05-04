@@ -22,6 +22,11 @@ esac
 
 shopt -s globstar
 
+{{ if eq .chezmoi.fqdnHostname "media" }}
+source <(ssh-agent -s)
+ssh-add ~/.ssh/github
+{{ end }}
+
 type -p chezmoi > /dev/null && chezmoi update
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
@@ -65,11 +70,6 @@ source <(mise activate bash)
 source <(starship init bash)
 
 setup_atuin
-{{ end }}
-
-{{ if eq .chezmoi.fqdnHostname "media" }}
-source <(ssh-agent -s)
-ssh-add ~/.ssh/github
 {{ end }}
 
 [[ ${BLE_VERSION-} ]] && ble-attach
