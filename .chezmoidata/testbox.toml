@@ -1,4 +1,4 @@
 testbox = '"$HOME/testbox"'
 curlChezmoi = '\"\$(curl -sSLf get.chezmoi.io)\"'
-testboxBin = '\"$HOME/.local/bin\"'
+testboxBin = '"$HOME/.local/bin"'
 testboxUser = "redbeardymcgee"
