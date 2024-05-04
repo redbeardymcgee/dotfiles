@@ -12,13 +12,15 @@ entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 
-{{ define "dlChezmoi" }} "$(curl -sSLf get.chezmoi.io)" {{ end }}
+# {{ define "dlChezmoi" }} "$(curl -sSLf get.chezmoi.io)" {{ end }}
+#
+# {{ define "devboxLocalBin" }} "$HOME/devbox/.local/bin" {{ end }}
+#
+# {{ define "dotfilesRepo" }} "git@github.com:redbeardymcgee/dotfiles.git" {{ end }}
+#
+# init_hooks='sh -c {{ template "dlChezmoi" }} -- -b {{ template "devboxLocalBin" }} init {{ template "dotfilesRepo" }} --apply --promptDefaults --force'
 
-{{ define "devboxLocalBin" }} "$HOME/devbox/.local/bin" {{ end }}
-
-{{ define "dotfilesRepo" }} "git@github.com:redbeardymcgee/dotfiles.git" {{ end }}
-
-init_hooks='sh -c {{ template "dlChezmoi" }} -- -b {{ template "devboxLocalBin" }} init {{ template "dotfilesRepo" }} --apply --promptDefaults --force'
+init_hooks='sh -c "echo $BAR"'
 
 # home=""
 # pre_init_hooks=""
