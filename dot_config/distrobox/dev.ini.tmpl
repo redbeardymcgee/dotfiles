@@ -14,6 +14,9 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 
 ## no idea if this is mounting right
 ## seems to fail, perms issue?
+## a copy or whatever of `.ssh/` is required because github
+## requires ssh for write access to the repo
+## https remotes can be pulled but not pushed
 #volume="{{ .chezmoi.homeDir }}/.ssh"
 
 ## workaround since the volume for .ssh causes a bailout
@@ -22,6 +25,7 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}/.ssh;'
 
 ## this is just failing suddenly after working a dozen times in a row
+## returns success, but no `chezmoi` binary is found in the home dir
 ## workaround below depends on the host system `chezmoi`
 #init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\"'
 
