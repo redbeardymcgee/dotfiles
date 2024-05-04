@@ -6,7 +6,7 @@ start_now=true
 home={{ .testbox }}
 entry=false
 
-additional_flags='--hostname "dev.{{ .chezmoi.hostname }}"'
+additional_flags='--hostname "test.{{ .chezmoi.hostname }}"'
 
 #pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }}'
 init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\"'
