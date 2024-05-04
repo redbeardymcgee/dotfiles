@@ -22,7 +22,7 @@ esac
 
 shopt -s globstar
 
-type -P chezmoi && chezmoi update
+type -p chezmoi > /dev/null && chezmoi update
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=" \
