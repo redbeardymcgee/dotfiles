@@ -12,6 +12,20 @@ entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 
+{{ define "dlChezmoi" }}
+"$(curl -sSLf get.chezmoi.io)"
+{{ end }}
+
+{{ define "devboxLocalBin" }}
+"$HOME/devbox/.local/bin"
+{{ end }}
+
+{{ define "dotfilesRepo" }}
+"git@github.com:redbeardymcgee/dotfiles.git"
+{{ end }}
+
+init_hooks='sh -c {{ template "dlChezmoi" }} -- -b {{ template "devboxLocalBin" }} init {{ template "dotfilesRepo" }} --apply --promptDefaults --force'
+
 # home=""
 # pre_init_hooks=""
 # volume=""
