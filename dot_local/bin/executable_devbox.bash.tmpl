@@ -4,6 +4,15 @@
 
 set -euo pipefail
 
+cp -r ../.ssh .
+sh -c "$(curl -fsLS get.chezmoi.io)" -- \
+  -b "$HOME/.local/bin" \
+  init 'git@github.com:redbeardymcgee/dotfiles.git' \
+  --apply \
+  --force \
+  --promptDefaults \
+  --ssh
+
 source "$HOME/.local/lib/rbm/utils.sh"
 
 dl() {
