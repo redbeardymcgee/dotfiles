@@ -1,14 +1,18 @@
 # Put this above the interactive session check
 # This allows `ssh foo@bar <command>` to resolve 
 # <command> from "$HOME"
-source "$HOME/.local/lib/rbm/utils.sh"
 
-prepend_to_PATH "$HOME/.local/bin"
-prepend_to_PATH "$HOME/.cargo/bin"
+if [[ -r $HOME/.local/lib/rbm/utils.sh ]]; then
+  source "$HOME/.local/lib/rbm/utils.sh"
 
-{{ if eq .chezmoi.hostname "rbmpc" "media" }}
-prepend_to_PATH "$HOME/devbox/.local/bin"
-{{ end }}
+  prepend_to_PATH "$HOME/.local/bin"
+  prepend_to_PATH "$HOME/.cargo/bin"
+
+  {{ if eq .chezmoi.hostname "rbmpc" "media" }}
+  prepend_to_PATH "$HOME/devbox/.local/bin"
+  {{ end }}
+
+fi
 
 # Enable the subsequent settings only in interactive sessions
 case $- in
@@ -17,6 +21,8 @@ case $- in
 esac
 
 shopt -s globstar
+
+type -P chezmoi && chezmoi update
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=" \
@@ -65,7 +71,5 @@ setup_atuin
 source <(ssh-agent -s)
 ssh-add ~/.ssh/github
 {{ end }}
-
-chezmoi update
 
 [[ ${BLE_VERSION-} ]] && ble-attach
