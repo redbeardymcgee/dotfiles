@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-cp -fr "$HOME/../.ssh" .
+cp -aru "$HOME/../.ssh" "$HOME"
 sh -c "$(curl -fsLS get.chezmoi.io)" -- \
   -b "$HOME/.local/bin" \
   init 'git@github.com:redbeardymcgee/dotfiles.git' \
