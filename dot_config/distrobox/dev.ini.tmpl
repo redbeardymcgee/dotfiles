@@ -20,8 +20,6 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 #
 # init_hooks='sh -c {{ template "dlChezmoi" }} -- -b {{ template "devboxLocalBin" }} init {{ template "dotfilesRepo" }} --apply --promptDefaults --force'
 
-init_hooks='"echo $BAR"'
-
 # home=""
 # pre_init_hooks=""
 # volume=""
