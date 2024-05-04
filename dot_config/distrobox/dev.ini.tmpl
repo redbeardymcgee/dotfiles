@@ -15,7 +15,7 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 init_hooks='sudo dnf install coreutils;'
 init_hooks="curl -sSLf get.chezmoi.io -o chezmoi-installer;"
 init_hooks="chmod +x ./chezmoi-installer"
-init_hooks='./chezmoi-installer -b "/home/josh/devbox/.local/bin" init redbeardymcgee --ssh --apply --promptDefaults --force;'
+init_hooks='./chezmoi-installer -b "/home/josh/devbox/.local/bin" init redbeardymcgee --ssh --apply --promptDefaults --force || :;'
 
 # home=""
 # pre_init_hooks=""
