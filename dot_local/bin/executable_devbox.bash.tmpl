@@ -75,7 +75,7 @@ for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package"
 done
 
-mise use -g 'node@20'
+mise use -g 'node@22'
 mise use -g 'python@3.12'
 
 {{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
