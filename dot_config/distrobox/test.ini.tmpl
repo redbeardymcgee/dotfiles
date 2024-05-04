@@ -9,7 +9,7 @@ entry=false
 additional_flags='--hostname "test.{{ .chezmoi.hostname }}"'
 
 pre_init_hooks='ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }};'
-init_hooks='chezmoi init --apply --ssh --promptDefaults --keep-going --force redbeardymcgee;'
+init_hooks='chezmoi init --apply --promptDefaults --keep-going --force redbeardymcgee;'
 
 #init_hooks='echo devbox.bash'
 
