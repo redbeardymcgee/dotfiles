@@ -127,7 +127,7 @@ export_bins=(
 	/usr/bin/eza
 	/usr/bin/fzf
 
-	{{ if eq .chezmoi.hostname "dev" }}
+	{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 	"$HOME/.cargo/bin/neovide"
 	{{ end }}
 
