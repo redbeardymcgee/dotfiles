@@ -12,7 +12,7 @@ additional_flags='--hostname "test.{{ .chezmoi.hostname }}"'
 init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\";'
 #-- -b "$HOME/testbox/.local/bin"'
 #init {{ .testboxUser }} --apply --ssh'
-init_hooks='echo devbox.bash'
+#init_hooks='echo devbox.bash'
 
 # home=""
 # pre_init_hooks=""
