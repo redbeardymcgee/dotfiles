@@ -3,7 +3,7 @@ image="registry.fedoraproject.org/fedora-toolbox:latest"
 pull=true
 start_now=true
 
-home={{ .testbox }}
+#home={{ .testbox }}
 entry=false
 
 #additional_flags='--hostname "test.{{ .chezmoi.hostname }}"'
@@ -12,8 +12,8 @@ entry=false
 #pre_init_hooks='ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .testbox }};'
 
 init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\";'
-#-- -b "$HOME/testbox/.local/bin"'
-#init {{ .testboxUser }} --apply --ssh'
+#-- -b "$HOME/testbox/.local/bin"
+#init {{ .testboxUser }} --apply --ssh
 
 #init_hooks='echo devbox.bash'
 
