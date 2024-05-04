@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-# cp -aru "{{ .chezmoi.homeDir }}/.ssh" "$HOME"
+# ln -sf "{{ .chezmoi.homeDir }}/.ssh" "$HOME"
 # sh -c "$(curl -fsLS get.chezmoi.io)" -- \
 #   -b "$HOME/.local/bin" \
 #   init 'git@github.com:redbeardymcgee/dotfiles.git' \
@@ -63,12 +63,12 @@ repos=(
 )
 
 for repo in "${repos[@]}"; do
-	sudo dnf -y copr enable "$repo"
+	sudo dnf -y copr enable "$repo" &>/dev/null
 done
 
-sudo dnf -y install "${packages[@]}"
+sudo dnf -y install "${packages[@]}" &>/dev/null
 
-dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
+dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path &>/dev/null
 PATH=$HOME/.cargo/bin:$PATH
 
 cargo_packages=(
@@ -76,24 +76,6 @@ cargo_packages=(
 	mise
 	starship
 )
-
-BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
-curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash
-
-for package in "${cargo_packages[@]}"; do
-	cargo binstall -y "$package"
-done
-
-mise use -g 'node@22'
-mise use -g 'python@3.12'
-
-{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
-cargo_git_packages=("https://github.com/neovide/neovide")
-
-for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" neovide
-done
-{{ end }}
 
 OPT_DIR=$HOME/.local/opt
 NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
@@ -110,8 +92,28 @@ setup_nnvim() {
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-	setup_nnvim
+	setup_nnvim &>/dev/null
 fi
+
+vi --headless -c 'Lazy! sync' -c 'qall' &>/dev/null &
+
+BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
+{ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash } &>/dev/null
+
+for package in "${cargo_packages[@]}"; do
+	cargo binstall -y "$package" &>/dev/null
+done
+
+mise use -g 'node@22' &>/dev/null
+mise use -g 'python@3.12' &>/dev/null
+
+{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
+cargo_git_packages=("https://github.com/neovide/neovide")
+
+for package in "${cargo_git_packages[@]}"; do
+	cargo install --git "$package" neovide &>/dev/null
+done
+{{ end }}
 
 BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
 
@@ -119,15 +121,17 @@ BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
 	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
 	make -k -C ble.sh install PREFIX="$HOME/.local"
 	rm -rf ble.sh
-}
+} &>/dev/null
 
+## this shouldn't be necessary
+## distrobox is supposed to inherit these for me
 FONT_DIR=$HOME/.local/share/fonts
 FIRA_CODE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz"
 {
 	mkdir -p "$FONT_DIR"
 	dl "$FIRA_CODE_URL" | tar -C "$FONT_DIR" -xJf -
 	fc-cache
-}
+} &>/dev/null
 
 EXPORT_BIN_PATH=$HOME/.local/bin
 
