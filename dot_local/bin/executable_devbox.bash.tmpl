@@ -65,6 +65,7 @@ for repo in "${repos[@]}"; do
 done
 
 sudo dnf -y install "${packages[@]}" #&>/dev/null
+exit 0
 
 dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path #&>/dev/null
 
