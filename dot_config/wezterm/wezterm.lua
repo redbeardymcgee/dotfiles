@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local vi_copy_mode = require("vi-copy-mode")
 local act = wezterm.action
+local kb = require("keys")
 
 local function activate_pane(window, pane, pane_direction, vim_direction)
 	local isViProcess = pane:get_foreground_process_name():find("n?vim") ~= nil
@@ -29,12 +29,8 @@ wezterm.on("activate_pane_d", function(window, pane)
 end)
 
 config.disable_default_key_bindings = true
-config.keys = {
-	{ key = "h", mods = "CTRL", action = act.EmitEvent("activate_pane_l") },
-	{ key = "j", mods = "CTRL", action = act.EmitEvent("activate_pane_d") },
-	{ key = "k", mods = "CTRL", action = act.EmitEvent("activate_pane_u") },
-	{ key = "l", mods = "CTRL", action = act.EmitEvent("activate_pane_r") },
-}
+config.keys = kb.keys
+config.key_tables = kb.key_tables
 
 config.scrollback_lines = 3500
 
