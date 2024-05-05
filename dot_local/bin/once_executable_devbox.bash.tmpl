@@ -13,7 +13,7 @@ source "$HOME/.local/lib/rbm/utils.sh"
 dl() {
 	local args_but_last=${@::$#-1}
 	local url=${@:-1}
-	curl --proto "=https" --tlsv1.2 "args_but_last" -sSLf "$url"
+	curl --proto "=https" --tlsv1.2 "${args_but_last[@]}" -sSLf "$url"
 }
 
 packages=(
