@@ -112,17 +112,19 @@ done
 
 setup_blesh() {
 	BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
-	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
-	make -k -C ble.sh install PREFIX="$HOME/.local"
-	rm -rf ble.sh
+	blesh_tmp=/tmp/blesh
+	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL" "$blesh_tmp"
+	make -k -C "$blesh_tmp" install PREFIX="$HOME/.local"
+	rm -rf "$blesh_tmp"
 }
 
 setup_blesh #&>/dev/null
 
 setup_browsh() {
-	dl -o browsh.rpm https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64.rpm
-	rpm -Uvh ./browsh.rpm
-	rm ./browsh.rpm
+	url="https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64"
+	browsh_path=$HOME/devbox/bin/browsh
+	dl -o "$browsh_path" "$url"
+	chmod +x "$browsh_path"
 }
 
 setup_browsh #&>/dev/null
