@@ -32,20 +32,22 @@ bhelp() {
   "$@" --help 2>&1 | bathelp
 }
 
-source ~/.local/share/blesh/ble.sh \
-  --noattach \
-  --rcfile ~/.config/ble.rc
+if [[ $DEV_CONTAINER = "dev" ]]; then
+  source ~/.local/share/blesh/ble.sh \
+    --noattach \
+    --rcfile ~/.config/ble.rc
 
-setup_atuin() {
-  source <(atuin init bash)
-  out=$HOME/.local/etc/bash_completion.d/
-  if ! [[ -r $out/atuin.bash ]]; then
-    atuin gen-completions --shell bash --out-dir "$out"
-  fi
-}
+  setup_atuin() {
+    source <(atuin init bash)
+    out=$HOME/.local/etc/bash_completion.d/
+    if ! [[ -r $out/atuin.bash ]]; then
+      atuin gen-completions --shell bash --out-dir "$out"
+    fi
+  }
 
-source <(mise activate bash)
-source <(starship init bash)
-setup_atuin
+  source <(mise activate bash)
+  source <(starship init bash)
+  setup_atuin
+fi
 
 [[ ${BLE_VERSION-} ]] && ble-attach

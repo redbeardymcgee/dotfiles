@@ -15,10 +15,6 @@
 
 source /etc/profile.d/bash_completion.sh
 
-# Setup fzf
-ble-import -d integration/fzf-completion
-ble-import -d integration/fzf-key-bindings
-
 bind 'set completion-ignore-case on'
 
 # ble-face argument_error=fg=black,bg=225
