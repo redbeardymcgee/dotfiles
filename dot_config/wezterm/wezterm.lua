@@ -3,30 +3,30 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 local kb = require("keys")
 
-local function activate_pane(window, pane, pane_direction, vim_direction)
-	local isViProcess = pane:get_foreground_process_name():find("n?vim") ~= nil
-	if isViProcess then
-		window:perform_action( -- This should match the keybinds you set in Neovim.
-			act.SendKey({ key = vim_direction, mods = "CTRL" }),
-			pane
-		)
-	else
-		window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
-	end
-end
+-- local function activate_pane(window, pane, pane_direction, vim_direction)
+-- 	local isViProcess = pane:get_foreground_process_name():find("n?vim") ~= nil
+-- 	if isViProcess then
+-- 		window:perform_action( -- This should match the keybinds you set in Neovim.
+-- 			act.SendKey({ key = vim_direction, mods = "CTRL" }),
+-- 			pane
+-- 		)
+-- 	else
+-- 		window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
+-- 	end
+-- end
 
-wezterm.on("activate_pane_r", function(window, pane)
-	activate_pane(window, pane, "Right", "l")
-end)
-wezterm.on("activate_pane_l", function(window, pane)
-	activate_pane(window, pane, "Left", "h")
-end)
-wezterm.on("activate_pane_u", function(window, pane)
-	activate_pane(window, pane, "Up", "k")
-end)
-wezterm.on("activate_pane_d", function(window, pane)
-	activate_pane(window, pane, "Down", "j")
-end)
+-- wezterm.on("activate_pane_r", function(window, pane)
+-- 	activate_pane(window, pane, "Right", "l")
+-- end)
+-- wezterm.on("activate_pane_l", function(window, pane)
+-- 	activate_pane(window, pane, "Left", "h")
+-- end)
+-- wezterm.on("activate_pane_u", function(window, pane)
+-- 	activate_pane(window, pane, "Up", "k")
+-- end)
+-- wezterm.on("activate_pane_d", function(window, pane)
+-- 	activate_pane(window, pane, "Down", "j")
+-- end)
 
 config.disable_default_key_bindings = true
 config.keys = kb.keys
