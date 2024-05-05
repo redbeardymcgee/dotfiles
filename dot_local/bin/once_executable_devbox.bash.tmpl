@@ -59,7 +59,6 @@ done
 sudo dnf -y install "${packages[@]}" &>/dev/null
 
 dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path &>/dev/null
-PATH=$HOME/.cargo/bin:$PATH
 
 cargo_packages=(
 	atuin
@@ -104,25 +103,16 @@ for package in "${cargo_git_packages[@]}"; do
 done
 {{ end }}
 
-BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
-
-{
+setup_blesh() {
+	BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
 	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL"
 	make -k -C ble.sh install PREFIX="$HOME/.local"
 	rm -rf ble.sh
-} &>/dev/null
+}
 
-## this shouldn't be necessary
-## distrobox is supposed to inherit these for me
-FONT_DIR=$HOME/.local/share/fonts
-FIRA_CODE_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.tar.xz"
-{
-	mkdir -p "$FONT_DIR"
-	dl "$FIRA_CODE_URL" | tar -C "$FONT_DIR" -xJf -
-	fc-cache
-} &>/dev/null
+setup_blesh &>/dev/null
 
-EXPORT_BIN_PATH=$HOME/.local/bin
+EXPORT_BIN_PATH=$HOME/devbox/bin
 
 export_bins=(
 	/usr/bin/bat

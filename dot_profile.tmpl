@@ -15,7 +15,7 @@ source_env_files() {
 }
 
 {{ if eq .chezmoi.hostname "rbmpc" "media" }}
-prepend_to_PATH "$HOME/devbox/.local/bin"
+prepend_to_PATH "$HOME/devbox/bin"
 {{ end }}
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"
