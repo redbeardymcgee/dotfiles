@@ -86,7 +86,7 @@ setup_nnvim() {
 			--transform 's,bin/nvim$,bin/nvim-nightly,' \
 			--overwrite \
 			-xzf -
-	nvim-nightly --headless '+Lazy! sync' +qa
+	nvim --headless '+Lazy! sync' +qa
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
