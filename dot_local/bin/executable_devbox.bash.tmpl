@@ -16,6 +16,8 @@ source "$HOME/.local/lib/rbm/utils.sh"
 dl() {
 	local args_but_last=${@::$#-1}
 	local url=${@:-1}
+	echo URL "$url"
+	echo ARGS "${args_but_last[@]}"
 	curl --proto "=https" --tlsv1.2 "${args_but_last[@]}" -sSLf "$url"
 }
 
@@ -94,7 +96,7 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 fi
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
-{ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash; } #&>/dev/null
+{ dl "$BINSTALL_URL" | bash; } #&>/dev/null
 
 cargo binstall -y "${packages[@]}" #&>/dev/null
 
