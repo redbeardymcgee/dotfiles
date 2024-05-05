@@ -16,7 +16,10 @@ source_env_files() {
 
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"
-{{ if eq .chezmoi.hostname "rbmpc" "media" }}
+{{
+  if or (hasSuffix "rbmpc" .chezmoi.fqdnHostname)
+        (hasSuffix  "media" .chezmoi.fqdnHostname)
+}}
 prepend_to_PATH "$HOME/devbox/bin"
 {{ end }}
 
