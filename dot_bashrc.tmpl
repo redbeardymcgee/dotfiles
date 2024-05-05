@@ -23,11 +23,6 @@ esac
 shopt -s globstar
 shopt -s extglob
 
-{{ if hasSuffix "media" .chezmoi.fqdnHostname }}
-source <(ssh-agent -s)
-ssh-add ~/.ssh/github
-{{ end }}
-
 type -p chezmoi > /dev/null && chezmoi update
 
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
