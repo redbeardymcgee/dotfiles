@@ -53,7 +53,7 @@ local function is_inside_vim(pane)
 		"ps -o state= -o comm= -t"
 			.. wezterm.shell_quote_arg(tty)
 			.. " | "
-			.. "grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|[n?]vim?(nightly)?x?)(diff)?$'",
+			.. "grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|[n?]vim?(-nightly)?x?)(diff)?$'",
 	})
 
 	return success
