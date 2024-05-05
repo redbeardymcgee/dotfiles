@@ -2,7 +2,7 @@ return {
   "folke/zen-mode.nvim",
   opts = {
     window = {
-      height = 0.85,
+      height = 0.65,
     },
     plugins = {
       wezterm = {
