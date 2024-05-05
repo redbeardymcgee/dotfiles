@@ -66,15 +66,6 @@ done
 
 sudo dnf -y install "${packages[@]}" #&>/dev/null
 
-dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path #&>/dev/null
-
-exit 0
-cargo_packages=(
-	atuin
-	mise
-	starship
-)
-
 OPT_DIR=$HOME/.local/opt
 NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
 
@@ -93,6 +84,15 @@ setup_nnvim() {
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	setup_nnvim #&>/dev/null
 fi
+
+dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path #&>/dev/null
+
+cargo_packages=(
+	atuin
+	mise
+	starship
+)
+exit 0
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
 { dl "$BINSTALL_URL" | bash; } #&>/dev/null
