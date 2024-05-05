@@ -1,3 +1,4 @@
+-- also check out: https://github.com/willothy/wezterm.nvim
 return {
   "numToStr/Navigator.nvim",
 
