@@ -25,16 +25,12 @@ alias vim="nvim"
 alias bathelp='bat --plain --language=help'
 alias cat="bat"
 alias ls='eza'
-
-{{ if not (hasPrefix "dev" .chezmoi.hostname) }}
 alias dev="distrobox enter dev"
-{{ end }}
 
 bhelp() {
 	"$@" --help 2>&1 | bathelp
 }
 
-{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
 source ~/.local/share/blesh/ble.sh \
 	--noattach \
 	--rcfile ~/.config/ble.rc
@@ -50,6 +46,5 @@ setup_atuin() {
 source <(mise activate bash)
 source <(starship init bash)
 setup_atuin
-{{ end }}
 
 [[ ${BLE_VERSION-} ]] && ble-attach
