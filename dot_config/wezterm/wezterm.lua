@@ -1,49 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
-local kb = require("keys")
-
-local function activate_pane(window, pane, pane_direction, vim_direction)
-	local isViProcess = pane:get_foreground_process_name():find("n?vim") ~= nil
-	if isViProcess then
-		window:perform_action( -- This should match the keybinds you set in Neovim.
-			act.SendKey({ key = vim_direction, mods = "CTRL" }),
-			pane
-		)
-	else
-		window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
-	end
-end
-
-wezterm.on("activate_pane_r", function(window, pane)
-	activate_pane(window, pane, "Right", "l")
-end)
-wezterm.on("activate_pane_l", function(window, pane)
-	activate_pane(window, pane, "Left", "h")
-end)
-wezterm.on("activate_pane_u", function(window, pane)
-	activate_pane(window, pane, "Up", "k")
-end)
-wezterm.on("activate_pane_d", function(window, pane)
-	activate_pane(window, pane, "Down", "j")
-end)
-
-config.keys = {
-	-- 	{ key = "h", mods = "CTRL", action = act.DisableDefaultAssignment },
-	-- 	{ key = "j", mods = "CTRL", action = act.DisableDefaultAssignment },
-	-- 	{ key = "k", mods = "CTRL", action = act.DisableDefaultAssignment },
-	-- 	{ key = "l", mods = "CTRL", action = act.DisableDefaultAssignment },
-	--
-	-- { key = "h", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	-- { key = "j", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	-- { key = "k", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	-- { key = "l", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	--
-	-- 	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
-	-- 	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
-	-- 	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
-	-- 	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
-}
 
 config.scrollback_lines = 3500
 
@@ -81,6 +38,47 @@ config.ssh_domains = {
 config.inactive_pane_hsb = {
 	saturation = 0.3,
 	brightness = 0.6,
+}
+
+local function is_inside_vim(pane)
+	local tty = pane:get_tty_name()
+	if tty == nil then
+		return false
+	end
+
+	local success, _, _ = wezterm.run_child_process({
+		"sh",
+		"-c",
+		"ps -o state= -o comm= -t"
+			.. wezterm.shell_quote_arg(tty)
+			.. " | "
+			.. "grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|[n?]vim?x?)(diff)?$'",
+	})
+
+	return success
+end
+
+local function is_outside_vim(pane)
+	return not is_inside_vim(pane)
+end
+
+local function bind_if(cond, key, mods, action)
+	local function callback(win, pane)
+		if cond(pane) then
+			win:perform_action(action, pane)
+		else
+			win:perform_action(act.SendKey({ key = key, mods = mods }), pane)
+		end
+	end
+
+	return { key = key, mods = mods, action = wezterm.action_callback(callback) }
+end
+
+config.keys = {
+	bind_if(is_outside_vim, "h", "ALT", act.ActivatePaneDirection("Left")),
+	bind_if(is_outside_vim, "l", "ALT", act.ActivatePaneDirection("Right")),
+	bind_if(is_outside_vim, "j", "ALT", act.ActivatePaneDirection("Down")),
+	bind_if(is_outside_vim, "k", "ALT", act.ActivatePaneDirection("Up")),
 }
 
 wezterm.on("update-status", function(window, pane)
