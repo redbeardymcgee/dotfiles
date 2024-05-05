@@ -107,14 +107,14 @@ mise use -g 'python@3.12'
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" "${package##*/}"
+	: cargo install --git "$package" "${package##*/}"
 done
 {{ end }}
 
 setup_blesh() {
-	BLESH_URL="https://github.com/akinomyoga/ble.sh.git"
+	blesh_url="https://github.com/akinomyoga/ble.sh.git"
 	blesh_tmp=/tmp/blesh
-	git clone --recursive --depth 1 --shallow-submodules "$BLESH_URL" "$blesh_tmp"
+	git clone --recursive --depth 1 --shallow-submodules "$blesh_url" "$blesh_tmp"
 	make -k -C "$blesh_tmp" install PREFIX="$HOME/.local"
 	rm -rf "$blesh_tmp"
 }
@@ -137,8 +137,12 @@ export_bins=(
 	/usr/bin/eza
 	/usr/bin/fzf
 
+	starship
+	atuin
+	mise
+
 	{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
-	"$HOME/.cargo/bin/neovide"
+	# "$HOME/.cargo/bin/neovide"
 	{{ end }}
 
 	/usr/bin/nvim
