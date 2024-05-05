@@ -17,12 +17,12 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 ## a copy or whatever of `.ssh/` is required because github
 ## requires ssh for write access to the repo
 ## https remotes can be pulled but not pushed
-#volume="{{ .chezmoi.homeDir }}/.ssh"
+volume="{{ .chezmoi.homeDir }}/.ssh"
 
 ## workaround since the volume for .ssh causes a bailout
 ## without sudo, this fails or the link is owned by root
 ## inconsistent results so far, not tracking closely
-pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}/.ssh;'
+#pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}/.ssh;'
 
 ## this is just failing suddenly after working a dozen times in a row
 ## returns success, but no `chezmoi` binary is found in the home dir
@@ -32,7 +32,7 @@ pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.s
 ## `chezmoi` makes all its files owned by root somehow
 ## i think it's an environment issue passing down through distrobox
 ## `sudo` shouldn't be required, but it makes the files owned by me
-init_hooks='sudo -u {{ .chezmoi.username }} {{ .chezmoi.homeDir }}/.local/bin/chezmoi init redbeardymcgee --apply --force --promptDefaults --ssh;'
+#init_hooks='sudo -u {{ .chezmoi.username }} {{ .chezmoi.homeDir }}/.local/bin/chezmoi init redbeardymcgee --apply --force --promptDefaults --ssh;'
 
 ## `chezmoi` successfully does nothing if any command runs after it
 ## or maybe it doesn't run at all, not sure
