@@ -23,7 +23,7 @@ esac
 shopt -s globstar
 shopt -s extglob
 
-{{ if eq .chezmoi.hostname "media" }}
+{{ if hasPrefix "media" .chezmoi.fqdnHostname }}
 source <(ssh-agent -s)
 ssh-add ~/.ssh/github
 {{ end }}
