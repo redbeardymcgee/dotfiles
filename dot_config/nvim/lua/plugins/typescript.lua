@@ -41,13 +41,11 @@ return {
           if client.name == "typescript-tools" then
             keymap(
               "n",
-              "<leader>la",
+              "<leader>cia",
               "<cmd>TSToolsAddMissingImports<cr>",
               { buffer = bufnr, desc = "Add Missing Imports" }
             )
-            keymap("n", "<leader>lo", "<cmd>TSToolsOrganizeImports<cr>", { buffer = bufnr, desc = "Organize Imports" })
-            keymap("n", "<leader>lO", "<cmd>TSToolsSortImports<cr>", { buffer = bufnr, desc = "Sort Imports" })
-            keymap("n", "<leader>lu", "<cmd>TSToolsRemoveUnused<cr>", { buffer = bufnr, desc = "Removed Unused" })
+            keymap("n", "<leader>cir", "<cmd>TSToolsRemoveUnused<cr>", { buffer = bufnr, desc = "Removed Unused" })
             keymap(
               "n",
               "<leader>lr",
@@ -56,12 +54,11 @@ return {
             )
             keymap(
               "n",
-              "<leader>ld",
+              "<leader>cD",
               "<cmd>TSToolsGoToSourceDefinition<cr>",
               { buffer = bufnr, desc = "Go To Source Definition" }
             )
-            keymap("n", "<leader>lf", "<cmd>TSToolsFixAll<cr>", { buffer = bufnr, desc = "Fix All" })
-            require("twoslash-queries").attach(client, bufnr)
+            keymap("n", "<leader>cX", "<cmd>TSToolsFixAll<cr>", { buffer = bufnr, desc = "Fix All" })
           end
         end)
         require("typescript-tools").setup(opts)
