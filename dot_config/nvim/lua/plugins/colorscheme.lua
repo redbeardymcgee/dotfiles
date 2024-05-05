@@ -1,19 +1,15 @@
 return {
   {
-    "catppuccin",
+    "catppuccin/nvim",
+    name = "catppuccin",
     opts = {
       transparent_background = false,
       dim_inactive = {
         enable = true,
-        shade = "dark",
-        percentage = 0.25,
+        -- shade = "dark",
+        -- percentage = 0.25,
       },
-    },
-    integrations = {
-      noice = true,
-      nvim_notify = true,
-      lsp_trouble = true,
-      which_key = true,
+      term_colors = true,
     },
   },
   {
