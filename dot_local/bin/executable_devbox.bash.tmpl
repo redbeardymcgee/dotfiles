@@ -79,13 +79,12 @@ setup_nnvim() {
 			--transform 's,bin/nvim$,bin/nvim-nightly,' \
 			--overwrite \
 			-xzf -
+	nvim-nightly --headless '+Lazy! sync' +qa
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	setup_nnvim &>/dev/null
 fi
-
-nnvim --headless '+Lazy! sync' +qa &
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
 { curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash; } &>/dev/null
