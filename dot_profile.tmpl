@@ -20,9 +20,10 @@ prepend_to_PATH "$HOME/devbox/.local/bin"
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"
 
-export NIX_CONFIG="experimental-features = nix-command flakes"
 export CHECKPOINT_DISABLE=1
 export MISE_NODE_COREPACK=true
 
 export EDITOR=nvim
 export VISUAL=nvim
+
+export MANROFFOPT="-c"
