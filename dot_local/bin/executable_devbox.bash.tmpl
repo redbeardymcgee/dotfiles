@@ -123,7 +123,7 @@ setup_blesh #&>/dev/null
 setup_browsh() {
 	url="https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64"
 	browsh_path=$HOME/devbox/bin/browsh
-	dl -o "$browsh_path" "$url"
+	dl --create-dirs -o "$browsh_path" "$url"
 	chmod +x "$browsh_path"
 }
 
