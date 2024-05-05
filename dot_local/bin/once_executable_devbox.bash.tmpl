@@ -7,8 +7,9 @@ set -euo pipefail
 source "$HOME/.local/lib/rbm/utils.sh"
 
 dl() {
-	local url=$1
-	curl --proto "=https" --tlsv1.2 "${@:2}" -sSLf "$url"
+	local args_but_last=${@::$#-1}
+	local url=${@:-1}
+	curl --proto "=https" --tlsv1.2 "args_but_last" -sSLf "$url"
 }
 
 packages=(
@@ -88,9 +89,7 @@ fi
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
 { curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash; } &>/dev/null
 
-for package in "${cargo_packages[@]}"; do
-	cargo binstall -y "$package" &>/dev/null
-done
+cargo binstall -y "${packages[@]}" &>/dev/null
 
 mise use -g 'node@22' &>/dev/null
 mise use -g 'python@3.12' &>/dev/null
@@ -99,7 +98,7 @@ mise use -g 'python@3.12' &>/dev/null
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" neovide &>/dev/null
+	cargo install --git "$package" "${package##*/}" &>/dev/null
 done
 {{ end }}
 
@@ -111,6 +110,14 @@ setup_blesh() {
 }
 
 setup_blesh &>/dev/null
+
+setup_browsh() {
+	dl -o browsh.rpm https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64.rpm
+	rpm -Uvh ./browsh.rpm
+	rm ./browsh.rpm
+}
+
+setup_browsh &>/dev/null
 
 EXPORT_BIN_PATH=$HOME/devbox/bin
 
