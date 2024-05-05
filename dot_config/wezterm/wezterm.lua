@@ -75,10 +75,10 @@ local function bind_if(cond, key, mods, action)
 end
 
 config.keys = {
-	bind_if(is_outside_vim, "h", "ALT", act.ActivatePaneDirection("Left")),
-	bind_if(is_outside_vim, "l", "ALT", act.ActivatePaneDirection("Right")),
-	bind_if(is_outside_vim, "j", "ALT", act.ActivatePaneDirection("Down")),
-	bind_if(is_outside_vim, "k", "ALT", act.ActivatePaneDirection("Up")),
+	bind_if(is_outside_vim, "h", "CTRL", act.ActivatePaneDirection("Left")),
+	bind_if(is_outside_vim, "l", "CTRL", act.ActivatePaneDirection("Right")),
+	bind_if(is_outside_vim, "j", "CTRL", act.ActivatePaneDirection("Down")),
+	bind_if(is_outside_vim, "k", "CTRL", act.ActivatePaneDirection("Up")),
 }
 
 wezterm.on("update-status", function(window, pane)
