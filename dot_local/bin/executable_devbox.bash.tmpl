@@ -4,21 +4,11 @@
 
 set -euo pipefail
 
-# ln -sf "{{ .chezmoi.homeDir }}/.ssh" "$HOME"
-# sh -c "$(curl -fsLS get.chezmoi.io)" -- \
-#   -b "$HOME/.local/bin" \
-#   init 'git@github.com:redbeardymcgee/dotfiles.git' \
-#   --apply \
-#   --force \
-#   --promptDefaults \
-#   --ssh
-
 source "$HOME/.local/lib/rbm/utils.sh"
 
 dl() {
 	local url=$1
-
-	curl --proto "=https" --tlsv1.2 -sSLf "$url"
+	curl --proto "=https" --tlsv1.2 "${@:2}" -sSLf "$url"
 }
 
 packages=(
@@ -95,10 +85,10 @@ if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
 	setup_nnvim &>/dev/null
 fi
 
-vi --headless -c 'Lazy! sync' -c 'qall' &>/dev/null &
+vi --headless -c 'Lazy! sync' -c 'qall' &>/dev/null
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
-{ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash } &>/dev/null
+{ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash; } &>/dev/null
 
 for package in "${cargo_packages[@]}"; do
 	cargo binstall -y "$package" &>/dev/null
