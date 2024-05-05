@@ -17,11 +17,12 @@ additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
 ## a copy or whatever of `.ssh/` is required because github
 ## requires ssh for write access to the repo
 ## https remotes can be pulled but not pushed
-volume="{{ .chezmoi.homeDir }}/.ssh"
+#volume="{{ .chezmoi.homeDir }}/.ssh"
 
 ## workaround since the volume for .ssh causes a bailout
 ## without sudo, this fails or the link is owned by root
 ## inconsistent results so far, not tracking closely
+## also shouldn't my ssh agent forwarding just be working?
 #pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}/.ssh;'
 
 ## this is just failing suddenly after working a dozen times in a row
