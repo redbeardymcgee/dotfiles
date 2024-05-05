@@ -9,6 +9,12 @@ return {
         percentage = 0.25,
       },
     },
+    integrations = {
+      noice = true,
+      nvim_notify = true,
+      lsp_trouble = true,
+      which_key = true,
+    },
   },
   {
     "LazyVim/LazyVim",
