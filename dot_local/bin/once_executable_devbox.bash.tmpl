@@ -5,7 +5,10 @@
 set -euo pipefail
 
 if [[ $CONTAINER_ID != "dev" ]]; then
-	exit 0
+	exec distrobox enter -n dev -- devbox.bash || {
+		echo 'CONTAINER_ID != dev'
+		exit 1
+	}
 fi
 
 source "$HOME/.local/lib/rbm/utils.sh"
@@ -58,12 +61,12 @@ repos=(
 )
 
 for repo in "${repos[@]}"; do
-	sudo dnf -y copr enable "$repo" &>/dev/null
+	sudo dnf -y copr enable "$repo" #&>/dev/null
 done
 
-sudo dnf -y install "${packages[@]}" &>/dev/null
+sudo dnf -y install "${packages[@]}" #&>/dev/null
 
-dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path &>/dev/null
+dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path #&>/dev/null
 
 cargo_packages=(
 	atuin
@@ -87,22 +90,22 @@ setup_nnvim() {
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-	setup_nnvim &>/dev/null
+	setup_nnvim #&>/dev/null
 fi
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
-{ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash; } &>/dev/null
+{ curl --proto "=https" --tlsv1.2 -sSLf "$BINSTALL_URL" | bash; } #&>/dev/null
 
-cargo binstall -y "${packages[@]}" &>/dev/null
+cargo binstall -y "${packages[@]}" #&>/dev/null
 
-mise use -g 'node@22' &>/dev/null
-mise use -g 'python@3.12' &>/dev/null
+mise use -g 'node@22'     #&>/dev/null
+mise use -g 'python@3.12' #&>/dev/null
 
 {{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" "${package##*/}" &>/dev/null
+	cargo install --git "$package" "${package##*/}" #&>/dev/null
 done
 {{ end }}
 
@@ -113,7 +116,7 @@ setup_blesh() {
 	rm -rf ble.sh
 }
 
-setup_blesh &>/dev/null
+setup_blesh #&>/dev/null
 
 setup_browsh() {
 	dl -o browsh.rpm https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64.rpm
@@ -121,7 +124,7 @@ setup_browsh() {
 	rm ./browsh.rpm
 }
 
-setup_browsh &>/dev/null
+setup_browsh #&>/dev/null
 
 EXPORT_BIN_PATH=$HOME/devbox/bin
 
