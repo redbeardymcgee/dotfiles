@@ -96,7 +96,7 @@ cargo_packages=(
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
 { dl "$BINSTALL_URL" | bash; } #&>/dev/null
 
-cargo binstall -y "${packages[@]}" #&>/dev/null
+cargo binstall -y "${cargo_packages[@]}" #&>/dev/null
 
 exit 0
 mise use -g 'node@22'     #&>/dev/null
