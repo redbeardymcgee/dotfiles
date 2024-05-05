@@ -62,10 +62,10 @@ repos=(
 )
 
 for repo in "${repos[@]}"; do
-	sudo dnf -y copr enable "$repo" #&>/dev/null
+	sudo dnf -y copr enable "$repo"
 done
 
-sudo dnf -y install "${packages[@]}" #&>/dev/null
+sudo dnf -y install "${packages[@]}"
 
 OPT_DIR=$HOME/.local/opt
 NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
@@ -79,14 +79,15 @@ setup_nnvim() {
 			--transform 's,bin/nvim$,bin/nvim-nightly,' \
 			--overwrite \
 			-xzf -
-	nvim --headless '+Lazy! sync' +qa
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-	setup_nnvim #&>/dev/null
+	setup_nnvim
 fi
 
-dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path #&>/dev/null
+nvim --headless '+Lazy! sync' +qa
+
+dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
 
 cargo_packages=(
 	atuin
@@ -95,18 +96,18 @@ cargo_packages=(
 )
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
-{ dl "$BINSTALL_URL" | bash; } #&>/dev/null
+{ dl "$BINSTALL_URL" | bash; }
 
-cargo binstall -y "${cargo_packages[@]}" #&>/dev/null
+cargo binstall -y "${cargo_packages[@]}"
 
-mise use -g 'node@22'     #&>/dev/null
-mise use -g 'python@3.12' #&>/dev/null
+mise use -g 'node@22'
+mise use -g 'python@3.12'
 
 {{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" "${package##*/}" #&>/dev/null
+	cargo install --git "$package" "${package##*/}"
 done
 {{ end }}
 
@@ -118,7 +119,7 @@ setup_blesh() {
 	rm -rf "$blesh_tmp"
 }
 
-setup_blesh #&>/dev/null
+setup_blesh
 
 setup_browsh() {
 	url="https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64"
@@ -127,7 +128,7 @@ setup_browsh() {
 	chmod +x "$browsh_path"
 }
 
-setup_browsh #&>/dev/null
+setup_browsh
 
 EXPORT_BIN_PATH=$HOME/devbox/bin
 
