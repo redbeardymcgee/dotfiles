@@ -178,4 +178,5 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 	end
 	window:set_config_overrides(overrides)
 end)
+
 return config
