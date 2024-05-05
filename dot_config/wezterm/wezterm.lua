@@ -34,10 +34,10 @@ config.keys = {
 	-- 	{ key = "k", mods = "CTRL", action = act.DisableDefaultAssignment },
 	-- 	{ key = "l", mods = "CTRL", action = act.DisableDefaultAssignment },
 	--
-	{ key = "h", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	{ key = "j", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	{ key = "k", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
-	{ key = "l", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
+	-- { key = "h", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
+	-- { key = "j", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
+	-- { key = "k", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
+	-- { key = "l", mods = "CTRL", action = act.EmitEvent("activate_pane_h") },
 	--
 	-- 	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
 	-- 	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
