@@ -123,12 +123,12 @@ wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 	}
 end)
 
-config.ssh_domains = {
-	{
-		name = "mcgeedia",
-		remote_address = "media.mcgee.network",
-	},
-}
+-- config.ssh_domains = {
+-- 	{
+-- 		name = "mcgeedia",
+-- 		remote_address = "media.mcgee.network",
+-- 	},
+-- }
 
 config.keys = {
 	bind_if(is_outside_vim, "h", "CTRL", act.ActivatePaneDirection("Left")),
