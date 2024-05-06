@@ -157,8 +157,4 @@ for bin in "${export_bins[@]}"; do
 	distrobox-export --export-path "$EXPORT_BIN_PATH" --bin "$bin"
 done
 
-{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
-distrobox-export --app wezterm
-{{ end }}
-
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
