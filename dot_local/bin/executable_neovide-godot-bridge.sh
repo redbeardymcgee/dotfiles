@@ -8,7 +8,7 @@ line=$2
 col=$3
 
 [[ -e $server_path ]] || neovide \
-	--neovim-bin ~/.local/bin/nvim-nightly-bin \
+	--neovim-bin ~/.local/bin/nvim-nightly \
 	"$file" \
 	-- \
 	--listen "$server_path"

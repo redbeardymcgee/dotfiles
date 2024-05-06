@@ -1,20 +1,4 @@
-if [ -n "$BASH_VERSION" ]; then
-  if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-  fi
-fi
-
-echo BV $BASH_VERSION
-
 source "$HOME/.local/lib/rbm/utils.sh"
-
-source_env_files() {
-  for env_file; do
-    if [ -f "$env_file" ] && [ -r "$env_file" ]; then
-      . "$env_file"
-    fi
-  done
-}
 
 prepend_to_PATH "$HOME/.cargo/bin"
 prepend_to_PATH "$HOME/.local/bin"

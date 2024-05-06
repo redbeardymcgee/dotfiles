@@ -1,7 +1,16 @@
 
 # dotfiles
 
-`chezmoi init --apply redbeardymcgee`
+***Warning: Probably incomplete, may break at literally any moment.***
+
+To install `chezmoi` for bootstrapping the dotfiles:
+`sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"`
+
+To use these dotfiles, you must have a repo named `dotfiles` (`git@github.com:<GITHUB_USERNAME>/dotiles.git`):
+`chezmoi init --apply --ssh <GITHUB_USERNAME>`
+
+For the devbox:
+`distrobox assemble create --replace --file ~/.config/distrobox/dev.ini`
 
 ## Software
 
