@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
-local mcgeedia = require("workspaces/mcgeedia")
+local mcgeedia = require("workspaces.mcgeedia")
 
 local function is_inside_vim(pane)
 	local tty = pane:get_tty_name()
