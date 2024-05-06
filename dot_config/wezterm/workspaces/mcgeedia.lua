@@ -16,13 +16,21 @@ function M.startup(wezterm)
 	mcgeedia_tab:set_title("Shell")
 
 	local containers_tab, containers_pane, _ = mcgeedia_window:spawn_tab({
+		domain = {
+			DomainName = "mcgeedia",
+		},
 		workspace = workspace_name,
 		cwd = containers_dir,
 	})
 
 	containers_tab:set_title("Containers")
 
-	containers_pane:split({ direction = "Right", args = { "nvim-nightly", "." } })
+	containers_pane:split({
+		domain = {
+			DomainName = "mcgeedia",
+		},
+		{ direction = "Right", args = { "nvim-nightly", "." } },
+	})
 
 	mux.set_active_workspace(workspace_name)
 end
