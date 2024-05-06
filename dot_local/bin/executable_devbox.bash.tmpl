@@ -29,7 +29,9 @@ packages=(
 
 	fd-find
 	fontconfig-devel
+	{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 	firefox
+	{{ end }}
 	freetype-devel
 	fswatch
 	fzf
@@ -121,6 +123,7 @@ setup_blesh() {
 
 setup_blesh
 
+{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
 setup_browsh() {
 	url="https://github.com/browsh-org/browsh/releases/download/v1.8.0/browsh_1.8.0_linux_amd64"
 	browsh_path=$HOME/devbox/bin/browsh
@@ -129,6 +132,7 @@ setup_browsh() {
 }
 
 setup_browsh
+{{ end }}
 
 EXPORT_BIN_PATH=$HOME/devbox/bin
 
