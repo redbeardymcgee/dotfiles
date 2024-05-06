@@ -17,3 +17,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 export MANROFFOPT="-c"
+
+if [ -n "$SSH_TTY" ]; then
+  source <(ssh-agent -s)
+fi
