@@ -142,6 +142,14 @@ end
 
 -- config.ssh_domains = utils.merge_tables(config, create_ssh_domain_from_ssh_config(config.ssh_domains))
 
+config.ssh_domains = {
+	{
+		name = "McGeedia",
+		remote_address = "media.mcgee.network",
+		assume_shell = "Posix",
+	},
+}
+
 config.keys = {
 	bind_if(is_outside_vim, "h", "CTRL", act.ActivatePaneDirection("Left")),
 	bind_if(is_outside_vim, "l", "CTRL", act.ActivatePaneDirection("Right")),
