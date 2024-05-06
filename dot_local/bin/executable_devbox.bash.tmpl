@@ -107,7 +107,7 @@ mise use -g 'python@3.12'
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	: cargo install --git "$package" "${package##*/}"
+	cargo install --git "$package" "${package##*/}"
 done
 {{ end }}
 
@@ -142,7 +142,7 @@ export_bins=(
 	"$HOME/.cargo/bin/mise"
 
 	{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
-	# "$HOME/.cargo/bin/neovide"
+	"$HOME/.cargo/bin/neovide"
 	{{ end }}
 
 	/usr/bin/nvim
