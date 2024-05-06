@@ -7,39 +7,7 @@ start_now=true
 nvidia=true
 {{ end }}
 
-#home={{ .devbox }}
 entry=false
 
-additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
-
-## no idea if this is mounting right
-## seems to fail, perms issue?
-## a copy or whatever of `.ssh/` is required because github
-## requires ssh for write access to the repo
-## https remotes can be pulled but not pushed
-#volume="{{ .chezmoi.homeDir }}/.ssh"
-
-## workaround since the volume for .ssh causes a bailout
-## without sudo, this fails or the link is owned by root
-## inconsistent results so far, not tracking closely
-## also shouldn't my ssh agent forwarding just be working?
-#pre_init_hooks='sudo -u {{ .chezmoi.username }} ln -sf {{ .chezmoi.homeDir }}/.ssh {{ .devbox }}/.ssh;'
-
-## this is just failing suddenly after working a dozen times in a row
-## returns success, but no `chezmoi` binary is found in the home dir
-## workaround below depends on the host system `chezmoi`
-#init_hooks='sh -c \"\$(curl -fsLS get.chezmoi.io)\"'
-
-## `chezmoi` makes all its files owned by root somehow
-## i think it's an environment issue passing down through distrobox
-## `sudo` shouldn't be required, but it makes the files owned by me
-#init_hooks='sudo -u {{ .chezmoi.username }} {{ .chezmoi.homeDir }}/.local/bin/chezmoi init redbeardymcgee --apply --force --promptDefaults --ssh;'
-
-## `chezmoi` successfully does nothing if any command runs after it
-## or maybe it doesn't run at all, not sure
-##
-## This causes the rest of the bootstrap process to fail because my
-## files are all missing.
-#init_hooks='sudo -u {{ .chezmoi.username }} ~/.local/bin/devbox.bash;'
-#init_hooks='echo devbox.bash'
+init_hooks='devbox.bash'
 
