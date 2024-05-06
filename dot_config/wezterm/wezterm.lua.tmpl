@@ -140,7 +140,7 @@ local function create_ssh_domain_from_ssh_config(ssh_domains)
 	return { ssh_domains = ssh_domains }
 end
 
-config.ssh_domains = utils.merge_tables(config, create_ssh_domain_from_ssh_config(config.ssh_domains))
+-- config.ssh_domains = utils.merge_tables(config, create_ssh_domain_from_ssh_config(config.ssh_domains))
 
 config.keys = {
 	bind_if(is_outside_vim, "h", "CTRL", act.ActivatePaneDirection("Left")),
