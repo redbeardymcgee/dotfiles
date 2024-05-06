@@ -95,12 +95,15 @@ cargo_packages=(
 	atuin
 	mise
 	starship
+
+	yazi-fm
+	yazi-cli
 )
 
 BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
 { dl "$BINSTALL_URL" | bash; }
 
-cargo binstall -y "${cargo_packages[@]}"
+cargo binstall --locked -y "${cargo_packages[@]}"
 
 mise use -g 'node@22'
 mise use -g 'python@3.12'
@@ -109,7 +112,7 @@ mise use -g 'python@3.12'
 cargo_git_packages=("https://github.com/neovide/neovide")
 
 for package in "${cargo_git_packages[@]}"; do
-	cargo install --git "$package" "${package##*/}"
+	cargo install --locked --git "$package" "${package##*/}"
 done
 {{ end }}
 
