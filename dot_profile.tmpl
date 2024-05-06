@@ -7,7 +7,7 @@ prepend_to_PATH "$HOME/.local/bin"
   if or (hasSuffix "rbmpc" .chezmoi.fqdnHostname)
         (hasSuffix  "media" .chezmoi.fqdnHostname)
 }}
-prepend_to_PATH "$HOME/devbox/bin:$PATH"
+pathmunge "$HOME/devbox/bin"
 {{ end }}
 
 export CHECKPOINT_DISABLE=1
