@@ -31,7 +31,7 @@ bhelp() {
   "$@" --help 2>&1 | bathelp
 }
 
-if [[ $DEV_CONTAINER = "dev" ]]; then
+if [[ $CONTAINER_ID = "dev" ]]; then
   source ~/.local/share/blesh/ble.sh \
     --noattach \
     --rcfile ~/.config/ble.rc
