@@ -8,3 +8,7 @@ Exec=/home/josh/.local/bin/distrobox-enter  -n dev  --   wezterm start --cwd .
 Type=Application
 Categories=System;TerminalEmulator;Utility;
 Terminal=false
+
+[Desktop Action McGeedia]
+Name=WezTerm (on mcgeedia)
+Exec=/home/josh/.local/bin/distrobox-enter  -n dev  --   wezterm connect mcgeedia
