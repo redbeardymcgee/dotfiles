@@ -4,10 +4,11 @@ function M.startup(wezterm)
 	local mux = wezterm.mux
 	local containers_dir = "/opt/containers"
 	local workspace_name = "McGeedia"
+	local domain_name = "mcgeedia"
 
 	local mcgeedia_tab, mcgeedia_pane, mcgeedia_window = mux.spawn_window({
 		domain = {
-			DomainName = "mcgeedia",
+			DomainName = domain_name,
 		},
 		workspace = workspace_name,
 	})
@@ -17,7 +18,7 @@ function M.startup(wezterm)
 
 	local containers_tab, containers_pane, _ = mcgeedia_window:spawn_tab({
 		domain = {
-			DomainName = "mcgeedia",
+			DomainName = domain_name,
 		},
 		workspace = workspace_name,
 		cwd = containers_dir,
@@ -27,7 +28,7 @@ function M.startup(wezterm)
 
 	containers_pane:split({
 		domain = {
-			DomainName = "mcgeedia",
+			DomainName = domain_name,
 		},
 		{ direction = "Right", args = { "nvim-nightly", "." } },
 	})
