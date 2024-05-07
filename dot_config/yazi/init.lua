@@ -63,19 +63,19 @@ end
 -- 		ui.Span(" "),
 -- 	})
 -- end
---
--- function Status:render(area)
--- 	self.area = area
---
--- 	local left = ui.Line({ self:mode(), self:size(), self:name() })
--- 	local right = ui.Line({ self:owner(), self:permissions(), self:percentage(), self:position() })
--- 	return {
--- 		ui.Paragraph(area, { left }),
--- 		ui.Paragraph(area, { right }):align(ui.Paragraph.RIGHT),
--- 		table.unpack(Progress:render(area, right:width())),
--- 	}
--- end
---
+
+function Status:render(area)
+	self.area = area
+
+	local left = ui.Line({ self:mode(), self:size(), self:name() })
+	local right = ui.Line({ self:owner(), self:permissions(), self:percentage(), self:position() })
+	return {
+		ui.Paragraph(area, { left }),
+		ui.Paragraph(area, { right }):align(ui.Paragraph.RIGHT),
+		table.unpack(Progress:render(area, right:width())),
+	}
+end
+
 require("keyjump"):setup({
 	icon_fg = "#fda1a1",
 })
