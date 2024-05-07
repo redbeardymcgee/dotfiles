@@ -16,6 +16,9 @@ source "$HOME/.local/lib/rbm/utils.sh"
 dl() {
 	local args_but_last=${@:1:$#-1}
 	local url=${@: -1}
+	echo "downloading $url" >&2
+	echo "args but last: ${args_but_last[@]}"
+	echo "args but last: ${args_but_last[*]}"
 	curl --proto "=https" --tlsv1.2 --clobber -sSLf "$url" ${args_but_last[@]}
 }
 
