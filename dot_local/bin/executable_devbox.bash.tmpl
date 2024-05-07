@@ -16,7 +16,7 @@ source "$HOME/.local/lib/rbm/utils.sh"
 dl() {
 	local args_but_last=${@:1:$#-1}
 	local url=${@: -1}
-	curl --proto "=https" --tlsv1.2 -sSLf "$url" ${args_but_last[*]}
+	curl --proto "=https" --tlsv1.2 -sSLf "$url" ${args_but_last[@]}
 }
 
 packages=(
@@ -61,7 +61,7 @@ packages=(
 	pango-devel
 	patch
 	perl-App-cpanminus
-	perl-Image-ExifTool.noarch
+	perl-Image-ExifTool
 	python2-cairo-devel
 
 	ripgrep
@@ -87,7 +87,7 @@ done
 
 sudo dnf -y install "${packages[@]}"
 
-OPT_DIR=$HOME/.local/opt
+OPT_DIR=$HOME/devbox/local/opt
 NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
 
 setup_nnvim() {
