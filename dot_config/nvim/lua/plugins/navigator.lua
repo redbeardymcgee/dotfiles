@@ -1,6 +1,6 @@
 -- also check out: https://github.com/willothy/wezterm.nvim
 return {
-  "numToStr/Navigator.nvim",
+  "craigmac/nvim-navigator",
 
   opts = {
     disable_on_zoom = true,
