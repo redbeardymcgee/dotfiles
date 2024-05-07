@@ -5,7 +5,7 @@ function M.startup(wezterm)
 	local containers_dir = "/opt/containers"
 	local workspace_name = "McGeedia"
 
-	mux.set_default_domain("mcgeedia")
+	mux.set_default_domain("McGeedia")
 
 	local mcgeedia_tab, mcgeedia_pane, mcgeedia_window = mux.spawn_window({
 		cwd = containers_dir,

@@ -12,4 +12,4 @@ Actions=McGeedia;
 
 [Desktop Action McGeedia]
 Name=WezTerm (on mcgeedia)
-Exec=/home/josh/.local/bin/distrobox-enter  -n dev  --   wezterm connect mcgeedia
+Exec=/home/josh/.local/bin/distrobox-enter  -n dev  --   wezterm connect McGeedia
