@@ -26,7 +26,10 @@ packages=(
 	cmake
 	coreutils
 
+	difftastic
+
 	eza
+
 	fd-find
 	fontconfig-devel
 	{{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
@@ -38,7 +41,6 @@ packages=(
 
 	golang
 	gdk-pixbuf2-devel
-	git-delta
 	graphene-devel
 	gtk4-devel
 
@@ -86,8 +88,8 @@ NNVIM_DIR=$OPT_DIR/nvim-nightly-bin
 
 setup_nnvim() {
 	mkdir -p "$OPT_DIR"
-	NNVIM_URL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
-	dl "$NNVIM_URL" |
+	local nnvim_url="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+	dl "$nnvim_url" |
 		tar -C "$OPT_DIR" \
 			--strip-components=1 \
 			--transform 's,bin/nvim$,bin/nvim-nightly,' \
@@ -143,9 +145,18 @@ for package in "${go_packages[@]}"; do
 	go install "$package"
 done
 
+setup_ffsend() {
+	local ffsend_url="https://github.com/timvisee/ffsend/releases/download/v0.2.76/ffsend-v0.2.76-linux-x64"
+	local ffsend_target="$HOME/.local/bin/ffsend"
+	dl -o "$ffsend_target" "$ffsend_url"
+	chmod +x "$ffsend_target"
+}
+
+setup_ffsend
+
 setup_blesh() {
-	blesh_url="https://github.com/akinomyoga/ble.sh.git"
-	blesh_tmp=/tmp/blesh
+	local blesh_url="https://github.com/akinomyoga/ble.sh.git"
+	local blesh_tmp=/tmp/blesh
 	git clone --recursive --depth 1 --shallow-submodules "$blesh_url" "$blesh_tmp"
 	make -k -C "$blesh_tmp" install PREFIX="$HOME/.local"
 	rm -rf "$blesh_tmp"

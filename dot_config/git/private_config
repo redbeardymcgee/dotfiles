@@ -5,8 +5,6 @@
 	defaultBranch = main
 [pull]
 	ff = only
-[core]
-	pager = delta
 [interactive]
   diffFilter = delta --color-only --features=interactive
 [color]
@@ -14,9 +12,15 @@
 [merge]
   conflictstyle = diff3
 [diff]
+  external = difft
+[pager]
   colorMoved = default
-[include]
-  path = themes/catppuccin.gitconfig
-[delta]
-  navigate = true
-  features = catppuccin-macchiato
+; [include]
+;   path = themes/catppuccin.gitconfig
+; [delta]
+;   navigate = true
+;   features = catppuccin-macchiato
+
+# `git dlog` to show `git log -p` with difftastic.
+[alias]
+  dlog = "log -p --ext-diff"
