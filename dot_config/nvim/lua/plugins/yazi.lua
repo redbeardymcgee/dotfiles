@@ -1,11 +1,26 @@
 return {
-  "DreamMaoMao/yazi.nvim",
+  "mikavilpas/yazi.nvim",
   dependencies = {
-    "nvim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim",
   },
-
+  event = "VeryLazy",
   keys = {
-    { "<leader>gy", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+    {
+      "<leader>-",
+      function()
+        require("yazi").yazi()
+      end,
+      desc = "Open the file manager",
+    },
+    {
+      "<leader>cw",
+      function()
+        require("yazi").yazi(nil, vim.fn.getcwd())
+      end,
+      desc = "Open the file manager in nvim's working directory",
+    },
+  },
+  opts = {
+    open_for_directories = true,
   },
 }
