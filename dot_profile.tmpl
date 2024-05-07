@@ -5,10 +5,7 @@ pathmunge "$HOME/go/bin"
 pathmunge "$HOME/.cargo/bin"
 {{ end }}
 
-{{ if eq .chezmoi.hostname "media" "rbmpc" }}
 pathmunge "$HOME/devbox/bin"
-{{ end }}
-
 pathmunge "$HOME/.local/bin"
 
 export CHECKPOINT_DISABLE=1
