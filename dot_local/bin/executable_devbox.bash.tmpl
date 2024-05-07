@@ -147,7 +147,7 @@ done
 
 setup_ffsend() {
 	local ffsend_url="https://github.com/timvisee/ffsend/releases/download/v0.2.76/ffsend-v0.2.76-linux-x64"
-	local ffsend_target="$HOME/.local/bin/ffsend"
+	local ffsend_target="$HOME/local/opt/bin/ffsend"
 	dl -o "$ffsend_target" "$ffsend_url"
 	chmod +x "$ffsend_target"
 }

@@ -9,23 +9,23 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 utils_path=$HOME/.local/lib/rbm/utils.sh
 if [[ -f $utils_path ]]; then
-	if [[ -r $utils_path ]]; then
-		. "$utils_path"
-		prepend_to_PATH "$HOME/devbox/bin"
-		prepend_to_PATH "$HOME/.local/bin"
-	fi
+  if [[ -r $utils_path ]]; then
+    . "$utils_path"
+    prepend_to_PATH "$HOME/devbox/bin"
+    prepend_to_PATH "$HOME/.local/bin"
+  fi
 fi
 
 # Enable the subsequent settings only in interactive sessions
 case $- in
-*i*) ;;
-*) return ;;
+  *i*) ;;
+  *) return ;;
 esac
 
 shopt -s globstar
 shopt -s extglob
 
-type -p chezmoi >/dev/null && chezmoi update
+type -p chezmoi > /dev/null && chezmoi update
 
 alias nneovide="NEOVIM_BIN=$HOME/.local/bin/nvim-nightly neovide"
 alias nnvim="nvim-nightly"
@@ -37,25 +37,31 @@ alias ls="eza"
 alias dev="distrobox enter dev"
 
 bhelp() {
-	"$@" --help 2>&1 | bathelp
+  "$@" --help 2>&1 | bathelp
 }
 
 if [[ $CONTAINER_ID = "dev" ]]; then
-	source ~/.local/share/blesh/ble.sh \
-		--noattach \
-		--rcfile ~/.config/ble.rc
+  source ~/.local/share/blesh/ble.sh \
+    --noattach \
+    --rcfile ~/.config/ble.rc
 
-	setup_atuin() {
-		source <(atuin init bash)
-		out=$HOME/.local/etc/bash_completion.d/
-		if ! [[ -r $out/atuin.bash ]]; then
-			atuin gen-completions --shell bash --out-dir "$out"
-		fi
-	}
+  setup_atuin() {
+    source <(atuin init bash)
+    out=$HOME/.local/etc/bash_completion.d/
+    if ! [[ -r $out/atuin.bash ]]; then
+      atuin gen-completions --shell bash --out-dir "$out"
+    fi
+  }
 
-	source <(mise activate bash)
-	source <(starship init bash)
-	setup_atuin
+  source <(mise activate bash)
+  source <(starship init bash)
+  setup_atuin
+
+  YAZI_TERM=""
+  if [ -n "$YAZI_LEVEL" ]; then
+    YAZI_TERM="|  Yazi terminal: "
+  fi
+  PS1="$PS1$YAZI_TERM"
 fi
 
 [[ ${BLE_VERSION-} ]] && ble-attach
