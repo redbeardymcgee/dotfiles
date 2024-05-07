@@ -103,7 +103,7 @@ setup_nnvim() {
 }
 
 if [[ ! -x $NNVIM_DIR/bin/nvim-nightly-bin ]]; then
-	setup_nnvim
+	: setup_nnvim
 fi
 
 nvim --headless '+Lazy! sync' +qa
