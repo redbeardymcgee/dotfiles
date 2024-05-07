@@ -7,12 +7,9 @@ function M.startup(wezterm, workspace_name)
 	local dotfiles_tab, dotfiles_pane, dotfiles_window = mux.spawn_window({
 		workspace = workspace_name,
 		cwd = config_dir,
-		args = { "nvim-nightly", "." },
 	})
 
 	dotfiles_tab:set_title("dotfiles")
-
 	dotfiles_pane:split({ direction = "Right" })
-
-	dotfiles_pane:activate()
+	dotfiles_pane:activate({ args = { "nvim-nightly", "." } })
 end

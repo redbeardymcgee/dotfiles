@@ -18,7 +18,6 @@ function M.startup(wezterm)
 	local containers_tab, containers_pane, containers_window = mcgeedia_window:spawn_tab()
 
 	containers_tab:set_title("Containers")
-
 	containers_pane:split({
 		{ direction = "Right", args = { "nvim-nightly", "." } },
 	})
