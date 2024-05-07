@@ -3,11 +3,7 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [plugin]
-prepend_previewers = [
-  # Archive previewer
-]
 preloaders = [
-  { name = "*", cond = "!mime", run = "mime", multi = true, prio = "high" },
   # Image
   { mime = "image/vnd.djvu", run = "noop" },
   { mime = "image/*", run = "allmytoes" },
@@ -15,6 +11,7 @@ preloaders = [
   { mime = "video/*", run = "video" },
   # PDF
   { mime = "application/pdf", run = "pdf" },
+  { name = "*", cond = "!mime", run = "mime", multi = true, prio = "high" },
 ]
 previewers = [
   { name = "*/", run = "folder", sync = true },
