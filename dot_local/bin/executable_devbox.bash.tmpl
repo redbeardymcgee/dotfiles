@@ -47,6 +47,8 @@ packages=(
 	libxkbcommon-x11
 	libXcursor
 
+	miller
+
 	neovim
 	openssl-devel
 
@@ -126,6 +128,14 @@ for package in "${cargo_git_packages[@]}"; do
 	cargo install --locked --git "$package" "${package##*/}"
 done
 {{ end }}
+
+go_packages=(
+	github.com/charmbracelet/glow@latest
+)
+
+for package in "${go_packages[@]}"; do
+	go install "${package}@latest"
+done
 
 setup_blesh() {
 	blesh_url="https://github.com/akinomyoga/ble.sh.git"
