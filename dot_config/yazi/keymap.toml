@@ -35,11 +35,11 @@
 # on = ["J"]
 # run = "plugin --sync parent-arrow --args=1"
 # desc = "Navigate down the parent directory"
-#
-# [[manager.prepend_keymap]]
-# on = ["i"]
-# run = "plugin keyjump"
-# desc = "Keyjump (Normal mode)"
+
+[[manager.prepend_keymap]]
+on = ["i"]
+run = "plugin keyjump"
+desc = "Keyjump (Normal mode)"
 
 [[manager.prepend_keymap]]
 on = ["f", "g"]
