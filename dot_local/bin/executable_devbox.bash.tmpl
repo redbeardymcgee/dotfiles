@@ -43,6 +43,8 @@ packages=(
 	graphene-devel
 	gtk4-devel
 
+	hexyl
+
 	lazygit
 	libxkbcommon-x11
 	libXcursor
@@ -55,6 +57,7 @@ packages=(
 	pango-devel
 	patch
 	perl-App-cpanminus
+	perl-Image-ExifTool.noarch
 	python2-cairo-devel
 
 	ripgrep
@@ -101,9 +104,12 @@ nvim --headless '+Lazy! sync' +qa
 dl "https://sh.rustup.rs" | sh -s -- -q -y --no-modify-path
 
 cargo_packages=(
+	allmytoes
 	atuin
 
 	mise
+
+	ouch
 
 	ripdrag
 
