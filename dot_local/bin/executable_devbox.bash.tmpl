@@ -154,7 +154,7 @@ done
 
 setup_ffsend() {
 	local ffsend_url="https://github.com/timvisee/ffsend/releases/download/v0.2.76/ffsend-v0.2.76-linux-x64"
-	local ffsend_target="$HOME/local/opt/bin/ffsend"
+	local ffsend_target="$HOME/devbox/local/opt/bin/ffsend"
 	dl -o "$ffsend_target" "$ffsend_url"
 	chmod +x "$ffsend_target"
 }
@@ -165,7 +165,7 @@ setup_blesh() {
 	local blesh_url="https://github.com/akinomyoga/ble.sh.git"
 	local blesh_tmp=/tmp/blesh
 	git clone --recursive --depth 1 --shallow-submodules "$blesh_url" "$blesh_tmp"
-	make -k -C "$blesh_tmp" install PREFIX="$HOME/.local"
+	make -k -C "$blesh_tmp" install PREFIX="$HOME/devbox/local"
 	rm -rf "$blesh_tmp"
 }
 

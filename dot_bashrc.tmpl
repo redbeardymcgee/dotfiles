@@ -11,8 +11,8 @@ utils_path=$HOME/.local/lib/rbm/utils.sh
 if [[ -f $utils_path ]]; then
   if [[ -r $utils_path ]]; then
     . "$utils_path"
-    prepend_to_PATH "$HOME/devbox/bin"
-    prepend_to_PATH "$HOME/.local/bin"
+    pathmunge "$HOME/devbox/bin"
+    pathmunge "$HOME/.local/bin"
   fi
 fi
 

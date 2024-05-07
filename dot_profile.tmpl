@@ -1,18 +1,15 @@
 source "$HOME/.local/lib/rbm/utils.sh"
 
 {{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
-prepend_to_PATH "$HOME/go/bin"
+pathmunge "$HOME/go/bin"
+pathmunge "$HOME/.cargo/bin"
 {{ end }}
 
-prepend_to_PATH "$HOME/.cargo/bin"
-prepend_to_PATH "$HOME/.local/bin"
-
-{{
-  if or (hasSuffix "rbmpc" .chezmoi.fqdnHostname)
-        (hasSuffix  "media" .chezmoi.fqdnHostname)
-}}
+{{ if eq .chezmoi.hostname "media" "rbmpc" }}
 pathmunge "$HOME/devbox/bin"
 {{ end }}
+
+pathmunge "$HOME/.local/bin"
 
 export CHECKPOINT_DISABLE=1
 export MISE_NODE_COREPACK=true
