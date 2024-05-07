@@ -9,5 +9,7 @@ nvidia=true
 
 entry=false
 
-init_hooks='echo devbox.bash'
+additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"
+
+init_hooks="echo devbox.bash"
 
