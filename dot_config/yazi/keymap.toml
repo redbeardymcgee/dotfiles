@@ -2,90 +2,91 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[[manager.prepend_keymap]]
-on = ["l"]
-run = "plugin bypass --args=smart_enter"
-desc = "Enter the child directory, or open the file"
+# [[manager.prepend_keymap]]
+# on = ["l"]
+# run = "plugin bypass --args=smart_enter"
+# desc = "Enter the child directory, or open the file"
+#
+# [[manager.prepend_keymap]]
+# on = ["p"]
+# run = "plugin --sync smart-paste"
+# desc = "Paste into the hovered directory or CWD"
+#
+# [[manager.prepend_keymap]]
+# on = ["<C-n>"]
+# run = '''
+#   shell 'ripdrag "$@" -x 2>/dev/null &' --confirm
+# '''
+# desc = "Drag and drop into the hovered directory or CWD"
+#
+# [[manager.prepend_keymap]]
+# on = ["y"]
+# run = ["yank", '''
+# 	shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
+# ''']
+# desc = "Copy selected paths and files to clipboard"
+#
+# [[manager.prepend_keymap]]
+# on = ["K"]
+# run = "plugin --sync parent-arrow --args=-1"
+# desc = "Navigate up the parent directory"
+#
+# [[manager.prepend_keymap]]
+# on = ["J"]
+# run = "plugin --sync parent-arrow --args=1"
+# desc = "Navigate down the parent directory"
+#
+# [[manager.prepend_keymap]]
+# on = ["i"]
+# run = "plugin keyjump"
+# desc = "Keyjump (Normal mode)"
+#
+# [[manager.prepend_keymap]]
+# on = ["f", "g"]
+# run = "plugin fg"
+# desc = "find file by content (fuzzy match)"
+#
+# [[manager.prepend_keymap]]
+# on = ["f", "G"]
+# run = "plugin fg --args='rg'"
+# desc = "find file by content (ripgrep match)"
+#
+# [[manager.prepend_keymap]]
+# on = ["f", "f"]
+# run = "plugin fg --args='fzf'"
+# desc = "find file by file name"
+#
+# [[manager.prepend_keymap]]
+# on = ["L"]
+# run = "plugin bypass"
+# desc = "Recursively enter child directory, skipping children with only a single subdirectory"
+#
+# [[manager.prepend_keymap]]
+# on = ["H"]
+# run = "plugin bypass --args=reverse"
+# desc = "Recursively enter parent directory, skipping parents with only a single subdirectory"
+#
+# [[manager.prepend_keymap]]
+# on = ["u", "a"]
+# run = "plugin bookmarks-persistence --args=save"
+# desc = "Save current position as a bookmark"
+#
+# [[manager.prepend_keymap]]
+# on = ["u", "g"]
+# run = "plugin bookmarks-persistence --args=jump"
+# desc = "Jump to a bookmark"
+#
+# [[manager.prepend_keymap]]
+# on = ["u", "d"]
+# run = "plugin bookmarks-persistence --args=delete"
+# desc = "Delete a bookmark"
+#
+# [[manager.prepend_keymap]]
+# on = ["u", "D"]
+# run = "plugin bookmarks-persistence --args=delete_all"
+# desc = "Delete all bookmarks"
 
-[[manager.prepend_keymap]]
-on = ["p"]
-run = "plugin --sync smart-paste"
-desc = "Paste into the hovered directory or CWD"
-
-[[manager.prepend_keymap]]
-on = ["<C-n>"]
-run = '''
-  shell 'ripdrag "$@" -x 2>/dev/null &' --confirm
-'''
-desc = "Drag and drop into the hovered directory or CWD"
-
-[[manager.prepend_keymap]]
-on = ["y"]
-run = ["yank", '''
-	shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
-''']
-desc = "Copy selected paths and files to clipboard"
-
-[[manager.prepend_keymap]]
-on = ["K"]
-run = "plugin --sync parent-arrow --args=-1"
-desc = "Navigate up the parent directory"
-
-[[manager.prepend_keymap]]
-on = ["J"]
-run = "plugin --sync parent-arrow --args=1"
-desc = "Navigate down the parent directory"
-
-[[manager.prepend_keymap]]
-on = ["i"]
-run = "plugin keyjump"
-desc = "Keyjump (Normal mode)"
-
-[[manager.prepend_keymap]]
-on = ["f", "g"]
-run = "plugin fg"
-desc = "find file by content (fuzzy match)"
-
-[[manager.prepend_keymap]]
-on = ["f", "G"]
-run = "plugin fg --args='rg'"
-desc = "find file by content (ripgrep match)"
-
-[[manager.prepend_keymap]]
-on = ["f", "f"]
-run = "plugin fg --args='fzf'"
-desc = "find file by file name"
-
-[[manager.prepend_keymap]]
-on = ["L"]
-run = "plugin bypass"
-desc = "Recursively enter child directory, skipping children with only a single subdirectory"
-
-[[manager.prepend_keymap]]
-on = ["H"]
-run = "plugin bypass --args=reverse"
-desc = "Recursively enter parent directory, skipping parents with only a single subdirectory"
-
-[[manager.prepend_keymap]]
-on = ["u", "a"]
-run = "plugin bookmarks-persistence --args=save"
-desc = "Save current position as a bookmark"
-
-[[manager.prepend_keymap]]
-on = ["u", "g"]
-run = "plugin bookmarks-persistence --args=jump"
-desc = "Jump to a bookmark"
-
-[[manager.prepend_keymap]]
-on = ["u", "d"]
-run = "plugin bookmarks-persistence --args=delete"
-desc = "Delete a bookmark"
-
-[[manager.prepend_keymap]]
-on = ["u", "D"]
-run = "plugin bookmarks-persistence --args=delete_all"
-desc = "Delete all bookmarks"
-
+## defaults
 
 # [manager]
 #
