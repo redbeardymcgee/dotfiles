@@ -1,8 +1,8 @@
 source "$HOME/.local/lib/rbm/utils.sh"
 
 {{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
-pathmunge "$HOME/go/bin"
 pathmunge "$HOME/.cargo/bin"
+pathmunge "$HOME/go/bin"
 {{ end }}
 
 pathmunge "$HOME/devbox/bin"
