@@ -128,8 +128,12 @@ cargo_packages=(
 	yazi-cli
 )
 
-BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
-{ dl "$BINSTALL_URL" | bash; }
+setup_binstall() {
+	BINSTALL_URL="https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh"
+	dl "$BINSTALL_URL" | bash
+}
+
+setup_binstall
 
 cargo binstall --locked -y "${cargo_packages[@]}"
 
