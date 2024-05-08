@@ -12,7 +12,7 @@ alias vim=nvim
 
 # fix common typos
 alias quit='exit'
-alias cd..='z ..'
+alias cd..='cd ..'
 
 # misc
 alias please=sudo

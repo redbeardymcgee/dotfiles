@@ -34,3 +34,4 @@ autoload -Uz promptinit && promptinit
 
 source <(atuin init zsh)
 source <(starship init zsh)
+source <(zoxide init zsh --cmd cd)
