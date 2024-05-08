@@ -11,8 +11,8 @@ utils_path=$HOME/.local/lib/rbm/utils.sh
 if [[ -f $utils_path ]]; then
   if [[ -r $utils_path ]]; then
     . "$utils_path"
-    pathmunge "$HOME/.local/bin"
     pathmunge "$HOME/devbox/bin"
+    pathmunge "$HOME/.local/bin"
   fi
 fi
 
@@ -24,8 +24,6 @@ esac
 
 shopt -s globstar
 shopt -s extglob
-
-# type -p chezmoi > /dev/null && chezmoi update
 
 alias nneovide="NEOVIM_BIN=$HOME/.local/bin/nvim-nightly neovide"
 alias nnvim="nvim-nightly"

@@ -1,9 +1,9 @@
 source "$HOME/.local/lib/rbm/utils.sh"
 
-{{ if hasPrefix "dev" .chezmoi.fqdnHostname }}
-pathmunge "$HOME/.cargo/bin"
-pathmunge "$HOME/go/bin"
-{{ end }}
+if [[ $CONTAINER_ID = "dev" ]]; then
+  pathmunge "$HOME/.cargo/bin"
+  pathmunge "$HOME/go/bin"
+fi
 
 pathmunge "$HOME/devbox/bin"
 pathmunge "$HOME/.local/bin"
