@@ -200,7 +200,9 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 end)
 
 {{ if hasSuffix .chezmoi.fqdnHostname "media" }}
-wezterm.on("mux-startup", mcgeedia.startup(wezterm))
+wezterm.on("mux-startup", function()
+mcgeedia.startup(wezterm)
+end)
 {{ end }}
 
 return config
