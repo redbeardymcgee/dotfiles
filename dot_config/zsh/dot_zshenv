@@ -9,8 +9,25 @@
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
-ZUTILFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions/util}
-fpath=($ZUTILFUNCDIR $fpath)
+## not working
+# ZUTILFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions/util}
+# fpath=($ZUTILFUNCDIR $fpath)
+function pathmunge {
+  d=$({ cd -- "$1" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
+  if ! [[ -d $d ]]; then
+    return
+  fi
+  case ":${PATH}:" in
+  *:"$d":*) ;;
+  *)
+    if [[ "$2" = "after" ]]; then
+      PATH=$PATH:$d
+    else
+      PATH=$d:$PATH
+    fi
+    ;;
+  esac
+}
 
 if [[ $CONTAINER_ID = "dev" ]]; then
   pathmunge $HOME/go/bin
