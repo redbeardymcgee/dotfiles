@@ -20,3 +20,6 @@ zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 
 # ^S
 zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+
+# Wait for a minimum amount of input
+zstyle ':autocomplete:*' min-input 3

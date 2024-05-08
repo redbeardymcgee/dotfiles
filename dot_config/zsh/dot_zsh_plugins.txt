@@ -30,12 +30,13 @@
 #   autoload -Uz compinit && compinit
 #
 ###
-zsh-users/zsh-completions
-jnooree/zoxide-zsh-completion
 
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
 mattmc3/zephyr path:plugins/completion
+
+# https://github.com/jnooree/zoxide-zsh-completion
+jnooree/zoxide-zsh-completion kind:fpath
 
 # zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
 # We combine the `path:` and `kind:fpath` annotations here:
@@ -188,7 +189,7 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 
 ## I suspect this wants to be loaded late for $fpath to be populated
 ## but the readme says load early
-#marlonrichert/zsh-autocomplete
+marlonrichert/zsh-autocomplete
 
 # These popular core plugins should be loaded at the end
 #zsh-users/zsh-autosuggestions

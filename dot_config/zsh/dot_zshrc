@@ -22,8 +22,6 @@ autoload -Uz $fpath[1]/*(.:t)
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
-autoload -Uz promptinit && promptinit
-
 ## https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
 # bindkey              '^I'         menu-complete
@@ -31,7 +29,8 @@ autoload -Uz promptinit && promptinit
 
 # Make Enter always submit the command line
 # bindkey -M menuselect '^M' .accept-line
-## 
+
+##
 
 source <(atuin init zsh)
 source <(starship init zsh)
