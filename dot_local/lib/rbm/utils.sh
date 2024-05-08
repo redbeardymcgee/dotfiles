@@ -1,3 +1,4 @@
+UTILS_SOURCED=${UTILS_SOURCED:-false}
 if [[ $UTILS_SOURCED = "true" ]]; then
 	echo "utils.sh: already sourced"
 	exit

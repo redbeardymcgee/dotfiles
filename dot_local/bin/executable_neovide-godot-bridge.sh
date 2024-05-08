@@ -13,5 +13,5 @@ col=$3
 	-- \
 	--listen "$server_path"
 
-nvim-nightly-bin --server "$server_path" \
+nvim-nightly --server "$server_path" \
 	--remote-send "<C-\><C-N>:n $file<CR>:call cursor($line,$col)<CR>" "${@:4}"
