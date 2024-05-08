@@ -25,7 +25,6 @@ rummik/zsh-tailf
 mattmc3/zman
 zpm-zsh/ls
 MichaelAquilina/zsh-you-should-use
-dim-an/cod
 
 ## NOTE: This supposedly defers its own init until first prompt
 ## It may be necessary to set ZVM_INIT_MODE=sourcing to prevent some keybind overrides
@@ -167,3 +166,6 @@ marlonrichert/zsh-autocomplete
 # These popular core plugins should be loaded at the end
 zsh-users/zsh-autosuggestions
 #zsh-users/zsh-history-substring-search
+## This plugin expects the completion system to be fully initialized already
+## It's probably initalized by a plugin above
+dim-an/cod
