@@ -45,9 +45,9 @@ if [[ $CONTAINER_ID = "dev" ]]; then
   fi
   PS1="$PS1$YAZI_TERM"
 
-  source ~/.local/share/blesh/ble.sh \
-    --noattach \
-    --rcfile ~/.config/ble.rc
+  # source ~/.local/share/blesh/ble.sh \
+  #   --noattach \
+  #   --rcfile ~/.config/ble.rc
 
   setup_atuin() {
     source <(atuin init bash)
@@ -57,11 +57,11 @@ if [[ $CONTAINER_ID = "dev" ]]; then
     fi
   }
 
-  # setup_atuin
+  setup_atuin
 
-  # source <(mise activate bash)
-  # source <(starship init bash)
-  # source <(zoxide init --cmd cd bash)
+  source <(mise activate bash)
+  source <(starship init bash)
+  source <(zoxide init --cmd cd bash)
 
   alias curlie='curlie --curl'
 
