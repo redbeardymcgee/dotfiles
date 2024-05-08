@@ -23,14 +23,14 @@ zsh-users/zsh-completions path:src kind:fpath
 https://github.com/peterhurford/up.zsh
 rummik/zsh-tailf
 mattmc3/zman
-#zpm-zsh/ls
-#MichaelAquilina/zsh-you-should-use
+zpm-zsh/ls
+MichaelAquilina/zsh-you-should-use
 
 ## NOTE: This supposedly defers its own init until first prompt
 ## It may be necessary to set ZVM_INIT_MODE=sourcing to prevent some keybind overrides
 ## Alternative: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
 ## But this seems like it will mess up other plugin init sequencing
-#jeffreytse/zsh-vi-mode kind:defer
+jeffreytse/zsh-vi-mode kind:defer
 
 
 
