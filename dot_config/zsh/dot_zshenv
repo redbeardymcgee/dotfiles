@@ -9,8 +9,8 @@
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
-ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions/util}
-fpath=($ZFUNCDIR $fpath)
+ZUTILFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions/util}
+fpath=($ZUTILFUNCDIR $fpath)
 
 if [[ $CONTAINER_ID = "dev" ]]; then
   pathmunge $HOME/go/bin
