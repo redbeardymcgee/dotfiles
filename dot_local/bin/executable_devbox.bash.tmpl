@@ -16,6 +16,12 @@ source "$HOME/.local/lib/rbm/utils.sh"
 dl() {
 	local args_but_last=${@:1:$#-1}
 	local url=${@: -1}
+
+	{
+		echo "url: $url"
+		echo "args: $args_but_last"
+	} >&2
+
 	# FIXME: unquoted expansion because '""' is the result quoted
 	# This breaks programs in general because empty string
 	# is semantically relevant
