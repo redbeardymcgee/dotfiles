@@ -32,7 +32,7 @@ antidote load
 ###
 
 ### keybinds
-
+bindkey '^P' atuin-up-search
 ###
 
 source <(atuin init zsh)
