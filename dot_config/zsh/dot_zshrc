@@ -21,3 +21,17 @@ autoload -Uz $fpath[1]/*(.:t)
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+autoload -Uz promptinit && promptinit
+prompt ${prompt_name:-pure}
+
+## https://github.com/marlonrichert/zsh-autocomplete
+# Make Tab and ShiftTab cycle completions on the command line
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
+
+# Make Enter always submit the command line
+bindkey -M menuselect '^M' .accept-line
+
+source <(atuin init zsh)
+source <(starship init zsh)

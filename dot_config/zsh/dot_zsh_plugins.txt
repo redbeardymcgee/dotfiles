@@ -30,6 +30,8 @@
 #   autoload -Uz compinit && compinit
 #
 ###
+zsh-users/zsh-completions
+jnooree/zoxide-zsh-completion
 
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
@@ -37,7 +39,7 @@ mattmc3/zephyr path:plugins/completion
 
 # zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
 # We combine the `path:` and `kind:fpath` annotations here:
-# zsh-users/zsh-completions path:src kind:fpath
+zsh-users/zsh-completions path:src kind:fpath
 
 # Most other compinit plugins should be near the END of .zsh_plugins.txt so that $fpath
 # has been fully populated. One such plugin is zsh-utils and its completion subplugin.
@@ -52,7 +54,6 @@ mattmc3/zephyr path:plugins/completion
 https://github.com/peterhurford/up.zsh
 rummik/zsh-tailf
 mattmc3/zman
-agkozak/zsh-z
 
 
 ### Local Plugins
@@ -100,9 +101,10 @@ $ZDOTDIR/.aliases
 
 # Use kind:fpath for prompts you want available to promptinit.
 romkatv/powerlevel10k kind:fpath
+sindresorhus/pure kind:fpath
 
 # Or, just load a prompt plugin the normal way.
-sindresorhus/pure
+# sindresorhus/pure
 
 
 ### Utilities
@@ -141,52 +143,13 @@ romkatv/zsh-bench kind:path
 #   ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 #
 ####
-ohmyzsh/ohmyzsh path:lib/clipboard.zsh
-ohmyzsh/ohmyzsh path:plugins/copybuffer
-ohmyzsh/ohmyzsh path:plugins/copyfile
-ohmyzsh/ohmyzsh path:plugins/copypath
-ohmyzsh/ohmyzsh path:plugins/extract
-ohmyzsh/ohmyzsh path:plugins/magic-enter
-ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
-
-
-### Framework: Prezto
-#
-# Prezto is another popular Zsh framework. You might choose to use parts of it in your
-# config alongside/instead of OMZ. Prezto has some key differences from OMZ. For
-# starters, it doesn't have a lib directory and it calls its plugins 'modules'. Its
-# modules also often have functions directories that need autoloaded. And, because it's
-# meant to be used as an integrated framework, Prezto modules don't operate well as
-# cherry-picking independent plugins, so using Prezto with antidote is not recommended
-# for anyone but the most advanced Zsh users.
-#
-###
-
-# Prezto can be difficult to assemble because it's so interdependent.
-# Use at your own risk.
-# sorin-ionescu/prezto path:modules/helper/functions kind:autoload
-# sorin-ionescu/prezto path:modules/helper
-# sorin-ionescu/prezto path:modules/environment
-# sorin-ionescu/prezto path:modules/terminal
-# sorin-ionescu/prezto path:modules/editor
-# sorin-ionescu/prezto path:modules/directory
-# sorin-ionescu/prezto path:modules/git/functions kind:autoload
-# sorin-ionescu/prezto path:modules/git
-
-# And Prezto has tons more...
-# sorin-ionescu/prezto path:modules/history
-# sorin-ionescu/prezto path:modules/spectrum
-# sorin-ionescu/prezto path:modules/utility/functions kind:autoload
-# sorin-ionescu/prezto path:modules/utility
-# sorin-ionescu/prezto path:modules/completion
-# sorin-ionescu/prezto path:modules/history-substring-search
-# sorin-ionescu/prezto path:modules/prompt/functions kind:autoload
-# sorin-ionescu/prezto path:modules/prompt
-# sorin-ionescu/prezto path:modules/python
-# sorin-ionescu/prezto path:modules/python/functions kind:autoload
-# sorin-ionescu/prezto path:modules/osx conditional:ismacos
-# sorin-ionescu/prezto path:modules/osx/functions kind:autoload conditional:ismacos
-
+# ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+# ohmyzsh/ohmyzsh path:plugins/copybuffer
+# ohmyzsh/ohmyzsh path:plugins/copyfile
+# ohmyzsh/ohmyzsh path:plugins/copypath
+# ohmyzsh/ohmyzsh path:plugins/extract
+# ohmyzsh/ohmyzsh path:plugins/magic-enter
+# ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 ### Framework: zsh-utils
 #
@@ -213,7 +176,6 @@ belak/zsh-utils path:editor
 ###
 
 # Syntax highlighting
-#zsh-users/zsh-syntax-highlighting kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
 
@@ -224,6 +186,10 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 #
 ###
 
+## I suspect this wants to be loaded late for $fpath to be populated
+## but the readme says load early
+marlonrichert/zsh-autocomplete
+
 # These popular core plugins should be loaded at the end
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-history-substring-search
+#zsh-users/zsh-autosuggestions
+# zsh-users/zsh-history-substring-search
