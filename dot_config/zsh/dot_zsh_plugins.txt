@@ -113,13 +113,9 @@ romkatv/zsh-bench kind:path
 #   ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 #
 ####
-# ohmyzsh/ohmyzsh path:lib/clipboard.zsh
-# ohmyzsh/ohmyzsh path:plugins/copybuffer
-# ohmyzsh/ohmyzsh path:plugins/copyfile
-# ohmyzsh/ohmyzsh path:plugins/copypath
-# ohmyzsh/ohmyzsh path:plugins/extract
-# ohmyzsh/ohmyzsh path:plugins/magic-enter
-# ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:plugins/copypath
+ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 ### Framework: zsh-utils
 #
@@ -129,9 +125,8 @@ romkatv/zsh-bench kind:path
 # If you want a really thin framework, this is great.
 #
 ###
-#belak/zsh-utils path:history
-#belak/zsh-utils path:utility
 belak/zsh-utils path:editor
+
 
 ### Deferred Plugins
 #
