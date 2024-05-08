@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh
-
-zvm_after_init() {
-  eval "$(fzf --zsh)"
-}
-

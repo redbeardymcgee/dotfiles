@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-
-# Allows zsh-vi to yank to clipboard
-zvm_vi_yank () {
-	zvm_yank
-	printf %s "${CUTBUFFER}" | xclip -sel c
-	zvm_exit_visual_mode
-}
-
