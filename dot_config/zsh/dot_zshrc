@@ -19,5 +19,5 @@ autoload -Uz $fpath[1]/*(.:t)
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
 # Create an amazing Zsh config using antidote plugins.
-# source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-# antidote load
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
