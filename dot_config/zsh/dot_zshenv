@@ -9,22 +9,23 @@
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
-# function pathmunge {
-#   d=$({ cd -- "$1" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
-#   if ! [[ -d $d ]]; then
-#     return
-#   fi
-#   case ":${PATH}:" in
-#   *:"$d":*) ;;
-#   *)
-#     if [[ "$2" = "after" ]]; then
-#       PATH=$PATH:$d
-#     else
-#       PATH=$d:$PATH
-#     fi
-#     ;;
-#   esac
-# }
+## I want to put this in $ZDOTDIR/functions but it doesn't seem to load in time
+function pathmunge {
+  d=$({ cd -- "$1" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
+  if ! [[ -d $d ]]; then
+    return
+  fi
+  case ":${PATH}:" in
+  *:"$d":*) ;;
+  *)
+    if [[ "$2" = "after" ]]; then
+      PATH=$PATH:$d
+    else
+      PATH=$d:$PATH
+    fi
+    ;;
+  esac
+}
 
 if [[ $CONTAINER_ID = "dev" ]]; then
   pathmunge $HOME/go/bin

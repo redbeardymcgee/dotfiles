@@ -160,7 +160,7 @@ romkatv/zsh-bench kind:path
 # If you want a really thin framework, this is great.
 #
 ###
-belak/zsh-utils path:history
+#belak/zsh-utils path:history
 belak/zsh-utils path:utility
 belak/zsh-utils path:editor
 
