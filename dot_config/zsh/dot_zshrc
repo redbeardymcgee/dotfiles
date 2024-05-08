@@ -23,7 +23,6 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
 autoload -Uz promptinit && promptinit
-prompt ${prompt_name:-pure}
 
 ## https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
