@@ -1,0 +1,48 @@
+#!/bin/zsh
+#
+# .zprofile - Zsh file loaded on login.
+#
+
+source "$HOME/.local/lib/rbm/utils.sh"
+
+#
+# Browser
+#
+
+{{ if .chezmoi.os "darwin" }}
+  export BROWSER="${BROWSER:-open}"
+{{end}}
+
+
+export CHECKPOINT_DISABLE=1
+export MISE_NODE_COREPACK=true
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+export PAGER="${PAGER:-less}"
+export MANROFFOPT="-c"
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU path fpath
+
+# Set the list of directories that zsh searches for commands.
+path=(
+  $HOME/{,s}bin(N)
+  $HOME/{.local,devbox,}/bin(N)
+  $path
+)
+
+if [[ $CONTAINER_ID = "dev" ]]; then
+  path=(
+    $HOME/{.cargo,go}/bin(N)
+    $path
+)
+fi
+
+path=(
+  /opt/{homebrew,local}/{,s}bin(N)
+  /usr/local/{,s}bin(N)
+  $path
+)
+
