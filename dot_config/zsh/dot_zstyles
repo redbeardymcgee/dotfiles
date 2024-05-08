@@ -15,7 +15,8 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 
 # all history widgets
-zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+# I think `atuin` is replacing this
+# zstyle ':autocomplete:*history*:*' insert-unambiguous yes
 
 # ^S
 zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
