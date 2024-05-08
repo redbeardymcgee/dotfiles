@@ -39,6 +39,12 @@ bhelp() {
 }
 
 if [[ $CONTAINER_ID = "dev" ]]; then
+  YAZI_TERM=""
+  if [ -n "$YAZI_LEVEL" ]; then
+    YAZI_TERM="|  Yazi terminal: "
+  fi
+  PS1="$PS1$YAZI_TERM"
+
   source ~/.local/share/blesh/ble.sh \
     --noattach \
     --rcfile ~/.config/ble.rc
@@ -51,15 +57,13 @@ if [[ $CONTAINER_ID = "dev" ]]; then
     fi
   }
 
-  source <(mise activate bash)
-  source <(starship init bash)
   setup_atuin
 
-  YAZI_TERM=""
-  if [ -n "$YAZI_LEVEL" ]; then
-    YAZI_TERM="|  Yazi terminal: "
-  fi
-  PS1="$PS1$YAZI_TERM"
+  source <(mise activate bash)
+  source <(starship init bash)
+  source <(zoxide init --cmd cd bash)
+
+  alias curlie='curlie --curl'
 
 fi
 
