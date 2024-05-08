@@ -3,34 +3,6 @@
 # .zsh_plugins.txt - antidote plugins file
 #
 
-### Overview
-#
-# The `.zsh_plugins.txt` file is used by antidote to configure Zsh bundles. Bundles are
-# just a fancy way of referring to Zsh utilities, frameworks, prompts, or plugins.
-# `.zsh_plugins.txt` is used by antidote to generate a static `.zsh_plugins.zsh` file,
-# which can then be sourced in your `.zshrc`. You can use this file as a starting point
-# for your own config. Strip out instructional comments (ie: lines beginning with a '#')
-# and any plugins you don't need, then add what you like and make it yours!
-#
-# NOTE: Order matters in this file! Some bundles need to be last, and others are
-# prerequisites. Read the documentation for the plugins you use to ensure proper
-# configuration.
-#
-###
-
-### Completions
-#
-# You may want to add some additional completions to Zsh. Completions look in your fpath
-# for completion functions, which are functions named with a leading underscore
-# (eg: _git). You need to add all supplemental completions to your fpath prior to
-# running `compinit` to use completions functionality properly. You will want to find
-# a completion plugin that runs `compinit` for you, or you can run it yourself in
-# your .zshrc after antidote loads like this:
-#
-#   autoload -Uz compinit && compinit
-#
-###
-
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
 mattmc3/zephyr path:plugins/completion
@@ -42,10 +14,6 @@ jnooree/zoxide-zsh-completion kind:fpath
 # We combine the `path:` and `kind:fpath` annotations here:
 zsh-users/zsh-completions path:src kind:fpath
 
-# Most other compinit plugins should be near the END of .zsh_plugins.txt so that $fpath
-# has been fully populated. One such plugin is zsh-utils and its completion subplugin.
-# belak/zsh-utils path:completion
-
 ### Regular Plugins
 #
 # Plugins are the simplest kind of bundles. You can point to a full git URL, or if you
@@ -55,6 +23,7 @@ zsh-users/zsh-completions path:src kind:fpath
 https://github.com/peterhurford/up.zsh
 rummik/zsh-tailf
 mattmc3/zman
+zpm/zsh/ls
 
 
 ### Local Plugins
