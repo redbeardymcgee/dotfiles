@@ -130,7 +130,7 @@ romkatv/zsh-bench kind:path
 #
 ###
 #belak/zsh-utils path:history
-belak/zsh-utils path:utility
+#belak/zsh-utils path:utility
 belak/zsh-utils path:editor
 
 ### Deferred Plugins
