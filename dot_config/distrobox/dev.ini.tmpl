@@ -7,6 +7,10 @@ start_now=true
 nvidia=true
 {{ end }}
 
+{{ if eq .chezmoi.hostname "media" }}
+volume="/opt/containers"
+{{ end }}
+
 entry=false
 
 additional_flags="--hostname 'dev.{{ .chezmoi.hostname }}'"

@@ -1,20 +1,13 @@
 ## Non-interactive settings should go up here
-export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
---color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
---color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
-export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/themes/catppuccin/macchiato/blue.yml"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-utils_path=$HOME/.local/lib/rbm/utils.sh
-if [[ -f $utils_path ]]; then
-  if [[ -r $utils_path ]]; then
-    . "$utils_path"
-    pathmunge "$HOME/devbox/bin"
-    pathmunge "$HOME/.local/bin"
-  fi
-fi
+. "$HOME/.local/lib/rbm/utils.sh"
+# This is mostly to ensure that my local bin paths is available in `ssh`
+# e.g. `ssh user@host 'script --arg'`
+# Such shells in at least `openssh` hardcode `PATH`
+# Perhaps `ssh user@host 'bash -c "script --arg"'` should work instead of this,
+# but that's a shell-quoting nightmare isn't it?
+pathmunge "$HOME/devbox/bin"
+pathmunge "$HOME/.local/bin"
 
 # Enable the subsequent settings only in interactive sessions
 case $- in
@@ -25,17 +18,24 @@ esac
 shopt -s globstar
 shopt -s extglob
 
+export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
+--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
+--color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/themes/catppuccin/macchiato/blue.yml"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 alias nneovide="NEOVIM_BIN=$HOME/.local/bin/nvim-nightly neovide"
 alias nnvim="nvim-nightly"
 alias vim="nvim"
 
-alias bathelp="bat --plain --language=help"
 alias cat="bat"
 alias ls="eza"
 alias dev="distrobox enter dev"
 
 bhelp() {
-  "$@" --help 2>&1 | bathelp
+  "$@" --help 2>&1 | bat --plain --language=help
 }
 
 if [[ $CONTAINER_ID = "dev" ]]; then

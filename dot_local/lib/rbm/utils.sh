@@ -1,3 +1,8 @@
+if [[ $UTILS_SOURCED = "true" ]]; then
+	echo "utils.sh: already sourced"
+	exit
+fi
+
 pathmunge() {
 	d=$({ cd -- "$1" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
 	case ":${PATH}:" in
@@ -11,3 +16,5 @@ pathmunge() {
 		;;
 	esac
 }
+
+export UTILS_SOURCED=true
