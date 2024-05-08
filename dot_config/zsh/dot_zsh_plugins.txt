@@ -30,7 +30,7 @@ MichaelAquilina/zsh-you-should-use
 ## It may be necessary to set ZVM_INIT_MODE=sourcing to prevent some keybind overrides
 ## Alternative: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
 ## But this seems like it will mess up other plugin init sequencing
-#jeffreytse/zsh-vi-mode kind:defer
+jeffreytse/zsh-vi-mode
 
 
 
