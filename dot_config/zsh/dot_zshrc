@@ -22,15 +22,18 @@ autoload -Uz $fpath[1]/*(.:t)
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
-## https://github.com/marlonrichert/zsh-autocomplete
+### https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
 # bindkey              '^I'         menu-complete
 # bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 # Make Enter always submit the command line
 # bindkey -M menuselect '^M' .accept-line
+###
 
-##
+### keybinds
+
+###
 
 source <(atuin init zsh)
 source <(starship init zsh)
