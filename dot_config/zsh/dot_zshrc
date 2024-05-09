@@ -26,13 +26,13 @@ export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 export CHECKPOINT_DISABLE=1
 export MISE_NODE_COREPACK=true
 
-pathmunge $HOME/devbox/bin
-pathmunge $HOME/.local/bin
-
 if [[ $CONTAINER_ID = "dev" ]]; then
   pathmunge $HOME/go/bin
   pathmunge $HOME/.cargo/bin
 fi
+
+pathmunge $HOME/devbox/bin
+pathmunge $HOME/.local/bin
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
