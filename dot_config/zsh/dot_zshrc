@@ -19,8 +19,8 @@ fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
 # Set ZDOTDIR if you want to re-home Zsh.
-export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
+# export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+# export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
 # npm stuff
 export CHECKPOINT_DISABLE=1
@@ -30,7 +30,7 @@ if [[ $CONTAINER_ID = "dev" ]]; then
   PATH=$HOME/go/bin:$HOME/.cargo/bin:$PATH
 fi
 
-PATH=$HOME/devbox/bin:$HOME/.local/bin
+PATH=$HOME/.local/bin:$HOME/devbox/bin
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
