@@ -4,10 +4,11 @@
 #
 
 ### Regular Plugins
-https://github.com/peterhurford/up.zsh
-rummik/zsh-tailf
-mattmc3/zman
-MichaelAquilina/zsh-you-should-use
+peterhurford/up.zsh kind:defer
+mattmc3/zman kind:defer
+MichaelAquilina/zsh-you-should-use kind:defer
+rummik/zsh-tailf kind:defer
+zpm-zsh/ls kind:defer
 
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
@@ -118,5 +119,4 @@ zsh-users/zsh-autosuggestions
 ## It's probably initalized by a plugin above
 dim-an/cod
 
-zpm-zsh/ls
 # vim: ft=conf
