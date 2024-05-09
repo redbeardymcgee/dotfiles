@@ -56,6 +56,7 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 bindkey '^P' atuin-up-search
 ###
 
+source <(mise activate zsh)
 source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
