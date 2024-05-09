@@ -52,7 +52,9 @@ antidote load
 bindkey '^P' atuin-up-search
 ###
 
+print mise
 source <(mise activate zsh)
+print done mise
 source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
