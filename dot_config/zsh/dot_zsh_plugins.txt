@@ -44,7 +44,7 @@ $ZDOTDIR/.aliases
 
 
 ### Utilities
-peterhurford/up.zsh kind:fpath
+peterhurford/up.zsh kind:defer
 mattmc3/zman kind:defer kind:fpath
 MichaelAquilina/zsh-you-should-use kind:defer
 romkatv/zsh-bench kind:path
