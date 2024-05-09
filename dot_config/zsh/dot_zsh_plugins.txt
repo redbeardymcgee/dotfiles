@@ -49,7 +49,7 @@ mattmc3/zman kind:defer kind:fpath
 MichaelAquilina/zsh-you-should-use kind:defer
 romkatv/zsh-bench kind:path
 rummik/zsh-tailf kind:defer kind:fpath
-zpm-zsh/ls kind:defer kind:fpath
+zpm-zsh/ls kind:defer
 
 
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
