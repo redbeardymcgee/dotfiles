@@ -5,7 +5,7 @@
 
 # Zsh options.
 setopt extended_glob
-echo foobar
+
 ## Nested shell awareness
 YAZI_TERM=""
 if [ -n "$YAZI_LEVEL" ]; then
