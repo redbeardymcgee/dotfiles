@@ -57,4 +57,5 @@ source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
 
+print $PATH
 source <(inshellisense init zsh)
