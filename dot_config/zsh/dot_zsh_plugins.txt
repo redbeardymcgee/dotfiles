@@ -7,7 +7,6 @@
 https://github.com/peterhurford/up.zsh
 rummik/zsh-tailf
 mattmc3/zman
-zpm-zsh/ls
 MichaelAquilina/zsh-you-should-use
 
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
@@ -119,4 +118,5 @@ zsh-users/zsh-autosuggestions
 ## It's probably initalized by a plugin above
 dim-an/cod
 
+zpm-zsh/ls
 # vim: ft=conf
