@@ -18,10 +18,6 @@ ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
-# Set ZDOTDIR if you want to re-home Zsh.
-# export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-# export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
-
 # npm stuff
 export CHECKPOINT_DISABLE=1
 export MISE_NODE_COREPACK=true
@@ -41,7 +37,7 @@ PATH=$HOME/.local/bin:$HOME/devbox/bin:$PATH
 
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-# antidote load
+antidote load
 
 ### https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
@@ -60,3 +56,5 @@ source <(mise activate zsh)
 source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
+
+source <(inshellisense init zsh)
