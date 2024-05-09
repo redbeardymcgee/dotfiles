@@ -32,7 +32,8 @@ antidote load
 ###
 
 ### keybinds
-bindkey '^P' atuin-up-search
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
 ###
 
 source <(atuin init zsh)

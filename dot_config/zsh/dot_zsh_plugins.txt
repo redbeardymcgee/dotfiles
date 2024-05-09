@@ -4,12 +4,6 @@
 #
 
 ### Regular Plugins
-peterhurford/up.zsh kind:defer
-mattmc3/zman kind:defer
-MichaelAquilina/zsh-you-should-use kind:defer
-rummik/zsh-tailf kind:defer
-zpm-zsh/ls kind:defer
-
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
 mattmc3/zephyr path:plugins/completion
@@ -44,58 +38,25 @@ $ZDOTDIR/.aliases
 # $ZSH_CUSTOM/plugins/ruby
 
 
-### Prompts
-#
-# You can make certain themes available to the built-in Zsh prompt command using the
-# `kind:fpath` annotation. A theme is not active for the prompt until this command is
-# run:
-#
-#   autoload -Uz promptinit && promptinit
-#   prompt ${prompt_name:-pure}
-#
-# There are two ways to load prompts.
-# - Add multiple prompt plugins to your `$fpath` with `kind:fpath` and then later in
-#   your .zshrc run the Zsh built-in `prompt` to select the theme.
-# - Or, just load one prompt like a regular plugin.
-#
-###
-
 # Use kind:fpath for prompts you want available to promptinit.
 #romkatv/powerlevel10k kind:fpath
 #sindresorhus/pure kind:fpath
 
 
 ### Utilities
+peterhurford/up.zsh kind:defer kind:fpath
+mattmc3/zman kind:defer kind:fpath
+MichaelAquilina/zsh-you-should-use kind:defer
 romkatv/zsh-bench kind:path
+rummik/zsh-tailf kind:defer kind:fpath
+zpm-zsh/ls kind:defer kind:fpath
 
-
-### Frameworks
-#
-# Frameworks are a collection of Zsh features, settings, and plugins meant to ease
-# Zsh configuration. Unfortunately, all that power can come with serious drawbacks.
-# Frameworks can often set more settings or aliases than you need, cluttering your Zsh
-# config and slowing things down. Use with caution!
-#
-# Frameworks are handled in antidote using the `path:location/of/plugin` annotation.
-#
-###
 
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 belak/zsh-utils path:editor
-
-
-### Deferred Plugins
-#
-# Antidote allows you to defer loading plugins. This is similar to concepts like "turbo
-# mode" in other plugin managers. Antidote handles deferring plugins by leveraging
-# romkatv/zsh-defer, which "defers execution of a zsh command until zsh has nothing else
-# to do and is waiting for user input". In general, you should not defer plugins unless
-# you know for sure they properly support deferred loading, and there are no adverse
-# side-effects (see: https://github.com/romkatv/zsh-defer#Caveats).
-###
 
 # Syntax highlighting
 zdharma-continuum/fast-syntax-highlighting kind:defer
@@ -114,7 +75,7 @@ marlonrichert/zsh-autocomplete
 
 # These popular core plugins should be loaded at the end
 zsh-users/zsh-autosuggestions
-#zsh-users/zsh-history-substring-search
+zsh-users/zsh-history-substring-search
 ## This plugin expects the completion system to be fully initialized already
 ## It's probably initalized by a plugin above
 dim-an/cod
