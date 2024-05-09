@@ -3,10 +3,6 @@
 # .zsh_plugins.txt - antidote plugins file
 #
 
-## I suspect this wants to be loaded late for $fpath to be populated
-## but the readme says load early
-marlonrichert/zsh-autocomplete
-
 mattmc3/zephyr path:plugins/completion
 jnooree/zoxide-zsh-completion kind:fpath
 zsh-users/zsh-completions path:src kind:fpath
@@ -64,6 +60,10 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 # These popular core plugins should be loaded at the end
 zsh-users/zsh-autosuggestions
 #zsh-users/zsh-history-substring-search
+
+## I suspect this wants to be loaded late for $fpath to be populated
+## but the readme says load early
+marlonrichert/zsh-autocomplete
 
 ## This plugin expects the completion system to be fully initialized already
 ## It's probably initalized by a plugin above
