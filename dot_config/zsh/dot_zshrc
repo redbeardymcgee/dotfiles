@@ -6,10 +6,33 @@
 # Zsh options.
 setopt extended_glob
 
+## Nested shell awareness
+YAZI_TERM=""
+if [ -n "$YAZI_LEVEL" ]; then
+  YAZI_TERM="|  Yazi terminal: "
+fi
+PS1="$PS1$YAZI_TERM"
+
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
+
+# Set ZDOTDIR if you want to re-home Zsh.
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
+
+# npm stuff
+export CHECKPOINT_DISABLE=1
+export MISE_NODE_COREPACK=true
+
+if [[ $CONTAINER_ID = "dev" ]]; then
+  pathmunge $HOME/go/bin
+  pathmunge $HOME/.cargo/bin
+fi
+
+pathmunge $HOME/devbox/bin
+pathmunge $HOME/.local/bin
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles

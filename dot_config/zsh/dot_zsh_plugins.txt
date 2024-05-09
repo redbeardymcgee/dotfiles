@@ -3,6 +3,10 @@
 # .zsh_plugins.txt - antidote plugins file
 #
 
+## I suspect this wants to be loaded late for $fpath to be populated
+## but the readme says load early
+marlonrichert/zsh-autocomplete
+
 mattmc3/zephyr path:plugins/completion
 jnooree/zoxide-zsh-completion kind:fpath
 zsh-users/zsh-completions path:src kind:fpath
@@ -40,7 +44,6 @@ MichaelAquilina/zsh-you-should-use kind:defer
 romkatv/zsh-bench kind:path
 zpm-zsh/ls kind:defer
 
-
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
@@ -57,10 +60,6 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 # .zsh_plugins.txt file.
 #
 ###
-
-## I suspect this wants to be loaded late for $fpath to be populated
-## but the readme says load early
-marlonrichert/zsh-autocomplete
 
 # These popular core plugins should be loaded at the end
 zsh-users/zsh-autosuggestions

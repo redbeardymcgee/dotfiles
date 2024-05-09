@@ -8,37 +8,6 @@
 ## Ubuntu unhelpfully runs compinit for us
 skip_global_compinit=1
 
-# Set ZDOTDIR if you want to re-home Zsh.
-export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
-export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
-
-## I want to put this in `$ZDOTDIR/functions` but it doesn't seem to load in time
-## probably because that dir is lazy loaded -> waits until prompt? 
-function pathmunge {
-  d=$({ cd -- "$1" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
-  if ! [[ -d $d ]]; then
-    return
-  fi
-  case ":${PATH}:" in
-  *:"$d":*) ;;
-  *)
-    if [[ "$2" = "after" ]]; then
-      PATH=$PATH:$d
-    else
-      PATH=$d:$PATH
-    fi
-    ;;
-  esac
-}
-
-if [[ $CONTAINER_ID = "dev" ]]; then
-  pathmunge $HOME/go/bin
-  pathmunge $HOME/.cargo/bin
-fi
-
-pathmunge $HOME/devbox/bin
-pathmunge $HOME/.local/bin
-
 # You can use .zprofile to set environment vars for non-login, non-interactive shells.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
