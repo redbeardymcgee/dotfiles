@@ -43,7 +43,7 @@ pathmunge $HOME/.local/bin
 
 # Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
+# antidote load
 
 ### https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
