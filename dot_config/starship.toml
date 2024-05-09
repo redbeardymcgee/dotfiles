@@ -345,6 +345,11 @@ style = "italic red"
 [scala]
 symbol = " "
 
+[shell]
+bash_indicator = "󱆃"
+zsh_indicator = ""
+disabled = false
+
 [spack]
 symbol = "◇ "
 format = " spack [$symbol$environment]($style)"
