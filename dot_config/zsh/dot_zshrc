@@ -23,7 +23,7 @@ export CHECKPOINT_DISABLE=1
 export MISE_NODE_COREPACK=true
 
 if [[ $CONTAINER_ID = "dev" ]]; then
-  PATH=$HOME/go/bin:$HOME/.cargo/bin:$PATH
+  PATH=$HOME/devbox/local/opt/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
 fi
 
 PATH=$HOME/.local/bin:$HOME/devbox/bin:$PATH
@@ -57,4 +57,4 @@ source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
 
-source <(inshellisense init zsh)
+source <($(mise which inshellisense) init zsh)

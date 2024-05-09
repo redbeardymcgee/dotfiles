@@ -192,6 +192,10 @@ setup_blesh() {
 
 setup_blesh
 
+setup_zf() {
+	local zf_url="https://github.com/natecraddock/zf/releases/download/0.9.1/zf-0.9.1-x86_64-linux.tar.xz"
+	dl "$zf_url" | tar -C "$HOME/devbox/local/opt/bin" --transform '/zf-*/zf' -xJf -
+}
 EXPORT_BIN_PATH=$HOME/devbox/bin
 
 export_bins=(

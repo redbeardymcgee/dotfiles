@@ -3,6 +3,7 @@ source "$HOME/.local/lib/rbm/utils.sh"
 if [[ $CONTAINER_ID = "dev" ]]; then
   pathmunge "$HOME/.cargo/bin"
   pathmunge "$HOME/go/bin"
+  pathmunge "$HOME/devbox/local/opt/bin"
 fi
 
 pathmunge "$HOME/devbox/bin"
