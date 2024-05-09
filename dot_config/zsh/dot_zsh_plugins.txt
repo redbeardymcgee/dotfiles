@@ -3,16 +3,8 @@
 # .zsh_plugins.txt - antidote plugins file
 #
 
-### Regular Plugins
-# With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
-# to be run near the TOP of your .zsh_plugins.txt file.
 mattmc3/zephyr path:plugins/completion
-
-# https://github.com/jnooree/zoxide-zsh-completion
 jnooree/zoxide-zsh-completion kind:fpath
-
-# zsh-users/zsh-completions is a popular plugin for adding supplemental completions.
-# We combine the `path:` and `kind:fpath` annotations here:
 zsh-users/zsh-completions path:src kind:fpath
 
 
@@ -42,13 +34,10 @@ $ZDOTDIR/.aliases
 #romkatv/powerlevel10k kind:fpath
 #sindresorhus/pure kind:fpath
 
-
-### Utilities
 peterhurford/up.zsh kind:defer
 mattmc3/zman kind:defer
 MichaelAquilina/zsh-you-should-use kind:defer
 romkatv/zsh-bench kind:path
-rummik/zsh-tailf kind:defer
 zpm-zsh/ls kind:defer
 
 
@@ -76,6 +65,7 @@ marlonrichert/zsh-autocomplete
 # These popular core plugins should be loaded at the end
 zsh-users/zsh-autosuggestions
 #zsh-users/zsh-history-substring-search
+
 ## This plugin expects the completion system to be fully initialized already
 ## It's probably initalized by a plugin above
 dim-an/cod
