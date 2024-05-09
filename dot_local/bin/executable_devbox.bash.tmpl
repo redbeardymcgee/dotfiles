@@ -216,7 +216,7 @@ for bin in "${export_bins[@]}"; do
 done
 
 {{ if hasSuffix "rbmpc" .chezmoi.fqdnHostname }}
-distrobox-export --app /usr/bin/wezterm
+distrobox-export --app wezterm
 {{ end }}
 
 distrobox-export --export-path "$EXPORT_BIN_PATH" --bin /usr/bin/wezterm
