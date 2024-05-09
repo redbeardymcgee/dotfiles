@@ -3,6 +3,13 @@
 # .zsh_plugins.txt - antidote plugins file
 #
 
+### Regular Plugins
+https://github.com/peterhurford/up.zsh
+rummik/zsh-tailf
+mattmc3/zman
+zpm-zsh/ls
+MichaelAquilina/zsh-you-should-use
+
 # With antidote, using Zephyr's completion plugin is recommended. This plugin is meant
 # to be run near the TOP of your .zsh_plugins.txt file.
 mattmc3/zephyr path:plugins/completion
@@ -14,32 +21,8 @@ jnooree/zoxide-zsh-completion kind:fpath
 # We combine the `path:` and `kind:fpath` annotations here:
 zsh-users/zsh-completions path:src kind:fpath
 
-### Regular Plugins
-#
-# Plugins are the simplest kind of bundles. You can point to a full git URL, or if you
-# assume GitHub.com, then you can use the user/repo shorthand.
-#
-###
-https://github.com/peterhurford/up.zsh
-rummik/zsh-tailf
-mattmc3/zman
-zpm-zsh/ls
-MichaelAquilina/zsh-you-should-use
-
-## NOTE: This supposedly defers its own init until first prompt
-## It may be necessary to set ZVM_INIT_MODE=sourcing to prevent some keybind overrides
-## Alternative: https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#execute-extra-commands
-## But this seems like it will mess up other plugin init sequencing
-jeffreytse/zsh-vi-mode
-
-
 
 ### Local Plugins
-#
-# Plugins don't have to come from GitHub. You can also use local files or directories to
-# host your own custom plugins.
-#
-###
 $ZDOTDIR/.aliases
 #$ZDOTDIR/custom/plugins/example
 
@@ -78,21 +61,11 @@ $ZDOTDIR/.aliases
 ###
 
 # Use kind:fpath for prompts you want available to promptinit.
-romkatv/powerlevel10k kind:fpath
-sindresorhus/pure kind:fpath
-
-# Or, just load a prompt plugin the normal way.
-# sindresorhus/pure
+#romkatv/powerlevel10k kind:fpath
+#sindresorhus/pure kind:fpath
 
 
 ### Utilities
-#
-# Utilities aren't traditional Zsh plugins - they aren't sourced Zsh scripts. Instead
-# they provide commands that can be executed from your terminal session. One good
-# example is zsh-bench, which is a utility that benchmarks your Zsh config. Utility
-# bundles can often be made available simply with the `kind:path` annotation.
-#
-###
 romkatv/zsh-bench kind:path
 
 
@@ -107,32 +80,10 @@ romkatv/zsh-bench kind:path
 #
 ###
 
-### Framework: Oh-My-Zsh
-#
-# Oh-My-Zsh is a very popular Zsh framework. You might choose to use plugins from OMZ
-# in your own config. Depending on which plugins you use, you may also need to include
-# OMZ's entire "lib" directory. If you do this, be careful - "lib" configures a lot of
-# very broad settings. If you are familiar with what you are doing, you may choose to
-# only include parts of "lib".
-#
-#   # use all of lib
-#   ohmyzsh/ohmyzsh path:lib
-#   # -OR-, only use only the specific files we care about
-#   ohmyzsh/ohmyzsh path:lib/clipboard.zsh
-#
-####
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
-### Framework: zsh-utils
-#
-# zsh-utils is a micro-framework that is also well suited to pair with antidote. It
-# provides much of the same core functionality from other bigger frameworks without the
-# bloat or performance hit. Using zsh-utils, you may find you don't need much else.
-# If you want a really thin framework, this is great.
-#
-###
 belak/zsh-utils path:editor
 
 
@@ -143,9 +94,7 @@ belak/zsh-utils path:editor
 # romkatv/zsh-defer, which "defers execution of a zsh command until zsh has nothing else
 # to do and is waiting for user input". In general, you should not defer plugins unless
 # you know for sure they properly support deferred loading, and there are no adverse
-# side-effects (see: https://github.com/romkatv/zsh-defer#Caveats). However, for
-# certain plugins, this can greatly increase your zsh startup speed.
-#
+# side-effects (see: https://github.com/romkatv/zsh-defer#Caveats).
 ###
 
 # Syntax highlighting
@@ -169,3 +118,5 @@ zsh-users/zsh-autosuggestions
 ## This plugin expects the completion system to be fully initialized already
 ## It's probably initalized by a plugin above
 dim-an/cod
+
+# vim: ft=conf

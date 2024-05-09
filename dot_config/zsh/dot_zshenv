@@ -12,7 +12,8 @@ skip_global_compinit=1
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 export ZDOTDIR=${ZDOTDIR:-$XDG_CONFIG_HOME/zsh}
 
-## I want to put this in $ZDOTDIR/functions but it doesn't seem to load in time
+## I want to put this in `$ZDOTDIR/functions` but it doesn't seem to load in time
+## probably because that dir is lazy loaded -> waits until prompt? 
 function pathmunge {
   d=$({ cd -- "$1" && { pwd -P || pwd; }; } 2>/dev/null) # canonicalize symbolic links
   if ! [[ -d $d ]]; then
