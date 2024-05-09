@@ -30,7 +30,7 @@ if [[ $CONTAINER_ID = "dev" ]]; then
   PATH=$HOME/go/bin:$HOME/.cargo/bin:$PATH
 fi
 
-PATH=$HOME/.local/bin:$HOME/devbox/bin
+PATH=$HOME/.local/bin:$HOME/devbox/bin:$PATH
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
