@@ -5,7 +5,7 @@
 
 ## I suspect this wants to be loaded late for $fpath to be populated
 ## but the readme says load early
-marlonrichert/zsh-autocomplete
+#marlonrichert/zsh-autocomplete
 
 mattmc3/zephyr path:plugins/completion
 jnooree/zoxide-zsh-completion kind:fpath
