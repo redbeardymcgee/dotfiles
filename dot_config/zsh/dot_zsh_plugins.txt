@@ -75,7 +75,7 @@ marlonrichert/zsh-autocomplete
 
 # These popular core plugins should be loaded at the end
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-history-substring-search
+#zsh-users/zsh-history-substring-search
 ## This plugin expects the completion system to be fully initialized already
 ## It's probably initalized by a plugin above
 dim-an/cod
