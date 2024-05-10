@@ -24,7 +24,11 @@
     "eza@latest",
     "hexyl@latest",
     "jq@latest",
-    "difftastic@latest"
+    "difftastic@latest",
+    "miller@latest",
+    "lazygit@latest",
+    "fzf@latest",
+    "cargo@latest"
   ],
   "shell": {
     "init_hook": [
