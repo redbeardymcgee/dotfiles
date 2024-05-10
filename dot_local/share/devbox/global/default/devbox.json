@@ -20,7 +20,11 @@
     "bat-extras.batwatch@latest",
     "bat-extras.batdiff@latest",
     "curlie@latest",
-    "github:nix-community/neovim-nightly-overlay"
+    "github:nix-community/neovim-nightly-overlay",
+    "eza@latest",
+    "hexyl@latest",
+    "jq@latest",
+    "difftastic@latest"
   ],
   "shell": {
     "init_hook": [
