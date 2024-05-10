@@ -18,7 +18,9 @@
     "bat-extras.batman@latest",
     "bat-extras.batpipe@latest",
     "bat-extras.batwatch@latest",
-    "bat-extras.batdiff@latest"
+    "bat-extras.batdiff@latest",
+    "curlie@latest",
+    "github:nix-community/neovim-nightly-overlay"
   ],
   "shell": {
     "init_hook": [

@@ -385,6 +385,54 @@
         }
       }
     },
+    "curlie@latest": {
+      "last_modified": "2024-04-19T21:36:04Z",
+      "resolved": "github:NixOS/nixpkgs/92d295f588631b0db2da509f381b4fb1e74173c5#curlie",
+      "source": "devbox-search",
+      "version": "1.7.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/q8mgdyn4jsqfnzdismyhz9z8yc8yj2pl-curlie-1.7.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/q8mgdyn4jsqfnzdismyhz9z8yc8yj2pl-curlie-1.7.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/601jjpjq6cmiaxl6smsvk1qi6f7xx46x-curlie-1.7.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/601jjpjq6cmiaxl6smsvk1qi6f7xx46x-curlie-1.7.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hvgvn6zbg3kznzgfglry1464ggahl9vx-curlie-1.7.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hvgvn6zbg3kznzgfglry1464ggahl9vx-curlie-1.7.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3icnvz4ag98gniwgj8s9hfl3shdk1d64-curlie-1.7.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3icnvz4ag98gniwgj8s9hfl3shdk1d64-curlie-1.7.2"
+        }
+      }
+    },
     "git@latest": {
       "last_modified": "2024-05-01T20:12:28Z",
       "resolved": "github:NixOS/nixpkgs/1c74cc292b61614e74c1cf0d372f79d57fb4936b#git",
