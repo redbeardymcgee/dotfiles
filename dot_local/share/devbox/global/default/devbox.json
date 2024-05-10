@@ -10,7 +10,15 @@
     "procs@latest",
     "ripdrag@latest",
     "starship@latest",
-    "atuin@latest"
+    "atuin@latest",
+    "bat@latest",
+    "neovim@latest",
+    "bat-extras.prettybat@latest",
+    "bat-extras.batgrep@latest",
+    "bat-extras.batman@latest",
+    "bat-extras.batpipe@latest",
+    "bat-extras.batwatch@latest",
+    "bat-extras.batdiff@latest"
   ],
   "shell": {
     "init_hook": [
