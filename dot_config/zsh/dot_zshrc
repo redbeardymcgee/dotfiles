@@ -53,10 +53,10 @@ bindkey '^P' atuin-up-search
 ###
 
 # source <(mise activate zsh)
+source <(devbox global shellenv)
 source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
 
-source <(devbox global shellenv)
 
 # source <($(mise which inshellisense) init zsh)
