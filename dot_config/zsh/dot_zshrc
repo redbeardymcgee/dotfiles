@@ -57,6 +57,6 @@ source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
 
-# source <(devbox global shellenv)
+source <(devbox global shellenv)
 
 # source <($(mise which inshellisense) init zsh)
