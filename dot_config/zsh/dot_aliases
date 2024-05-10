@@ -20,8 +20,6 @@ alias please=sudo
 
 alias quit='exit'
 
-alias vi=vim
-
 alias vim="nvim"
 
 alias zshrc='chezmoi edit "${ZDOTDIR:-$HOME}"/.zshrc'
