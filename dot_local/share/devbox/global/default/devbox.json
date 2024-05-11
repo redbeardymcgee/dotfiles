@@ -29,7 +29,10 @@
     "fzf@latest",
     "cargo@latest",
     "chezmoi@latest",
-    "nodejs@latest"
+    "nodejs@latest",
+    "tealdeer@latest",
+    "ollama@latest",
+    "go@latest"
   ],
   "shell": {
     "init_hook": [

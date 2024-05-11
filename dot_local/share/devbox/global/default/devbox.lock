@@ -785,6 +785,54 @@
         }
       }
     },
+    "go@latest": {
+      "last_modified": "2024-04-19T21:36:04Z",
+      "resolved": "github:NixOS/nixpkgs/92d295f588631b0db2da509f381b4fb1e74173c5#go",
+      "source": "devbox-search",
+      "version": "1.22.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/x7gzwywk7mvjamdyc4n45fh62jks7lma-go-1.22.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/x7gzwywk7mvjamdyc4n45fh62jks7lma-go-1.22.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ka1iykac1bfvy98p9g2ii3xn2fnl98cn-go-1.22.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ka1iykac1bfvy98p9g2ii3xn2fnl98cn-go-1.22.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s26vypls3i2rvprj2jq7l1ypb5y12mq9-go-1.22.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/s26vypls3i2rvprj2jq7l1ypb5y12mq9-go-1.22.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9kriq85qac7phcxgpdqbqr25vlr61ifw-go-1.22.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9kriq85qac7phcxgpdqbqr25vlr61ifw-go-1.22.2"
+        }
+      }
+    },
     "gping@latest": {
       "last_modified": "2024-05-01T20:12:28Z",
       "resolved": "github:NixOS/nixpkgs/1c74cc292b61614e74c1cf0d372f79d57fb4936b#gping",
@@ -1242,6 +1290,54 @@
         }
       }
     },
+    "ollama@latest": {
+      "last_modified": "2024-05-01T20:12:28Z",
+      "resolved": "github:NixOS/nixpkgs/1c74cc292b61614e74c1cf0d372f79d57fb4936b#ollama",
+      "source": "devbox-search",
+      "version": "0.1.31",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ilxkby85ry7fvmm0mlj5yn258ry1x1w8-ollama-0.1.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ilxkby85ry7fvmm0mlj5yn258ry1x1w8-ollama-0.1.31"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/iqdxsqmkvd0vn8759vfx1dpb402nzlrv-ollama-0.1.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/iqdxsqmkvd0vn8759vfx1dpb402nzlrv-ollama-0.1.31"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/x9l8lvmkhcvxijjzmn9bzsd7hg5hx0kz-ollama-0.1.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/x9l8lvmkhcvxijjzmn9bzsd7hg5hx0kz-ollama-0.1.31"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/10xq72wzapsaq2x598qkidiq4m4l058v-ollama-0.1.31",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/10xq72wzapsaq2x598qkidiq4m4l058v-ollama-0.1.31"
+        }
+      }
+    },
     "ouch@latest": {
       "last_modified": "2024-05-01T20:12:28Z",
       "resolved": "github:NixOS/nixpkgs/1c74cc292b61614e74c1cf0d372f79d57fb4936b#ouch",
@@ -1431,6 +1527,54 @@
             }
           ],
           "store_path": "/nix/store/kcvvk2jbqkdqvvsqmhnrznsm3azkd9yh-starship-1.18.2"
+        }
+      }
+    },
+    "tealdeer@latest": {
+      "last_modified": "2024-05-01T20:12:28Z",
+      "resolved": "github:NixOS/nixpkgs/1c74cc292b61614e74c1cf0d372f79d57fb4936b#tealdeer",
+      "source": "devbox-search",
+      "version": "1.6.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/plpf707sfhlpc6zp0vivx76r6rpa1zjc-tealdeer-1.6.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/plpf707sfhlpc6zp0vivx76r6rpa1zjc-tealdeer-1.6.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/lzfkjah7n7ziqgin2kljqziljdihgn4z-tealdeer-1.6.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/lzfkjah7n7ziqgin2kljqziljdihgn4z-tealdeer-1.6.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3dqvni0pwqqmyhn2ilibz1gs8c9zi8ls-tealdeer-1.6.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3dqvni0pwqqmyhn2ilibz1gs8c9zi8ls-tealdeer-1.6.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8gyqkf5dxzkf5bmm78bn95lrp78kw0fz-tealdeer-1.6.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8gyqkf5dxzkf5bmm78bn95lrp78kw0fz-tealdeer-1.6.1"
         }
       }
     },
