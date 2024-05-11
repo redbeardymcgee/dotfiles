@@ -47,7 +47,7 @@ ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
-belak/zsh-utils path:editor
+#belak/zsh-utils path:editor
 
 # Syntax highlighting
 zdharma-continuum/fast-syntax-highlighting kind:defer
