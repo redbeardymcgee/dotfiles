@@ -29,7 +29,8 @@
     "lazygit@latest",
     "fzf@latest",
     "cargo@latest",
-    "chezmoi@latest"
+    "chezmoi@latest",
+    "nodejs@latest"
   ],
   "shell": {
     "init_hook": [
