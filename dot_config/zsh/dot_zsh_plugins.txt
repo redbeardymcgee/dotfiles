@@ -68,4 +68,5 @@ zsh-users/zsh-autosuggestions
 ## It's probably initalized by a plugin above
 dim-an/cod
 
+marlonrichert/zsh-edit
 # vim: ft=conf
