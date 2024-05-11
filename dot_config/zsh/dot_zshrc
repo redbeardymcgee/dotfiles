@@ -19,6 +19,7 @@ fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
 PATH=$HOME/.local/bin:$PATH
+DEVBOX_COREPACK_ENABLED=1
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
