@@ -28,7 +28,8 @@
     "miller@latest",
     "lazygit@latest",
     "fzf@latest",
-    "cargo@latest"
+    "cargo@latest",
+    "chezmoi@latest"
   ],
   "shell": {
     "init_hook": [
