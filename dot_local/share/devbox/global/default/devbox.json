@@ -12,7 +12,6 @@
     "starship@latest",
     "atuin@latest",
     "bat@latest",
-    "neovim@latest",
     "bat-extras.prettybat@latest",
     "bat-extras.batgrep@latest",
     "bat-extras.batman@latest",
