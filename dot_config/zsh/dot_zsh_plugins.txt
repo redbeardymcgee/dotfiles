@@ -7,9 +7,8 @@
 ## but the readme says load early
 marlonrichert/zsh-autocomplete
 
-# mattmc3/zephyr path:plugins/completion
-# jnooree/zoxide-zsh-completion kind:fpath
-# zsh-users/zsh-completions path:src kind:fpath
+mattmc3/zephyr path:plugins/completion
+zsh-users/zsh-completions path:src kind:fpath
 
 
 ### Local Plugins

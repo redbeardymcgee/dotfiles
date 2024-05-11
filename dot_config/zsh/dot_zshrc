@@ -18,19 +18,19 @@ ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
-PATH=$HOME/.local/bin:$PATH
-DEVBOX_COREPACK_ENABLED=1
-
-# Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
 
-# Clone antidote if necessary.
 [[ -d ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
-# Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+
+PATH=$HOME/.local/bin:$PATH
+
+source <(devbox global shellenv)
+
+DEVBOX_COREPACK_ENABLED=1
 
 ### https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
@@ -45,11 +45,6 @@ antidote load
 bindkey '^P' atuin-up-search
 ###
 
-# source <(mise activate zsh)
-source <(devbox global shellenv)
 source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
-
-
-# source <($(mise which inshellisense) init zsh)
