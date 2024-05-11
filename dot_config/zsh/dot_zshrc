@@ -18,15 +18,7 @@ ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
-# npm stuff
-export CHECKPOINT_DISABLE=1
-export MISE_NODE_COREPACK=true
-
-if [[ $CONTAINER_ID = "dev" ]]; then
-  PATH=$HOME/devbox/local/opt/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
-fi
-
-PATH=$HOME/.local/bin:$HOME/devbox/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
