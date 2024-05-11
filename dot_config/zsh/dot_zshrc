@@ -29,6 +29,7 @@ antidote load
 PATH=$HOME/.local/bin:$PATH
 
 source <(devbox global shellenv)
+source <(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 DEVBOX_COREPACK_ENABLED=1
 
@@ -44,7 +45,7 @@ DEVBOX_COREPACK_ENABLED=1
 ### keybinds
 bindkey '^P' atuin-up-search
 ###
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 source <(atuin init zsh)
 source <(starship init zsh)
 source <(zoxide init zsh --cmd cd)
