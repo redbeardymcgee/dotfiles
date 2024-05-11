@@ -255,6 +255,7 @@ symbol = "󰆥 "
 format = " nim [$symbol($version )]($style)"
 
 [nix_shell]
+disabled = true
 symbol = " "
 format = " nix [$symbol$state $name]($style)"
 
