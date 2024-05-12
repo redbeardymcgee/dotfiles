@@ -26,18 +26,14 @@ autoload -Uz $fpath[1]/*(.:t)
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
-PATH=$HOME/.local/bin:$PATH
-
 source <(devbox global shellenv)
-# source <(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+PATH=$HOME/.local/bin:$PATH
 
 ### https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
 bindkey              '^I'         menu-complete
 bindkey "$terminfo[kcbt]" reverse-menu-complete
-
-# Make Enter always submit the command line
-# bindkey -M menuselect '^M' .accept-line
 ###
 
 ### keybinds
