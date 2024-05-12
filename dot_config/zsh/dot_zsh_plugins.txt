@@ -10,7 +10,6 @@ marlonrichert/zsh-autocomplete
 mattmc3/zephyr path:plugins/completion
 zsh-users/zsh-completions path:src kind:fpath
 
-
 ### Local Plugins
 $ZDOTDIR/.aliases
 #$ZDOTDIR/custom/plugins/example
@@ -47,8 +46,6 @@ ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
-#belak/zsh-utils path:editor
-
 # Syntax highlighting
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
@@ -66,7 +63,7 @@ zsh-users/zsh-autosuggestions
 
 ## This plugin expects the completion system to be fully initialized already
 ## It's probably initalized by a plugin above
-dim-an/cod
+dim-an/cod type:defer
 
 marlonrichert/zsh-edit
 # vim: ft=conf

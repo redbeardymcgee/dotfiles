@@ -15,9 +15,9 @@ fi
 # Editors
 #
 
-export EDITOR="${EDITOR:+nvim}"
-export VISUAL="${VISUAL:+nvim}"
-export PAGER="${PAGER:+less -RF}"
+export EDITOR=nvim
+export VISUAL=nvim
+export PAGER="less -RF"
 
 #
 # Paths
