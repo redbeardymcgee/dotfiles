@@ -1,16 +1,4 @@
-source "$HOME/.local/lib/rbm/utils.sh"
-
-if [[ $CONTAINER_ID = "dev" ]]; then
-  pathmunge "$HOME/.cargo/bin"
-  pathmunge "$HOME/go/bin"
-  pathmunge "$HOME/devbox/local/opt/bin"
-fi
-
-pathmunge "$HOME/devbox/bin"
-pathmunge "$HOME/.local/bin"
-
 export CHECKPOINT_DISABLE=1
-export MISE_NODE_COREPACK=true
 
 export EDITOR=nvim
 export VISUAL=nvim

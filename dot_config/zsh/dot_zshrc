@@ -28,8 +28,6 @@ antidote load
 
 PATH=$HOME/.local/bin:$PATH
 
-DEVBOX_COREPACK_ENABLED=1
-
 source <(devbox global shellenv)
 # source <(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
@@ -43,12 +41,13 @@ source <(devbox global shellenv)
 ###
 
 ### keybinds
+bindkey '^A' beginning-of-line
 bindkey '^P' atuin-up-search
 bindkey '^B' backward-char
 bindkey '^F' forward-char
 bindkey '^E' end-of-line
-bindkey '^[[13]' forward-subword
-bindkey '^[[1;5B' backward-subword
+bindkey '^<M-f>' forward-subword
+bindkey '^<M-b>' backward-subword
 ###
 
 source <(atuin init zsh)
