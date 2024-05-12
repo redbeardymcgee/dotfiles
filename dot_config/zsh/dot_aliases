@@ -6,6 +6,7 @@
 # global aliases expand anywhere on the command line
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+alias -g -- ls='eza'
 
 alias _=sudo
 
@@ -13,8 +14,12 @@ alias cat="bat"
 alias curlie='curlie --curl'
 alias cd..='cd ..'
 
-alias nneovide="NEOVIM_BIN=$HOME/.local/bin/nvim-nightly neovide"
-alias nnvim="nvim-nightly"
+alias eza='eza -lbHo --smart-group --git --git-repos'
+alias ld='eza -D'
+alias lf='eza -af --color=always'
+alias lh='eza -d .* --group-directories-first'
+alias ll='eza -a --group-directories-first'
+alias lt='eza -a --sort=modified'
 
 alias please=sudo
 
