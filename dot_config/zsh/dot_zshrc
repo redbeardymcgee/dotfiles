@@ -44,6 +44,11 @@ DEVBOX_COREPACK_ENABLED=1
 
 ### keybinds
 bindkey '^P' atuin-up-search
+bindkey '^B' backward-char
+bindkey '^F' forward-char
+bindkey '^E' end-of-line
+bindkey '^[[13]' forward-subword
+bindkey '^[[1;5B' backward-subword
 ###
 
 source <(atuin init zsh)
