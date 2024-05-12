@@ -28,10 +28,10 @@ antidote load
 
 PATH=$HOME/.local/bin:$PATH
 
-source <(devbox global shellenv)
-source <(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 DEVBOX_COREPACK_ENABLED=1
+
+source <(devbox global shellenv)
+# source <(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 ### https://github.com/marlonrichert/zsh-autocomplete
 # Make Tab and ShiftTab cycle completions on the command line
