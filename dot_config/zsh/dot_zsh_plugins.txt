@@ -40,7 +40,6 @@ peterhurford/up.zsh kind:defer
 mattmc3/zman kind:defer
 MichaelAquilina/zsh-you-should-use kind:defer
 romkatv/zsh-bench kind:path
-zpm-zsh/ls kind:defer
 
 ohmyzsh/ohmyzsh path:lib/clipboard.zsh
 ohmyzsh/ohmyzsh path:plugins/copypath
