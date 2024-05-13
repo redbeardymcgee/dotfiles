@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 #function setup_atuin {
-out_dir=$HOME/.local/share/zsh/completion.d/
-out_file=$out_dir/atuin.zsh
-if ! [[ -r $out_file ]]; then
-  atuin gen-completions --shell zsh --out-dir $out_dir
-fi
-source $out_file
+  out_dir=$HOME/.local/share/zsh/completion.d/
+  out_file=$out_dir/atuin.zsh
+  if ! [[ -r $out_file ]]; then
+    atuin gen-completions --shell zsh --out-dir $out_dir
+  fi
+  source $out_file
 #}
