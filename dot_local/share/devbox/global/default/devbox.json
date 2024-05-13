@@ -37,7 +37,8 @@
     "ollama@latest",
     "go@latest",
     "direnv@latest",
-    "gtrash@latest"
+    "gtrash@latest",
+    "nushell@latest"
   ],
   "shell": {
     "init_hook": [
