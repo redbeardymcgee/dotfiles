@@ -1,0 +1,19 @@
+if status is-interactive
+
+    abbr -a ls --position anywhere eza
+    abbr -a eza eza -lbHo --smart-group --git --git-repos
+    abbr -a ld eza -D
+    abbr -a lf eza -af --color=always
+    abbr -a lh eza -d .* --group-directories-first
+    abbr -a ll eza -a --group-directories-first
+    abbr -a lt eza -a --sort=modified
+    abbr -a gp gtrash put
+    abbr -a rm echo "Use `gp` (`gtrash put`)"
+    abbr -a vim nvim
+
+    devbox global shellenv | source
+    starship init fish | source
+    atuin init fish | source
+    zoxide init fish --cmd cd | source
+    direnv hook fish | source
+end
