@@ -35,7 +35,8 @@
     "nodejs@latest",
     "tealdeer@latest",
     "ollama@latest",
-    "go@latest"
+    "go@latest",
+    "direnv@latest"
   ],
   "shell": {
     "init_hook": [

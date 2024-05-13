@@ -1,7 +1,5 @@
 if status is-interactive
 
-    abbr -a cat bat
-    abbr -a curlie curlie --curl
     abbr -a gp gtrash put
     abbr -a rm echo "Use `gp` (`gtrash put`)"
     abbr -a vim nvim
