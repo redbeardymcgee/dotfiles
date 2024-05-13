@@ -27,6 +27,6 @@ alias quit='exit'
 
 alias vim="nvim"
 
-alias zshrc='(cd ${ZDOTDIR:-$HOME/}; chezmoi edit "${ZDOTDIR:-$HOME}"/.zshrc)'
+alias zshrc='chezmoi edit ${ZDOTDIR:-$HOME}/.zshrc'
 alias zdot='cd ${ZDOTDIR:-~}'
 
