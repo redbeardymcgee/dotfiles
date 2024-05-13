@@ -14,6 +14,7 @@ alias cat="bat"
 alias curlie='curlie --curl'
 alias cd..='cd ..'
 
+## `ls` -> `eza`
 alias eza='eza -lbHo --smart-group --git --git-repos'
 alias ld='eza -D'
 alias lf='eza -af --color=always'

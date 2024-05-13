@@ -3,9 +3,9 @@
 
 #function yy {
 	local tmp=$(mktemp -p /tmp/yazi "yazi-cwd.XXXXXX")
-  local cwd=${(f)$(< $1)}
-	yazi "$@" --cwd-file="$tmp"
-  
+	command yazi "$@" --cwd-file="$tmp"
+
+  local cwd=$(< $tmp)
   if [[ -d $cwd && $cwd != $PWD ]]; then
     cd -- $cwd
 	fi
