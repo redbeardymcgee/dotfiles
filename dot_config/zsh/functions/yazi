@@ -2,10 +2,11 @@
 ##? yazi wrapper that drops me in the cwd on exit
 
 #function yy {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	local tmp=$(mktemp -p /tmp/yazi "yazi-cwd.XXXXXX")
+  local cwd=${(f)$(< $1)}
 	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
+  
+  if [[ -d $cwd && $cwd != $PWD ]]; then
+    cd -- $cwd
 	fi
-	rm -f -- "$tmp"
 #}
