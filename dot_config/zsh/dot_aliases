@@ -11,8 +11,8 @@ alias -g -- ls='eza'
 alias _=sudo
 
 alias cat="bat"
+
 alias curlie='curlie --curl'
-alias cd..='cd ..'
 
 ## `ls` -> `eza`
 alias eza='eza -lbHo --smart-group --git --git-repos'
@@ -22,9 +22,11 @@ alias lh='eza -d .* --group-directories-first'
 alias ll='eza -a --group-directories-first'
 alias lt='eza -a --sort=modified'
 
-alias please=sudo
+## https://specifications.freedesktop.org/trash-spec/trashspec-latest.html
+alias gp='gtrash put'
+alias rm='echo "Use `gp` (`gtrash put`)"; false'
 
-alias rm="echo -e 'If you want to use rm really, then use \"\\\\rm\" instead.'; false"
+alias please='sudo'
 
 alias quit='exit'
 
