@@ -4,10 +4,9 @@
 
 use nu-themes/catppuccin-mocha.nu
 
-$env.config.color_config = (catppuccin-mocha)
-
 $env.config = {
     show_banner: false
+    color_config: (catppuccin-mocha)
 
     rm: {
         always_trash: true
@@ -28,3 +27,4 @@ $env.config = {
     highlight_resolved_externals: true
     plugins: {} # Per-plugin configuration. See https://www.nushell.sh/contributor-book/plugins.html#configuration.
 }
+
