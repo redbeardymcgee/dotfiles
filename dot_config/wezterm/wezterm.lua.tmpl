@@ -38,7 +38,9 @@ local function bind_if(cond, key, mods, action)
 	return { key = key, mods = mods, action = wezterm.action_callback(callback) }
 end
 
--- config.default_prog = { '/usr/bin/env', 'nu' }
+config.default_prog = {
+  "/var/home/josh/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/nu"
+}
 
 config.scrollback_lines = 3500
 
