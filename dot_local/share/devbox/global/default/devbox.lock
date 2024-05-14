@@ -1722,54 +1722,6 @@
         }
       }
     },
-    "wezterm@latest": {
-      "last_modified": "2024-05-11T07:37:55Z",
-      "resolved": "github:NixOS/nixpkgs/e4e7a43a9db7e22613accfeb1005cca1b2b1ee0d#wezterm",
-      "source": "devbox-search",
-      "version": "20240203-110809-5046fc22",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/219mzxbi0pf4mh1ys4fkll7cwsdv5igj-wezterm-20240203-110809-5046fc22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/219mzxbi0pf4mh1ys4fkll7cwsdv5igj-wezterm-20240203-110809-5046fc22"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/22xv4bz96pc0ikw5a1pv1z7m79cn43f7-wezterm-20240203-110809-5046fc22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/22xv4bz96pc0ikw5a1pv1z7m79cn43f7-wezterm-20240203-110809-5046fc22"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/3jdb06k72nj47y2npvcb0qgyji94mxa3-wezterm-20240203-110809-5046fc22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/3jdb06k72nj47y2npvcb0qgyji94mxa3-wezterm-20240203-110809-5046fc22"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/m1njxh2kwbjxnpl7ykr9dxz7fsyrbamh-wezterm-20240203-110809-5046fc22",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/m1njxh2kwbjxnpl7ykr9dxz7fsyrbamh-wezterm-20240203-110809-5046fc22"
-        }
-      }
-    },
     "yazi@latest": {
       "last_modified": "2024-05-03T15:42:32Z",
       "resolved": "github:NixOS/nixpkgs/5fd8536a9a5932d4ae8de52b7dc08d92041237fc#yazi",

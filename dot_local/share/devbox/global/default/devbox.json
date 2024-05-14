@@ -38,8 +38,7 @@
     "go@latest",
     "direnv@latest",
     "gtrash@latest",
-    "nushell@latest",
-    "wezterm@latest"
+    "nushell@latest"
   ],
   "shell": {
     "init_hook": [
