@@ -73,14 +73,13 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
-$env = {
-  XDG_CACHE_HOME = ($env.HOME | path join ".cache")
-  XDG_CONFIG_HOME = ($env.HOME | path join ".cache")
-  XDG_DATA_HOME = ($env.HOME | path join ".local/share")
-  XDG_STATE_HOME = ($env.HOME | path join ".local/state")
-  XDG_RUNTIME_DIR = ("/run/user/" | path join $env.UID)
+load-env {
+  XDG_CACHE_HOME : ($env.HOME | path join ".cache")
+  XDG_DATA_HOME : ($env.HOME | path join ".local/share")
+  XDG_STATE_HOME : ($env.HOME | path join ".local/state")
+  XDG_RUNTIME_DIR : ("/run/user/" | path join $env.UID)
 
-  NUPM_HOME = ($env.XDG_DATA_HOME | path join "nupm")
+  NUPM_HOME : ($env.XDG_DATA_HOME | path join "nupm")
 }
 
 # Directories to search for scripts when calling source or use
