@@ -5,6 +5,9 @@ if status is-interactive
     abbr -a rm echo "Use `gp` (`gtrash put`)"
     abbr -a vim nvim
 
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+
     starship init fish | source
     atuin init fish | source
     zoxide init fish --cmd cd | source
