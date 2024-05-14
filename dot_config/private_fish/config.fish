@@ -2,7 +2,7 @@ if status is-interactive
     devbox global shellenv | source
 
     abbr -a gp gtrash put
-    abbr -a rm echo "Use `gp` (`gtrash put`)"
+    abbr -a rm gp
     abbr -a vim nvim
 
     set -gx EDITOR nvim
