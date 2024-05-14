@@ -53,7 +53,7 @@ $env.NU_PLUGIN_DIRS = [
 $env.PATH = (
     $env.PATH
         | split row (char esep)
-        | ....
+        | prepend ($env.HOME | path join ".local" "bin")
         | prepend ($env.NUPM_HOME | path join "scripts")
         | uniq
 )
