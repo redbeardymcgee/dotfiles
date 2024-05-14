@@ -2,7 +2,8 @@
 #
 # version = "0.92.1"
 
-# use nu-themes/nushell-dark.nu
+use nu-themes/catppuccin-mocha.nu
+
 $env.config = {
     show_banner: false
 
@@ -21,9 +22,9 @@ $env.config = {
     filesize: {
         metric: true
     }
-    # color_config = (nushell-dark)
     use_kitty_protocol: true
     highlight_resolved_externals: true
-
     plugins: {} # Per-plugin configuration. See https://www.nushell.sh/contributor-book/plugins.html#configuration.
 }
+
+$env.color_config = (catppuccin-mocha)
