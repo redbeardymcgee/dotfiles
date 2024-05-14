@@ -20,6 +20,9 @@ $env.ENV_CONVERSIONS = {
 
 load-env {
   XDG_DATA_HOME: ($env.HOME | path join ".local" "share")
+}
+
+load-env {
   NUPM_HOME: ($env.XDG_DATA_HOME | path join "nupm")
 }
 
