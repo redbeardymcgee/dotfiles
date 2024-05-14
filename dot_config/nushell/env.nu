@@ -73,10 +73,13 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
+$env.NUPM_HOME = ($env.XDG_DATA_HOME | path join "nupm")
+
 # Directories to search for scripts when calling source or use
 # The default for this is $nu.default-config-dir/scripts
 $env.NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
+    ($env.NUPM_HOME | path join "modules")
 ]
 
 # Directories to search for plugin binaries when calling register
@@ -96,5 +99,15 @@ $env.NU_PLUGIN_DIRS = [
 # path add ($env.HOME | path join ".local" "bin")
 # $env.PATH = ($env.PATH | uniq)
 
+$env.PATH = (
+    $env.PATH
+        | split row (char esep)
+        | ....
+        | prepend ($env.NUPM_HOME | path join "scripts")
+        | uniq
+)
+
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
+
+starship init nu | save -f ~/.cache/starship/init.nu
