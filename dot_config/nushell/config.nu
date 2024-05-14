@@ -4,7 +4,7 @@
 
 use nu-themes/catppuccin-mocha.nu
 
-$env.color_config = (catppuccin-mocha)
+$env.config.color_config = (catppuccin-mocha)
 
 $env.config = {
     show_banner: false
