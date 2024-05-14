@@ -3,6 +3,7 @@
 # version = "0.92.1"
 
 use nu-themes/catppuccin-mocha.nu
+use ~/.cache/starship/init.nu
 
 $env.config = {
     show_banner: false
