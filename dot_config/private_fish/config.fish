@@ -1,6 +1,10 @@
 if status is-interactive
     devbox global shellenv | source
 
+    fish_add_path -gPm ~/.local/lib/node_modules/bin
+    fish_add_path -gPm ~/.cargo/bin
+    fish_add_path -gPm ~/.local/bin
+
     abbr -a gp gtrash put
     abbr -a rm gp
     abbr -a vim nvim
