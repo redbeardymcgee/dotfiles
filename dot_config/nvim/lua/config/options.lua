@@ -7,5 +7,5 @@ vim.g.neovide_transparency = 0.80
 vim.g["chezmoi#use_external"] = 1
 
 vim.g.copilot_proxy = "http://localhost:11435"
-vim.g.copilot_proxy_port = 11435
+-- vim.g.copilot_proxy_port = 11435
 vim.g.copilot_proxy_strict_ssl = false
