@@ -2,7 +2,7 @@
 ##? yazi wrapper that drops me in the cwd on exit
 
 #function yy {
-	local tmp=$(mktemp -p /tmp/yazi "yazi-cwd.XXXXXX")
+	local tmp=$(mktemp -p $XDG_RUNTIME_DIR/yazi/yazi-cwd.XXXXXX)
 	command yazi "$@" --cwd-file="$tmp"
 
   local cwd=$(< $tmp)
