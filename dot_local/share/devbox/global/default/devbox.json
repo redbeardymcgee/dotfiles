@@ -38,7 +38,8 @@
     "direnv@latest",
     "gtrash@latest",
     "nushell@latest",
-    "rustup@latest"
+    "rustup@latest",
+    "betterdiscordctl@latest"
   ],
   "shell": {
     "init_hook": [
