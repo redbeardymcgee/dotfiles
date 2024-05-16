@@ -41,7 +41,9 @@ end
 -- not inheriting `devbox` env properly
 -- flatpak problem?
 config.default_prog = {
-  "/var/home/josh/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/nu"
+	"fish",
+	"-c",
+	"/var/home/josh/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/nu",
 }
 
 config.scrollback_lines = 3500
@@ -205,10 +207,8 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 	window:set_config_overrides(overrides)
 end)
 
-{{ if hasSuffix .chezmoi.fqdnHostname "media" }}
-wezterm.on("mux-startup", function()
-mcgeedia.startup(wezterm)
-end)
-{{ end }}
+-- wezterm.on("mux-startup", function()
+-- mcgeedia.startup(wezterm)
+-- end)
 
 return config
