@@ -30,7 +30,6 @@
     "miller@latest",
     "lazygit@latest",
     "fzf@latest",
-    "cargo@latest",
     "chezmoi@latest",
     "nodejs@latest",
     "tealdeer@latest",
@@ -38,7 +37,8 @@
     "go@latest",
     "direnv@latest",
     "gtrash@latest",
-    "nushell@latest"
+    "nushell@latest",
+    "rustup@latest"
   ],
   "shell": {
     "init_hook": [
