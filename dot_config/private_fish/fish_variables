@@ -5,13 +5,12 @@ SETUVAR F_DATA:/var/home/josh/\x2elocal/share/f/data
 SETUVAR F_DATA_DIR:/var/home/josh/\x2elocal/share/f
 SETUVAR F_EXCLUDE:\x5e/tmp/\x2e\x2b
 SETUVAR __fish_initialized:3400
-SETUVAR _fisher_brewingweasel_2F_fishbang_files:\x7e/\x2econfig/fish/conf\x2ed/fishbang\x2efish
 SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/themes/Catppuccin\x20Frappe\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Latte\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Macchiato\x2etheme\x1e\x7e/\x2econfig/fish/themes/Catppuccin\x20Mocha\x2etheme
 SETUVAR _fisher_gokulsoumya_2F_f_files:\x7e/\x2econfig/fish/functions/__f\x2efish\x1e\x7e/\x2econfig/fish/functions/__f_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__f_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__f_complete\x2efish\x1e\x7e/\x2econfig/fish/functions/__f_extract_paths\x2efish\x1e\x7e/\x2econfig/fish/functions/__f_insert_from_picker\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/f\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/f_key_bindings\x2efish
 SETUVAR _fisher_jgusta_2F_paths_files:\x7e/\x2econfig/fish/functions/paths\x2efish
 SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:\x7e/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e\x7e/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/autopair\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/autopair\x2efish\x1ejgusta/paths\x1ecatppuccin/fish\x1ebrewingweasel/fishbang\x1egokulsoumya/f
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/autopair\x2efish\x1ejgusta/paths\x1ecatppuccin/fish\x1egokulsoumya/f
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:6c7086
 SETUVAR fish_color_cancel:f38ba8
