@@ -39,7 +39,8 @@
     "gtrash@latest",
     "nushell@latest",
     "rustup@latest",
-    "betterdiscordctl@latest"
+    "betterdiscordctl@latest",
+    "ripgrep@latest"
   ],
   "shell": {
     "init_hook": [
