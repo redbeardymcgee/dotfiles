@@ -1,18 +1,5 @@
 return {
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      inlay_hints = {
-        enabled = true,
-      },
-      codelens = {
-        enabled = true,
-      },
-    },
-    -- {
-    --   "windwp/nvim-ts-autotag",
-    --   cond = false,
-    -- },
     {
       "pmizio/typescript-tools.nvim",
       dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
