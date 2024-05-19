@@ -40,7 +40,8 @@
     "nushell@latest",
     "rustup@latest",
     "betterdiscordctl@latest",
-    "ripgrep@latest"
+    "ripgrep@latest",
+    "fd@latest"
   ],
   "shell": {
     "init_hook": [
