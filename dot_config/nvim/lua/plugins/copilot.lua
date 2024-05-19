@@ -5,8 +5,6 @@ return {
     suggestion = { enabled = false },
     panel = { enabled = false },
     filetypes = {
-      help = true,
-      markdown = true,
       typescript = true,
       typescriptreact = true,
       toml = true,
