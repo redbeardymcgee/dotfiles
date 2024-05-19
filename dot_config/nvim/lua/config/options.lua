@@ -8,4 +8,4 @@ vim.g["chezmoi#use_external"] = 1
 
 vim.g.copilot_proxy = "127.0.0.1:11435"
 -- vim.g.copilot_proxy_port = 11435
--- vim.g.copilot_proxy_strict_ssl = false
+vim.g.copilot_proxy_strict_ssl = false

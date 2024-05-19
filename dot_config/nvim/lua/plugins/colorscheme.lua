@@ -6,8 +6,8 @@ return {
       transparent_background = false,
       dim_inactive = {
         enable = true,
-        -- shade = "dark",
-        -- percentage = 0.25,
+        shade = "dark",
+        percentage = 0.25,
       },
       term_colors = true,
     },

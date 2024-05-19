@@ -27,6 +27,7 @@ return {
 
   opts = {
     -- your configuration overrides
+    model = "codellama:13",
     serve = {
       on_start = true,
     },
