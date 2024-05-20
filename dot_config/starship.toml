@@ -4,6 +4,7 @@ $hostname\
 $localip\
 $shlvl\
 $shell\
+${custom.yazi}\
 $env_var\
 $username\
 $sudo\
@@ -78,7 +79,6 @@ $gcloud\
 $openstack\
 $azure\
 $crystal\
-$custom\
 $jobs\
 $status\
 $os\
@@ -384,7 +384,6 @@ disabled = false
 symbol = " "
 
 [custom.yazi]
-description = "Indicate when the shell is a child of `yazi`"
-command = "echo Yazi"
-symbol = ""
+description = "Indicate when the shell was launched by `yazi`"
+symbol = " "
 when = """ test -n "$YAZI_LEVEL" """
