@@ -382,3 +382,8 @@ disabled = false
 
 [zig]
 symbol = " "
+
+[custom.yazi]
+description = "Indicate when the shell is a child of `yazi`"
+symbol = ""
+when = """ test -n "$YAZI_TERMINAL" """
