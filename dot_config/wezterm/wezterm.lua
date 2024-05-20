@@ -40,11 +40,11 @@ end
 
 -- not inheriting `devbox` env properly
 -- flatpak problem?
-config.default_prog = {
-	"fish",
-	"-c",
-	"/var/home/josh/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/nu",
-}
+-- config.default_prog = {
+-- 	"fish",
+-- 	"-c",
+-- 	"/var/home/josh/.local/share/devbox/global/default/.devbox/nix/profile/default/bin/nu",
+-- }
 
 config.scrollback_lines = 3500
 
