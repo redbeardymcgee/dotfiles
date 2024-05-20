@@ -6,6 +6,7 @@ if status is-interactive
     fish_add_path -gPm ~/.local/bin
 
     abbr -a gp gtrash put
+    abbr -a rm gtrash put
     abbr -a vim nvim
 
     set -gx EDITOR nvim
