@@ -41,7 +41,8 @@
     "rustup@latest",
     "betterdiscordctl@latest",
     "ripgrep@latest",
-    "fd@latest"
+    "fd@latest",
+    "cargo-update@latest"
   ],
   "shell": {
     "init_hook": [
