@@ -6,7 +6,7 @@
 preloaders = [
   # Image
   { mime = "image/vnd.djvu", run = "noop" },
-  # { mime = "image/*", run = "allmytoes" },
+  { mime = "image/*", run = "allmytoes" },
   # Video
   { mime = "video/*", run = "video" },
   # PDF
@@ -24,7 +24,7 @@ previewers = [
   { mime = "application/json", run = "json" },
   # Image
   { mime = "image/vnd.djvu", run = "noop" },
-  # { mime = "image/*", run = "allmytoes" },
+  { mime = "image/*", run = "allmytoes" },
   # Video
   { mime = "video/*", run = "video" },
   # PDF
