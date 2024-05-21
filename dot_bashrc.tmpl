@@ -33,6 +33,8 @@ if [ -n "$YAZI_LEVEL" ]; then
 fi
 PS1="$PS1$YAZI_TERM"
 
+source <(devbox global global shellenv)
+
 source "$HOME/devbox/local/share/blesh/ble.sh" \
   --noattach \
   --rcfile ~/.config/ble.rc
