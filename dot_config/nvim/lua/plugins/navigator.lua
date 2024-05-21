@@ -1,11 +1,8 @@
--- also check out: https://github.com/willothy/wezterm.nvim
 return {
   "craigmac/nvim-navigator",
-
   opts = {
     disable_on_zoom = true,
   },
-
   keys = {
     { "<C-h>", "<CMD>NavigatorLeft<CR>", mode = { "n", "t" } },
     { "<C-l>", "<CMD>NavigatorRight<CR>", mode = { "n", "t" } },
