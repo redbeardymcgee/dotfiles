@@ -347,9 +347,9 @@ style = "italic red"
 symbol = " "
 
 [shell]
-bash_indicator = "󱆃 "
-fish_indicator = " "
-zsh_indicator = " "
+bash_indicator = "󱆃"
+fish_indicator = ""
+zsh_indicator = ""
 disabled = false
 
 [spack]
