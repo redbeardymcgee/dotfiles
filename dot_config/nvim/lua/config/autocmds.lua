@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 vim.api.nvim_create_autocmd("VimEnter", {
-  group = vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true }),
+  group = vim.api.nvim_create_augroup("lazyvim_autoupdate", { clear = true }),
   callback = function()
     require("lazy").update({
       show = false,
