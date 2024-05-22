@@ -43,7 +43,8 @@
     "ripgrep@latest",
     "fd@latest",
     "cargo-update@latest",
-    "fish@latest"
+    "fish@latest",
+    "dogdns@latest"
   ],
   "shell": {
     "init_hook": [
