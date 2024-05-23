@@ -1,3 +1,4 @@
 return {
-  "wlangstroth/vim-racket",
+  { "wlangstroth/vim-racket" },
+  { "Olical/conjure" },
 }
