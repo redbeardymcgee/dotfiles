@@ -44,7 +44,8 @@
     "fd@latest",
     "cargo-update@latest",
     "fish@latest",
-    "dogdns@latest"
+    "dogdns@latest",
+    "racket@latest"
   ],
   "shell": {
     "init_hook": [
