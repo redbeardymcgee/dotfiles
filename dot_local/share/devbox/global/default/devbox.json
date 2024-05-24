@@ -45,7 +45,8 @@
     "cargo-update@latest",
     "fish@latest",
     "dogdns@latest",
-    "racket@latest"
+    "racket@latest",
+    "lazydocker@latest"
   ],
   "shell": {
     "init_hook": [
