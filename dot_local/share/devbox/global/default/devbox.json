@@ -46,7 +46,9 @@
     "fish@latest",
     "dogdns@latest",
     "racket@latest",
-    "lazydocker@latest"
+    "lazydocker@latest",
+    "python3@latest",
+    "ruby@latest"
   ],
   "shell": {
     "init_hook": [
