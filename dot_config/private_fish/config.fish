@@ -14,6 +14,8 @@ if status is-interactive
 
     set -gx NODE_PATH ~/.local/lib/node_modules
 
+    set -gx ZK_NOTEBOOK_DIR ~/Documents/Notes
+
     starship init fish | source
     atuin init fish | source
     zoxide init fish --cmd cd | source
